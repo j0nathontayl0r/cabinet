@@ -76,7 +76,24 @@ async function pathExists(targetPath) {
 }
 
 async function removePath(targetPath) {
-  await fs.rm(targetPath, { recursive: true, force: true });
+  const maxAttempts = process.platform === "win32" ? 6 : 1;
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    try {
+      await fs.rm(targetPath, { recursive: true, force: true });
+      return;
+    } catch (error) {
+      const code = error && typeof error === "object" ? error.code : undefined;
+      if (
+        attempt === maxAttempts ||
+        (code !== "EBUSY" && code !== "ENOTEMPTY" && code !== "EPERM")
+      ) {
+        throw error;
+      }
+
+      await new Promise((resolve) => setTimeout(resolve, attempt * 250));
+    }
+  }
 }
 
 async function copyDirectory(fromPath, toPath) {
