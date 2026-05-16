@@ -65,6 +65,8 @@
     },
     "detail": {
       "clickToTurnOff": "点击以关闭。",
+      "loadError": "无法加载此智能体。",
+      "retry": "重试",
       "color": "颜色",
       "customColor": "自定义颜色",
       "preset": "预设",
@@ -154,6 +156,9 @@
     "viewKanban": "看板",
     "viewList": "列表",
     "viewSchedule": "日程",
+    "viewKanbanHint": "看板视图 — 按 收件箱 / 该你了 / 运行中 / 刚完成 / 归档 分组",
+    "viewListHint": "所有任务的平铺列表,最近活动优先",
+    "viewScheduleHint": "已排程例行任务与即将运行的日历",
     "filterByAgent": "按智能体筛选:{{name}}",
     "noToDeleteTitle": "没有可删除的任务",
     "noToDeleteFiltered": "没有匹配 {{filter}} 的内容。清除筛选、换个视图,或创建一个新任务。",
@@ -307,8 +312,12 @@
   },
   "rowActions": {
     "stop": "停止",
+    "stopHint": "立即停止此运行(发送 SIGTERM)",
     "restart": "重启",
-    "reassign": "重新分配"
+    "restartHint": "从原始提示词重新运行",
+    "runHint": "立即开始此任务",
+    "reassign": "重新分配",
+    "reassignHint": "将此任务交给其他智能体"
   },
   "schedulesPanel": {
     "title": "已排程任务",
@@ -467,8 +476,10 @@
     "titleNow": "需要做点什么?",
     "titleRecurring": "设置一个循环例行任务",
     "titleHeartbeat": "按时唤醒这个智能体",
+    "titleEdit": "编辑任务",
     "submitStart": "开始",
     "submitAddInbox": "加入收件箱",
+    "submitSaveEdit": "保存更改",
     "submitCreateRoutine": "创建例行任务",
     "submitSaveHeartbeat": "保存心跳",
     "saving": "保存中……",
@@ -483,6 +494,7 @@
     "modeHeartbeatHint": "按它自己的节奏唤醒智能体",
     "agentFallback": "智能体",
     "failedToStart": "启动失败",
+    "failedToSave": "保存更改失败",
     "failedToSaveHeartbeat": "保存心跳失败"
   },
   "googleDoc": {
@@ -669,7 +681,10 @@
     "close": "关闭 (Esc)"
   },
   "rowActionsPlus": {
-    "delete": "删除"
+    "edit": "编辑",
+    "editHint": "在开始前编辑此草稿",
+    "delete": "删除",
+    "deleteHint": "永久删除 — 无法撤销"
   },
   "taskCard": {
     "ptyMode": "在终端 (PTY) 模式中运行"

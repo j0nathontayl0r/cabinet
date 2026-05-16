@@ -65,6 +65,8 @@
     },
     "detail": {
       "clickToTurnOff": "Click to turn off.",
+      "loadError": "Couldn’t load this agent.",
+      "retry": "Retry",
       "color": "Color",
       "customColor": "Custom color",
       "preset": "Preset",
@@ -154,6 +156,9 @@
     "viewKanban": "Kanban",
     "viewList": "List",
     "viewSchedule": "Schedule",
+    "viewKanbanHint": "Board view — tasks grouped into Inbox / Your turn / Running / Just Finished / Archive",
+    "viewListHint": "Flat list of every task, newest activity first",
+    "viewScheduleHint": "Calendar of scheduled routines and upcoming runs",
     "filterByAgent": "Filter by agent: {{name}}",
     "noToDeleteTitle": "No tasks to delete",
     "noToDeleteFiltered": "Nothing matches {{filter}}. Clear the filter, pick another view, or create a new task.",
@@ -307,8 +312,12 @@
   },
   "rowActions": {
     "stop": "Stop",
+    "stopHint": "Stop this run now (sends SIGTERM)",
     "restart": "Restart",
-    "reassign": "Reassign"
+    "restartHint": "Run again from the original prompt",
+    "runHint": "Start this task now",
+    "reassign": "Reassign",
+    "reassignHint": "Hand this task off to a different agent"
   },
   "schedulesPanel": {
     "title": "Scheduled jobs",
@@ -519,8 +528,10 @@
     "titleNow": "What needs to get done?",
     "titleRecurring": "Set up a recurring routine",
     "titleHeartbeat": "Wake this agent on a schedule",
+    "titleEdit": "Edit task",
     "submitStart": "Start",
     "submitAddInbox": "Add to Inbox",
+    "submitSaveEdit": "Save changes",
     "submitCreateRoutine": "Create routine",
     "submitSaveHeartbeat": "Save heartbeat",
     "saving": "Saving…",
@@ -535,6 +546,7 @@
     "modeHeartbeatHint": "Wake the agent on its own rhythm",
     "agentFallback": "Agent",
     "failedToStart": "Failed to start",
+    "failedToSave": "Failed to save changes",
     "failedToSaveHeartbeat": "Failed to save heartbeat"
   },
   "googleDoc": {
@@ -748,7 +760,10 @@
     "close": "Close (Esc)"
   },
   "rowActionsPlus": {
-    "delete": "Delete"
+    "edit": "Edit",
+    "editHint": "Edit this saved draft before it starts",
+    "delete": "Delete",
+    "deleteHint": "Delete permanently — this can't be undone"
   },
   "taskCard": {
     "ptyMode": "Running in terminal (PTY) mode"

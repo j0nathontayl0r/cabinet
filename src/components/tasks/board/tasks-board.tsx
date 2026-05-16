@@ -50,6 +50,8 @@ import {
 import { UndoToast, type PendingUndo } from "./undo-toast";
 import { ConfirmPopover, type PendingConfirm } from "./confirm-popover";
 import { StartWorkDialog, type StartWorkMode } from "@/components/composer/start-work-dialog";
+import type { TaskRuntimeSelection } from "@/components/composer/task-runtime-picker";
+import { IconHint } from "./icon-hint";
 import { ReassignMenu } from "./reassign-menu";
 import { deleteConversation, reassignConversation } from "./board-actions";
 import {
@@ -156,6 +158,15 @@ export function TasksBoard({
   const [newTaskOpen, setNewTaskOpen] = useState(false);
   const [newTaskMode, setNewTaskMode] = useState<StartWorkMode>("now");
   const [newTaskInitialPrompt, setNewTaskInitialPrompt] = useState<string | undefined>(undefined);
+  // Inbox-draft edit: RowActions dispatches `cabinet:open-edit-draft`; we
+  // load the draft's current text/agent/runtime and reopen StartWorkDialog
+  // bound to that conversation so submit PATCHes instead of creating.
+  const [editingDraft, setEditingDraft] = useState<
+    { conversationId: string; cabinetPath?: string } | null
+  >(null);
+  const [editSeed, setEditSeed] = useState<
+    { prompt: string; agentSlug?: string; runtime?: TaskRuntimeSelection } | null
+  >(null);
   const [jobDialog, setJobDialog] = useState<JobDialogState | null>(null);
   const [heartbeatDialog, setHeartbeatDialog] = useState<HeartbeatDialogState | null>(null);
 
@@ -168,6 +179,8 @@ export function TasksBoard({
       const detail = (e as CustomEvent).detail as
         | { initialPrompt?: string; initialMode?: StartWorkMode }
         | undefined;
+      setEditingDraft(null);
+      setEditSeed(null);
       setNewTaskMode(detail?.initialMode ?? "now");
       setNewTaskInitialPrompt(detail?.initialPrompt);
       setNewTaskOpen(true);
@@ -176,7 +189,65 @@ export function TasksBoard({
     return () => window.removeEventListener("cabinet:open-create-task", handler);
   }, []);
 
+  // Inbox-draft Edit (row action) → load the draft, then reopen the dialog
+  // pre-filled and bound to it. `request` is the user's original typed text
+  // (the composite prompt's "User request:" tail, peeled by the server).
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const detail = (e as CustomEvent).detail as
+        | { taskId?: string; cabinetPath?: string }
+        | undefined;
+      const taskId = detail?.taskId;
+      if (!taskId) return;
+      const cp = detail?.cabinetPath;
+      void (async () => {
+        try {
+          const params = new URLSearchParams();
+          if (cp) params.set("cabinetPath", cp);
+          const qs = params.toString();
+          const res = await fetch(
+            `/api/agents/conversations/${encodeURIComponent(taskId)}${qs ? `?${qs}` : ""}`,
+            { cache: "no-store" }
+          );
+          if (!res.ok) throw new Error(`load draft failed: ${res.status}`);
+          const data = (await res.json()) as {
+            request?: string;
+            meta?: {
+              agentSlug?: string;
+              providerId?: string;
+              adapterType?: string;
+              adapterConfig?: Record<string, unknown>;
+            };
+          };
+          const meta = data.meta;
+          const cfg = meta?.adapterConfig ?? {};
+          setEditSeed({
+            prompt: data.request ?? "",
+            agentSlug: meta?.agentSlug,
+            runtime: {
+              providerId: meta?.providerId,
+              adapterType: meta?.adapterType,
+              model: typeof cfg.model === "string" ? cfg.model : undefined,
+              effort: typeof cfg.effort === "string" ? cfg.effort : undefined,
+            },
+          });
+          setEditingDraft({ conversationId: taskId, cabinetPath: cp });
+          setNewTaskOpen(true);
+        } catch (err) {
+          console.error("[board] open edit draft failed", err);
+        }
+      })();
+    };
+    window.addEventListener("cabinet:open-edit-draft", handler);
+    return () => window.removeEventListener("cabinet:open-edit-draft", handler);
+  }, []);
+
   const openComposer = (mode: StartWorkMode) => {
+    // Always a fresh task — drop any edit binding so submit creates instead
+    // of PATCHing the previously-edited draft.
+    setEditingDraft(null);
+    setEditSeed(null);
+    setNewTaskInitialPrompt(undefined);
     setNewTaskMode(mode);
     setNewTaskOpen(true);
   };
@@ -631,12 +702,19 @@ export function TasksBoard({
         open={newTaskOpen}
         onOpenChange={(open) => {
           setNewTaskOpen(open);
-          if (!open) setNewTaskInitialPrompt(undefined);
+          if (!open) {
+            setNewTaskInitialPrompt(undefined);
+            setEditingDraft(null);
+            setEditSeed(null);
+          }
         }}
         cabinetPath={cabinetPath}
         agents={overview?.agents ?? []}
         initialMode={newTaskMode}
-        initialPrompt={newTaskInitialPrompt}
+        initialPrompt={editingDraft ? editSeed?.prompt : newTaskInitialPrompt}
+        initialAgentSlug={editingDraft ? editSeed?.agentSlug : undefined}
+        initialRuntime={editingDraft ? editSeed?.runtime : undefined}
+        editing={editingDraft}
         onStarted={(id) => {
           void refresh();
           setSelectedId(id);
@@ -666,15 +744,16 @@ function NewWorkButton({
   const { t } = useLocale();
   return (
     <div className="inline-flex h-7 items-stretch overflow-hidden rounded-md">
-      <button
-        type="button"
-        onClick={() => onCreate("now")}
-        className="inline-flex items-center gap-1.5 bg-primary px-2.5 text-[11.5px] font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-        title={t("tasksBoard:createTask")}
-      >
-        <Plus className="size-3.5" />
-        New Task
-      </button>
+      <IconHint label={t("tasksBoard:createTask")} side="bottom">
+        <button
+          type="button"
+          onClick={() => onCreate("now")}
+          className="inline-flex items-center gap-1.5 bg-primary px-2.5 text-[11.5px] font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+        >
+          <Plus className="size-3.5" />
+          New Task
+        </button>
+      </IconHint>
       <div className="w-px bg-primary-foreground/20" aria-hidden />
       <DropdownMenu>
         <DropdownMenuTrigger

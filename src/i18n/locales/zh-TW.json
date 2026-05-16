@@ -65,6 +65,8 @@
     },
     "detail": {
       "clickToTurnOff": "點擊以關閉。",
+      "loadError": "無法載入此代理。",
+      "retry": "重試",
       "color": "顏色",
       "customColor": "自訂顏色",
       "preset": "預設",
@@ -154,6 +156,9 @@
     "viewKanban": "看板",
     "viewList": "清單",
     "viewSchedule": "排程",
+    "viewKanbanHint": "看板檢視 — 依 收件匣 / 輪到你 / 執行中 / 剛完成 / 封存 分組",
+    "viewListHint": "所有任務的平面清單,最近活動優先",
+    "viewScheduleHint": "已排程例行任務與即將執行的行事曆",
     "filterByAgent": "依智慧代理篩選:{{name}}",
     "noToDeleteTitle": "沒有可刪除的任務",
     "noToDeleteFiltered": "沒有符合 {{filter}} 的內容。清除篩選、換個檢視,或建立一個新任務。",
@@ -307,8 +312,12 @@
   },
   "rowActions": {
     "stop": "停止",
+    "stopHint": "立即停止此執行(送出 SIGTERM)",
     "restart": "重新啟動",
-    "reassign": "重新指派"
+    "restartHint": "從原始提示詞重新執行",
+    "runHint": "立即開始此任務",
+    "reassign": "重新指派",
+    "reassignHint": "將此任務交給其他智慧代理"
   },
   "schedulesPanel": {
     "title": "已排程任務",
@@ -467,8 +476,10 @@
     "titleNow": "需要做點什麼?",
     "titleRecurring": "設定一個循環例行任務",
     "titleHeartbeat": "按時喚醒這個智慧代理",
+    "titleEdit": "編輯任務",
     "submitStart": "開始",
     "submitAddInbox": "加入收件匣",
+    "submitSaveEdit": "儲存變更",
     "submitCreateRoutine": "建立例行任務",
     "submitSaveHeartbeat": "儲存心跳",
     "saving": "儲存中……",
@@ -483,6 +494,7 @@
     "modeHeartbeatHint": "按它自己的節奏喚醒智慧代理",
     "agentFallback": "智慧代理",
     "failedToStart": "啟動失敗",
+    "failedToSave": "儲存變更失敗",
     "failedToSaveHeartbeat": "儲存心跳失敗"
   },
   "googleDoc": {
@@ -669,7 +681,10 @@
     "close": "關閉 (Esc)"
   },
   "rowActionsPlus": {
-    "delete": "刪除"
+    "edit": "編輯",
+    "editHint": "在開始前編輯此草稿",
+    "delete": "刪除",
+    "deleteHint": "永久刪除 — 無法復原"
   },
   "taskCard": {
     "ptyMode": "以終端機 (PTY) 模式執行中"
