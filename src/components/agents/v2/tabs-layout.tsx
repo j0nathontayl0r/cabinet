@@ -72,7 +72,7 @@ function TopBar({
       style={{ paddingInlineStart: `calc(1rem + var(--sidebar-toggle-offset, 0px))` }}
     >
       <div className="flex items-center gap-2">
-        <h1 className="text-[14px] font-semibold tracking-tight">Team</h1>
+        <h1 className="font-ui text-[14px] font-semibold tracking-tight">Team</h1>
         {loading && (
           <Loader2 className="size-3.5 animate-spin text-muted-foreground" />
         )}
