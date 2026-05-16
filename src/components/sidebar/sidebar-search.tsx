@@ -85,7 +85,11 @@ export function SidebarSearch({ children }: { children: ReactNode }) {
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const value = e.target.value;
       setQuery(value);
-      if (!value.trim()) {
+      if (value.trim()) {
+        // Enter the loading state on the same render as the query change so
+        // the debounce gap shows "Searching…", never a false "no results".
+        setLoading(true);
+      } else {
         if (debounceRef.current) clearTimeout(debounceRef.current);
         if (abortRef.current) abortRef.current.abort();
         setHits([]);
@@ -175,7 +179,7 @@ export function SidebarSearch({ children }: { children: ReactNode }) {
       {searching ? (
         <div className="flex flex-1 flex-col pt-0.5">
           {hits.length === 0 ? (
-            <p className="px-3 py-2 text-[11px] text-muted-foreground">
+            <p className="px-3 py-2 text-[11px] text-muted-foreground animate-in fade-in duration-150">
               {loading
                 ? t("sidebar:searchSearching")
                 : t("sidebar:searchNoResults", { query: trimmed })}
@@ -187,8 +191,13 @@ export function SidebarSearch({ children }: { children: ReactNode }) {
                 type="button"
                 onClick={() => openHit(hit)}
                 onMouseEnter={() => setActiveIndex(i)}
+                style={{
+                  animationDelay: `${Math.min(i, 12) * 18}ms`,
+                  animationFillMode: "backwards",
+                }}
                 className={cn(
                   "flex w-full items-center gap-2 rounded-md px-2 py-1 text-left text-[12px] text-foreground/75 transition-colors",
+                  "animate-in fade-in slide-in-from-top-1 duration-200 ease-out",
                   i === activeIndex
                     ? "bg-accent text-accent-foreground"
                     : "hover:bg-foreground/[0.03] hover:text-foreground"
