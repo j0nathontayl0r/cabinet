@@ -61,7 +61,8 @@
       "pickAnAgent": "Válasszon ügynököt",
       "dismiss": "Elvetés",
       "lockedHeartbeatTip": "Ez az ügynök leállt. Indítsa el az Ügynökök lapon a szívverés engedélyezéséhez.",
-      "lockedRoutineTip": "Ez az ügynök leállt. Indítsa el az Ügynökök lapon a rutinfeladatok engedélyezéséhez."
+      "lockedRoutineTip": "Ez az ügynök leállt. Indítsa el az Ügynökök lapon a rutinfeladatok engedélyezéséhez.",
+      "avatar": "workspace.avatar"
     },
     "detail": {
       "clickToTurnOff": "Kattintson a kikapcsoláshoz.",
@@ -1022,7 +1023,9 @@
       "getStarted": "Kezdés"
     },
     "welcome": {
-      "paragraph": "Az Otthonod a tiéd. Benne szobákat hozhatsz létre életed különböző területeihez: munka, második agy, kutatás, család. És minden szobában vannak szekrények: a jegyzeteid, a fájljaid és egy AI csapat, amely csendben végzi a dolgát a háttérben."
+      "paragraph": "Az Otthonod a tiéd. Benne szobákat hozhatsz létre életed különböző területeihez: munka, második agy, kutatás, család. És minden szobában vannak szekrények: a jegyzeteid, a fájljaid és egy AI csapat, amely csendben végzi a dolgát a háttérben.",
+      "namePrompt": "Mi a neved?",
+      "heading": "Üdvözlünk <accent>itthon</accent>!"
     },
     "welcomeBack": {
       "heading": "Üdv újra!",
@@ -1051,6 +1054,107 @@
       "finish": "Befejezés",
       "complete": "Beállítás befejezése",
       "copyToClipboard": "Másolás vágólapra"
+    },
+    "cabinetCreated": {
+      "continue": "Beállítás folytatása",
+      "heading": "A Cabinet elkészült",
+      "subtitle": "Minden készen áll.",
+      "agentsReady_one": "{{count}} ügynök készen áll a munkára",
+      "agentsReady_other": "{{count}} ügynök készen áll a munkára",
+      "scheduledJobs_one": "{{count}} ütemezett feladat",
+      "scheduledJobs_other": "{{count}} ütemezett feladat",
+      "subCabinets_one": "{{count}} alkabinét",
+      "subCabinets_other": "{{count}} alkabinét",
+      "agentsReady": "{{count}} ügynök készen áll a munkára",
+      "scheduledJobs": "{{count}} ütemezett feladat",
+      "subCabinets": "{{count}} alkabinét"
+    },
+    "cloud": {
+      "alreadyOnList": "Már rajta vagy a listán – hamarosan jelentkezünk.",
+      "aside": "A Cabinet Cloud hamarosan érkezik. Ugyanaz a termék, önhosting gondok nélkül.",
+      "description": "Nyisd meg a Cabinetet bármilyen eszközről, miközben AI ügynökeid dolgoznak – vázlatokat készítenek, kutatnak, rendszereznek –, még akkor is, ha a laptopod le van csukva.",
+      "error": "Hiba történt. Ellenőrizd az e-mail címet, és próbáld újra.",
+      "joinWaitlist": "Feliratkozás várólistára",
+      "onList": "Rajta vagy a listán. E-mailben értesítünk, amint a Cabinet Cloud elérhetővé válik.",
+      "sending": "Küldés…",
+      "title": "A Cabineted, bárhol. AI csapatod, mindig aktív.",
+      "waitlistSubtitle": "Csatlakozz bárhonnan. AI csapatod 24/7-ben dolgozik."
+    },
+    "discord": {
+      "aside": "Ha elsőként szeretnél új funkciókat, és inkább beszélgetnél, mintsem hibajegyet küldenél, ez a te szobád.",
+      "description": "Itt a visszajelzések funkciókká, a képernyőfotók vitákká válnak, és valaki általában megtalálja a szélső esetet, mielőtt az téged találna meg.",
+      "joinBadge": "Csatlakozás",
+      "title": "Discordon történnek a jó furcsaságok."
+    },
+    "github": {
+      "aside": "A Cabinet nyílt forráskódú. Ha tetszik a vízió, segíts terjeszteni a hírt.",
+      "description": "Egy GitHub csillag segít, hogy többen felfedezzék a Cabinetet és csatlakozzanak a közösséghez.",
+      "starsLabel": "{{stars}} GitHub csillag",
+      "title": "Segíts a Cabinet közösségnek növekedni"
+    },
+    "launch": {
+      "beforeYouLaunch": "Indítás előtt",
+      "defaultCabinetName": "A te Cabineted",
+      "defaultDescription": "Tudásbázis + AI csapat",
+      "launchCabinet": "Cabinet indítása",
+      "settingUp": "Beállítás...",
+      "disclaimerAccess": "<strong>Az ügynökök teljes hozzáféréssel futnak.</strong> A Cabinet a <flag>--dangerously-skip-permissions</flag> (Claude Code) és más szolgáltatók hasonló jelzőit használja. Ez megegyezik azzal, mintha ezeket a CLI eszközöket a saját terminálodból futtatnád. Bármely konfigurált MCP szerver vagy eszköz automatikusan meghívható az ügynökök által.",
+      "disclaimerBackup": "<strong>Rendszeresen készíts biztonsági másolatot az adataidról.</strong> Az ügynökök olvashatnak, írhatnak és törölhetnek fájlokat a tudásbázisodban és a kapcsolt repókban. A Cabinet nem felelős az adatvesztésért. Te vagy felelős az általad választott AI szolgáltatókért és azok szolgáltatási feltételeiért.",
+      "disclaimerBeta": "<strong>Béta szoftver. Hibák előfordulhatnak.</strong> Gyorsan szállítunk. Kompatibilitástörő változások értesítés nélkül is érkezhetnek.",
+      "legalNotice": "A folytatással elfogadod a <terms>Felhasználási feltételeinket</terms> és az <privacy>Adatvédelmi irányelveinket</privacy>. A Cabinet egy <oss>nyílt forráskódú projekt</oss>."
+    },
+    "provider": {
+      "agentType": "{{type}} ügynök",
+      "close": "Bezárás",
+      "comingSoon": "Hamarosan",
+      "guide": "Útmutató",
+      "heading": "Ügynök szolgáltató",
+      "install": "Telepítés",
+      "logIn": "Bejelentkezés",
+      "openTerminalButton": "Terminál megnyitása",
+      "openTerminalDetail": "A következő lépések futtatásához terminálra lesz szükséged.",
+      "openTerminalError": "Nem sikerült automatikusan megnyitni a terminált. Nyisd meg manuálisan a rendszerterminálodat.",
+      "openTerminalTitle": "Terminál megnyitása",
+      "recheck": "Szolgáltatók újraellenőrzése",
+      "rerunVerify": "Ellenőrzés újraindítása",
+      "runVerify": "Ellenőrzés futtatása",
+      "setupTitle": "{{name}} beállítása",
+      "skipForNow": "Kihagyás most",
+      "subtitle": "A Cabinetnek AI CLI-re van szüksége az ügynökök működtetéséhez.",
+      "verifyExplanation": "Az ellenőrzés végigfuttatja a szolgáltató fej nélküli promptját, és osztályozza az esetleges hibákat, hogy tudd, melyik lépést kell újra átnézni.",
+      "verifying": "Ellenőrzés…",
+      "failedAtStep": "Hiba a lépésnél: <strong>{{step}}</strong>"
+    },
+    "roomSetup": {
+      "subtitle": "Mire való ez a cabinet? Minden szobához saját AI csapat tartozik.",
+      "heading": "Válassz egy <accent>szobát</accent>"
+    },
+    "team": {
+      "browseAll": "Összes böngészése",
+      "browseCabinets": "Cabinetek böngészése",
+      "cabinetNameLabel": "Cabinet neve",
+      "cancel": "Mégse",
+      "importButton": "Importálás",
+      "importFailed": "Importálás sikertelen",
+      "importFailedConnection": "Importálás sikertelen. Ellenőrizd a kapcsolatot.",
+      "importTitle": "{{name}} importálása",
+      "orPickAgents": "Vagy válaszd ki az ügynökeidet",
+      "required": "Kötelező",
+      "startFromTemplate": "Kezdés sablonból",
+      "subtitle": "Minden cabinet egy AI csapat – ügynökök, feladatok és egy megosztott tudásbázis, amelyek együtt, egységként működnek.",
+      "heading": "Építsd <accent>a</accent> csapatod",
+      "agentCount_one": "{{count}} ügynök",
+      "agentCount_other": "{{count}} ügynök",
+      "jobCount_one": "{{count}} feladat",
+      "jobCount_other": "{{count}} feladat",
+      "subCabinetCount_one": "{{count}} alkabinet",
+      "subCabinetCount_other": "{{count}} alkabinet",
+      "cabinetsImported_one": "{{count}} kabinet importálva",
+      "cabinetsImported_other": "{{count}} kabinet importálva",
+      "agentCount": "{{count}} ügynök",
+      "cabinetsImported": "{{count}} kabinet importálva",
+      "jobCount": "{{count}} feladat",
+      "subCabinetCount": "{{count}} alkabinet"
     }
   },
   "search": {
@@ -1332,7 +1436,14 @@
       "savedAgoSeconds": "{{n}} mp. ezelőtt",
       "savedAgoMinutes": "{{n}} p. ezelőtt",
       "savedAgoHours": "{{n}} órája",
-      "savedAgoDays": "{{n}} napja"
+      "savedAgoDays": "{{n}} napja",
+      "saveFailedRetry": "Mentés sikertelen — újrapróbálkozás",
+      "savingText": "Mentés…",
+      "savedText": "Mentve",
+      "editingText": "Szerkesztés…",
+      "savedAgo": "Mentve · {{ago}}",
+      "word": "szó",
+      "words": "szó"
     },
     "git": {
       "statusModified": "Módosítva",
@@ -1382,7 +1493,11 @@
       "syncAriaLabelWithLast": "Legújabb változások lekérése GitHubról és frissítés. Utolsó szinkronizálás: {{when}}.",
       "terminal": "Terminál",
       "openTerminal": "Terminál megnyitása",
-      "newTerminalTab": "Új terminálfül"
+      "newTerminalTab": "Új terminálfül",
+      "pulling": "Lekérés…",
+      "pulled": "Frissítve a távoliról",
+      "upToDate": "Naprakész",
+      "pullFailed": "Lekérés sikertelen"
     },
     "update2": {
       "updateAvailable": "{{version}} frissítés elérhető",
@@ -1392,6 +1507,9 @@
       "dismiss": "Elvetés",
       "close": "Bezárás",
       "openSettings": "Nyissa meg a Beállításokat a telepített frissítés áttekintéséhez"
+    },
+    "misc": {
+      "restartToFinishUpdate": "Újraindítás a frissítés befejezéséhez"
     }
   },
   "tasks": {
@@ -1442,5 +1560,47 @@
     "itemArchived": "{{title}} · archiválva",
     "itemDefault": "{{title}} · {{when}}",
     "toggleRunning": "{{count}} fut — feladatok sáv megjelenítése"
+  },
+  "chrome": {
+    "nav": {
+      "home": "Kezdőlap",
+      "agents": "Ügynökök",
+      "tasks": "Feladatok",
+      "ai": "AI",
+      "menu": "Menü",
+      "primaryAriaLabel": "Elsődleges"
+    },
+    "returnTo": {
+      "task": "Feladat",
+      "tasks": "Feladatok",
+      "agent": "Ügynök",
+      "agents": "Ügynökök",
+      "cabinet": "Cabinet",
+      "home": "Kezdőlap",
+      "settings": "Beállítások",
+      "registry": "Nyilvántartás",
+      "back": "Vissza",
+      "backTo": "Vissza ide: {{label}}"
+    },
+    "theme": {
+      "defaultHeader": "Alapértelmezett",
+      "dark": "Sötét",
+      "darkThemes": "Sötét témák",
+      "lightThemes": "Világos témák"
+    },
+    "update": {
+      "restartTitle": "Indítsa újra a Cabinetet a frissítés befejezéséhez",
+      "availableTitle": "Elérhető a Cabinet {{version}}",
+      "updatesTitle": "Cabinet frissítések",
+      "description": "A Cabinet automatikusan ellenőrzi a kiadásokat. Mivel a termék még kísérleti fázisban van, készítsen biztonsági másolatot adatairól a frissítések telepítése előtt.",
+      "later": "Később",
+      "releaseNotes": "Kiadási megjegyzések"
+    },
+    "daemon": {
+      "fixHintElectron": "Lépjen ki, majd indítsa újra a Cabinetet az ügynök démon újraindításához.",
+      "fixHintDev": "Futtassa az `npm run dev:daemon` parancsot (vagy indítsa újra az `npm run dev:all` parancsot) az ügynök démon visszaállításához.",
+      "notResponding": "Az ügynök démon nem válaszol.",
+      "willFail": "Az ügynökök, feladatok és AI-kérések sikertelenek lesznek, amíg vissza nem áll. {{fixHint}}"
+    }
   }
 }

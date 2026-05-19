@@ -19,7 +19,7 @@
     },
     "metric": {
       "name": "اسم المقياس",
-      "namePlaceholder": "reddit_replies",
+      "namePlaceholder": "ردود reddit",
       "target": "الهدف",
       "targetPlaceholder": "ردود/أسبوع",
       "floor": "الحد الأدنى",
@@ -61,7 +61,8 @@
       "pickAnAgent": "اختر وكيلًا",
       "dismiss": "تجاهل",
       "lockedHeartbeatTip": "هذا الوكيل متوقف. ابدأ تشغيله في علامة تبويب الوكلاء لتمكين نبض النشاط.",
-      "lockedRoutineTip": "هذا الوكيل متوقف. ابدأ تشغيله في علامة تبويب الوكلاء لتمكين روتيناته."
+      "lockedRoutineTip": "هذا الوكيل متوقف. ابدأ تشغيله في علامة تبويب الوكلاء لتمكين روتيناته.",
+      "avatar": "صورة مساحة العمل الرمزية"
     },
     "detail": {
       "clickToTurnOff": "انقر للإيقاف.",
@@ -1022,7 +1023,9 @@
       "getStarted": "ابدأ"
     },
     "welcome": {
-      "paragraph": "منزلك ملكك. بداخله، ستنشئ غرفًا لأجزاء مختلفة من حياتك: العمل، العقل الثاني، البحث، العائلة. وكل غرفة تحتوي على خزائن: ملاحظاتك، ملفاتك، وفريق ذكاء اصطناعي ينجز المهام بهدوء في الخلفية."
+      "paragraph": "منزلك ملكك. بداخله، ستنشئ غرفًا لأجزاء مختلفة من حياتك: العمل، العقل الثاني، البحث، العائلة. وكل غرفة تحتوي على خزائن: ملاحظاتك، ملفاتك، وفريق ذكاء اصطناعي ينجز المهام بهدوء في الخلفية.",
+      "namePrompt": "ما اسمك؟",
+      "heading": "أهلاً بك <accent>في بيتك</accent>"
     },
     "welcomeBack": {
       "heading": "مرحبًا بعودتك",
@@ -1051,6 +1054,280 @@
       "finish": "إنهاء",
       "complete": "إكمال الإعداد",
       "copyToClipboard": "نسخ إلى الحافظة"
+    },
+    "cabinetCreated": {
+      "continue": "متابعة الإعداد",
+      "heading": "تم إنشاء Cabinet الخاص بك",
+      "subtitle": "كل شيء جاهز ومنظم.",
+      "agentsReady_one": "{{count}} وكيل جاهز للعمل",
+      "agentsReady_other": "{{count}} وكلاء جاهزون للعمل",
+      "scheduledJobs_one": "{{count}} مهمة مجدولة",
+      "scheduledJobs_other": "{{count}} مهام مجدولة",
+      "subCabinets_one": "{{count}} خزانة فرعية",
+      "subCabinets_other": "{{count}} خزانات فرعية",
+      "agentsReady": "{{count}} وكلاء جاهزون للعمل",
+      "scheduledJobs": "{{count}} مهام مجدولة",
+      "subCabinets": "{{count}} خزانات فرعية"
+    },
+    "cloud": {
+      "alreadyOnList": "أنت بالفعل على القائمة — سنتواصل معك.",
+      "aside": "Cabinet Cloud قادم قريباً. نفس المنتج، بدون تعقيدات الاستضافة الذاتية.",
+      "description": "افتح Cabinet الخاص بك من أي جهاز بينما يواصل وكلاء الذكاء الاصطناعي العمل — الصياغة، البحث، التنظيم — حتى عندما يكون حاسوبك المحمول مغلقاً.",
+      "error": "حدث خطأ ما. تحقق من البريد الإلكتروني وحاول مرة أخرى.",
+      "joinWaitlist": "انضم إلى قائمة الانتظار",
+      "onList": "أنت على القائمة. سنرسل لك بريداً إلكترونياً عند إطلاق Cabinet Cloud.",
+      "sending": "جارٍ الإرسال…",
+      "title": "Cabinet الخاص بك، في أي مكان. فريق الذكاء الاصطناعي الخاص بك، يعمل دائماً.",
+      "waitlistSubtitle": "اتصل من أي مكان. فريق الذكاء الاصطناعي الخاص بك يعمل 24/7."
+    },
+    "discord": {
+      "aside": "إذا كنت تريد الميزات الجديدة أولاً وتفضل 'الدردشة' على 'تقديم تذكرة دعم'، فهذه هي غرفتك.",
+      "description": "هنا تتحول الملاحظات إلى ميزات، ولقطات الشاشة إلى نقاشات، وعادة ما يجد أحدهم الحالة الهامشية قبل أن تجدك.",
+      "joinBadge": "انضم",
+      "title": "Discord هو المكان الذي تحدث فيه الأشياء الغريبة الجيدة."
+    },
+    "github": {
+      "aside": "Cabinet مفتوح المصدر. إذا أعجبتك الرؤية، ساعدنا في نشر الخبر.",
+      "description": "نجمة على GitHub تساعد المزيد من الأشخاص على اكتشاف Cabinet والانضمام إلى المجتمع.",
+      "starsLabel": "{{stars}} نجوم GitHub",
+      "title": "ساعد مجتمع Cabinet على النمو"
+    },
+    "launch": {
+      "beforeYouLaunch": "قبل الإطلاق",
+      "defaultCabinetName": "خزانتك",
+      "defaultDescription": "قاعدة معرفة + فريق ذكاء اصطناعي",
+      "launchCabinet": "إطلاق Cabinet",
+      "settingUp": "جارٍ الإعداد...",
+      "disclaimerAccess": "<strong>تعمل الوكلاء بصلاحيات كاملة.</strong> يستخدم Cabinet <flag>--dangerously-skip-permissions</flag> (Claude Code) وعلامات مكافئة في المزودين الآخرين. هذا مطابق لتشغيل أدوات سطر الأوامر هذه من طرفيتك الخاصة. قد يتم استدعاء أي خوادم أو أدوات MCP قمت بتكوينها تلقائيًا بواسطة الوكلاء.",
+      "disclaimerBackup": "<strong>احتفظ بنسخة احتياطية من بياناتك بانتظام.</strong> يمكن للوكلاء قراءة الملفات وكتابتها وحذفها عبر قاعدة بياناتك والمستودعات المرتبطة. Cabinet غير مسؤول عن فقدان البيانات. أنت مسؤول عن مزودي الذكاء الاصطناعي الذين تختارهم وشروط خدمتهم.",
+      "disclaimerBeta": "<strong>برنامج تجريبي. قد تحدث أعطال.</strong> نحن نطلق التحديثات بسرعة. قد تحدث تغييرات جذرية دون إشعار.",
+      "legalNotice": "بالمتابعة، أنت توافق على <terms>شروطنا</terms> و <privacy>الخصوصية</privacy>. Cabinet هو <oss>مشروع مفتوح المصدر</oss>."
+    },
+    "provider": {
+      "agentType": "وكيل {{type}}",
+      "close": "إغلاق",
+      "comingSoon": "قريبًا",
+      "guide": "دليل",
+      "heading": "مزود الوكيل",
+      "install": "تثبيت",
+      "logIn": "تسجيل الدخول",
+      "openTerminalButton": "فتح الطرفية",
+      "openTerminalDetail": "ستحتاج إلى طرفية لتشغيل الخطوات التالية.",
+      "openTerminalError": "تعذر فتح الطرفية تلقائيًا. افتح طرفية نظامك يدويًا.",
+      "openTerminalTitle": "افتح طرفية",
+      "recheck": "إعادة فحص المزودين",
+      "rerunVerify": "إعادة تشغيل التحقق",
+      "runVerify": "تشغيل التحقق",
+      "setupTitle": "إعداد {{name}}",
+      "skipForNow": "تخطي حاليًا",
+      "subtitle": "يحتاج Cabinet إلى AI CLI لتشغيل وكلائك.",
+      "verifyExplanation": "يقوم التحقق بتشغيل موجه المزود بدون واجهة رسومية من البداية إلى النهاية ويصنف أي فشل لتتمكن من معرفة الخطوة التي يجب مراجعتها.",
+      "verifying": "جارٍ التحقق...",
+      "failedAtStep": "فشل في الخطوة: <strong>{{step}}</strong>"
+    },
+    "roomSetup": {
+      "subtitle": "ما فائدة هذه الخزانة؟ كل غرفة تأتي مع فريق الذكاء الاصطناعي الخاص بها.",
+      "heading": "اختر <accent>غرفة</accent>"
+    },
+    "rooms": {
+      "office": {
+        "label": "المكتب",
+        "tagline": "لإدارة عمل تجاري، شركة ناشئة، أو مشروع جانبي.",
+        "workspaceLabel": "اسم الشركة أو المشروع",
+        "workspacePlaceholder": "Acme Corp",
+        "descriptionLabel": "ماذا تفعلون؟",
+        "descriptionPlaceholder": "ننتج بودكاست عن الشركات الناشئة في مجال الذكاء الاصطناعي",
+        "departmentNoun": "القسم",
+        "teamSizeLabel": "حجم الفريق",
+        "exampleAgents": {
+          "0": "الرئيس التنفيذي",
+          "1": "المحرر"
+        }
+      },
+      "study": {
+        "label": "الدراسة",
+        "tagline": "عقلك الثاني — للكتابة، الملاحظات، والمساعد الشخصي.",
+        "workspaceLabel": "سمِّ مساحتك",
+        "workspacePlaceholder": "دراستي",
+        "descriptionLabel": "ما هي مجالات الحياة التي ترغب في المساعدة بها؟",
+        "descriptionPlaceholder": "الكتابة، فرز البريد الإلكتروني، التقويم، تتبع العادات",
+        "departmentNoun": "المجال",
+        "exampleAgents": {
+          "0": "المساعد",
+          "1": "أمين المكتبة"
+        }
+      },
+      "lab": {
+        "label": "مختبر الأبحاث",
+        "tagline": "للعمل الأكاديمي، الأدب، التدريس، الأطروحات.",
+        "workspaceLabel": "اسم مساحة العمل",
+        "workspacePlaceholder": "فلسفة العقل",
+        "descriptionLabel": "ما هو مجالك أو ما الذي تبحث فيه؟",
+        "descriptionPlaceholder": "الظواهر، الوعي، تدريس مقدمة في الفلسفة",
+        "departmentNoun": "المجال",
+        "exampleAgents": {
+          "0": "رئيس الأبحاث",
+          "1": "أمين المكتبة"
+        }
+      },
+      "family-room": {
+        "label": "غرفة العائلة",
+        "tagline": "للمنزل، تقويم العائلة، الوجبات، الأطفال.",
+        "workspaceLabel": "اسم العائلة",
+        "workspacePlaceholder": "عائلة نجوين",
+        "descriptionLabel": "من يعيش هنا وماذا تديرون؟",
+        "descriptionPlaceholder": "أبوان، ثلاثة أطفال، مدرستان، كلب واحد",
+        "departmentNoun": "مجال",
+        "teamSizeLabel": "عدد أفراد الأسرة",
+        "exampleAgents": {
+          "0": "مدير المنزل",
+          "1": "مخطط"
+        }
+      },
+      "blank": {
+        "label": "غرفة فارغة",
+        "tagline": "لا شيء بعد. أحضر وكلاءك وشكلك الخاص.",
+        "workspaceLabel": "سمِّ Cabinet الخاص بك",
+        "workspacePlaceholder": "Cabinet الخاص بي",
+        "descriptionLabel": "ما الغرض منه؟",
+        "descriptionPlaceholder": "أي شيء — اتركه فارغًا إذا لم تكن متأكدًا بعد",
+        "departmentNoun": "مجموعة",
+        "exampleAgents": {
+          "0": "اختيارك"
+        }
+      }
+    },
+    "departments": {
+      "leadership": "قيادة",
+      "marketing": "تسويق",
+      "content": "محتوى",
+      "engineering": "هندسة",
+      "product-and-design": "المنتج والتصميم",
+      "business": "أعمال",
+      "research": "أبحاث",
+      "finance-and-ops": "مالية وعمليات",
+      "personal": "شخصي",
+      "second-brain": "عقل ثانٍ",
+      "writing": "كتابة",
+      "tools": "أدوات",
+      "life-admin": "شؤون الحياة",
+      "from-the-office": "من المكتب",
+      "writing-and-notes": "كتابة وملاحظات",
+      "other": "أخرى",
+      "household": "أسرة",
+      "admin": "إدارة",
+      "money": "أموال",
+      "product": "منتج",
+      "design": "تصميم",
+      "sales": "مبيعات",
+      "support": "دعم",
+      "analytics": "تحليلات",
+      "finance": "مالية",
+      "legal": "شؤون قانونية",
+      "people": "أفراد"
+    },
+    "demo": {
+      "greeting": {
+        "office": "صباح الخير فريق! مرحبًا بك في {{workspace}}. لنبدأ العمل فورًا.",
+        "study": "صباح الخير. عقلك الثاني متصل بالإنترنت — مرحبًا بعودتك إلى {{home}}.",
+        "lab": "مكتب الأبحاث جاهز — \"{{workspace}}\". ما الذي سنبحث فيه اليوم؟",
+        "family-room": "المقر الرئيسي للمنزل قيد التشغيل — {{home}}. لنوصل الجميع إلى حيث يحتاجون.",
+        "blank": "صفحة بيضاء — \"{{workspace}}\". ماذا تريد أن تبني هنا يا {{home}}؟"
+      },
+      "assign": "{{name}}، هل يمكنك تولي {{topic}}؟",
+      "fallbackTopic": "ما التالي",
+      "office": {
+        "replies": {
+          "0": "حسناً. سأجهز نظرة عامة شاملة بنهاية اليوم.",
+          "1": "أقوم بصياغة خطة بالفعل. سأشاركها في #content قريبًا.",
+          "2": "أقوم بإعداد سير العمل الأساسية الآن. تبدو جيدة حتى الآن."
+        },
+        "topics": {
+          "0": "بحث المنافسين",
+          "1": "تقويم المحتوى",
+          "2": "خطة الإطلاق"
+        },
+        "closing": "طاقة رائعة يا جماعة. لنجعل هذا الأسبوع الأول قويًا."
+      },
+      "study": {
+        "replies": {
+          "0": "سأقوم بفرز البريد الوارد وعرض ما يحتاجك.",
+          "1": "التقويم يبدو فارغًا حتى الساعة 3 مساءً — فرصة جيدة للكتابة.",
+          "2": "لقد ربطت ثلاث ملاحظات جديدة بفهرس 'اليومي' بالفعل."
+        },
+        "topics": {
+          "0": "فرز البريد الوارد اليومي",
+          "1": "كتابة هذا الأسبوع",
+          "2": "قائمة قراءاتي"
+        },
+        "closing": "جيد. نبهني إذا احتجتني — وإلا سأبقى بعيدًا عن طريقك."
+      },
+      "lab": {
+        "replies": {
+          "0": "أقوم بسحب أحدث ورقة بحثية حول هذا الموضوع الآن — مسودة ملخص في غضون ساعة.",
+          "1": "سأقوم بمزامنة المراجع بعد ذلك وتحديد التكرارات.",
+          "2": "مخطط المحاضرة ليوم الخميس جاهز تقريبًا للمراجعة."
+        },
+        "topics": {
+          "0": "مراجعة الأدبيات",
+          "1": "تحضير محاضرة الخميس",
+          "2": "قائمة المراجع"
+        },
+        "closing": "أبقني على اطلاع. سأراجع أي شيء ترسله بنهاية اليوم."
+      },
+      "family-room": {
+        "replies": {
+          "0": "الجدول يبدو فارغًا بعد الساعة 4. أضع علامة على التسليمات المتداخلة.",
+          "1": "تمت صياغة قائمة الطعام للأسبوع — قائمة البقالة جاهزة للمراجعة.",
+          "2": "تمت مزامنة أنشطة الأطفال. ليلة DnD لا تزال قائمة ليوم الجمعة."
+        },
+        "topics": {
+          "0": "جدول اليوم",
+          "1": "خطة الوجبات",
+          "2": "أنشطة الأطفال"
+        },
+        "closing": "شكرًا للجميع. نبهني إذا تغير أي شيء خلال اليوم."
+      },
+      "blank": {
+        "replies": {
+          "0": "فهمت. جاهز متى ما كنت أنت جاهزًا.",
+          "1": "في الانتظار.",
+          "2": "سأنتظر التوجيه."
+        },
+        "topics": {
+          "0": "الشيء الأول",
+          "1": "ما هو التالي",
+          "2": "السؤال المفتوح"
+        },
+        "closing": "متى ما كنت جاهزًا، أخبرنا ماذا نفعل."
+      }
+    },
+    "team": {
+      "browseAll": "تصفح الكل",
+      "browseCabinets": "تصفح الخزائن",
+      "cabinetNameLabel": "اسم الخزانة",
+      "cancel": "إلغاء",
+      "importButton": "استيراد",
+      "importFailed": "فشل الاستيراد",
+      "importFailedConnection": "فشل الاستيراد. تحقق من اتصالك.",
+      "importTitle": "استيراد {{name}}",
+      "orPickAgents": "أو اختر وكلائك",
+      "required": "مطلوب",
+      "startFromTemplate": "البدء من قالب",
+      "subtitle": "كل خزانة هي فريق ذكاء اصطناعي — وكلاء ومهام وقاعدة معرفة مشتركة، تعمل معًا ككيان واحد.",
+      "heading": "ابنِ <accent>فريقك</accent>",
+      "agentCount_one": "{{count}} وكيل",
+      "agentCount_other": "{{count}} وكلاء",
+      "jobCount_one": "{{count}} مهمة",
+      "jobCount_other": "{{count}} مهام",
+      "subCabinetCount_one": "{{count}} خزانة فرعية",
+      "subCabinetCount_other": "{{count}} خزانات فرعية",
+      "cabinetsImported_one": "تم استيراد {{count}} خزانة",
+      "cabinetsImported_other": "تم استيراد {{count}} خزانات",
+      "agentCount": "{{count}} وكلاء",
+      "cabinetsImported": "تم استيراد {{count}} خزانات",
+      "jobCount": "{{count}} مهام",
+      "subCabinetCount": "{{count}} خزانات فرعية"
     }
   },
   "search": {
@@ -1217,7 +1494,7 @@
     "profile": {
       "title": "الملف الشخصي",
       "name": "الاسم",
-      "namePlaceholder": "Hila",
+      "namePlaceholder": "هيلا",
       "displayName": "اسم العرض",
       "role": "الدور",
       "rolePlaceholder": "منشئ",
@@ -1332,7 +1609,14 @@
       "savedAgoSeconds": "منذ {{n}} ثانية",
       "savedAgoMinutes": "منذ {{n}} دقيقة",
       "savedAgoHours": "منذ {{n}} ساعة",
-      "savedAgoDays": "منذ {{n}} يوم"
+      "savedAgoDays": "منذ {{n}} يوم",
+      "saveFailedRetry": "فشل الحفظ — أعد المحاولة",
+      "savingText": "جارٍ الحفظ…",
+      "savedText": "تم الحفظ",
+      "editingText": "جارٍ التعديل…",
+      "savedAgo": "تم الحفظ · {{ago}}",
+      "word": "كلمة",
+      "words": "كلمات"
     },
     "git": {
       "statusModified": "معدّل",
@@ -1382,7 +1666,11 @@
       "syncAriaLabelWithLast": "اسحب آخر التغييرات من GitHub وحدّث. آخر مزامنة {{when}}.",
       "terminal": "الطرفية",
       "openTerminal": "افتح الطرفية",
-      "newTerminalTab": "علامة تبويب طرفية جديدة"
+      "newTerminalTab": "علامة تبويب طرفية جديدة",
+      "pulling": "جارٍ السحب…",
+      "pulled": "تم التحديث من البعيد",
+      "upToDate": "محدّث",
+      "pullFailed": "فشل السحب"
     },
     "update2": {
       "updateAvailable": "تحديث {{version}} متاح",
@@ -1392,6 +1680,9 @@
       "dismiss": "تجاهل",
       "close": "إغلاق",
       "openSettings": "افتح الإعدادات لمراجعة التحديث المثبت"
+    },
+    "misc": {
+      "restartToFinishUpdate": "أعد التشغيل لإنهاء التحديث"
     }
   },
   "tasks": {
@@ -1442,5 +1733,47 @@
     "itemArchived": "{{title}} · مؤرشف",
     "itemDefault": "{{title}} · {{when}}",
     "toggleRunning": "{{count}} قيد التشغيل — إظهار شريط المهام"
+  },
+  "chrome": {
+    "nav": {
+      "home": "الرئيسية",
+      "agents": "الوكلاء",
+      "tasks": "المهام",
+      "ai": "الذكاء الاصطناعي",
+      "menu": "القائمة",
+      "primaryAriaLabel": "أساسي"
+    },
+    "returnTo": {
+      "task": "مهمة",
+      "tasks": "المهام",
+      "agent": "وكيل",
+      "agents": "الوكلاء",
+      "cabinet": "Cabinet",
+      "home": "الرئيسية",
+      "settings": "الإعدادات",
+      "registry": "السجل",
+      "back": "رجوع",
+      "backTo": "الرجوع إلى {{label}}"
+    },
+    "theme": {
+      "defaultHeader": "افتراضي",
+      "dark": "داكن",
+      "darkThemes": "سمات داكنة",
+      "lightThemes": "سمات فاتحة"
+    },
+    "update": {
+      "restartTitle": "أعد تشغيل Cabinet لإنهاء التحديث",
+      "availableTitle": "يتوفر Cabinet {{version}}",
+      "updatesTitle": "تحديثات Cabinet",
+      "description": "يتحقق Cabinet من الإصدارات تلقائيًا. بينما لا يزال المنتج تجريبيًا، احتفظ بنسخة من بياناتك قبل تثبيت التحديثات.",
+      "later": "لاحقًا",
+      "releaseNotes": "ملاحظات الإصدار"
+    },
+    "daemon": {
+      "fixHintElectron": "أغلق وأعد تشغيل Cabinet لإعادة تشغيل الخفي الوكيل.",
+      "fixHintDev": "شغّل `npm run dev:daemon` (أو أعد تشغيل `npm run dev:all`) لإعادة تشغيل الخفي الوكيل.",
+      "notResponding": "الخفي الوكيل لا يستجيب.",
+      "willFail": "ستفشل الوكلاء والمهام وطلبات الذكاء الاصطناعي حتى يعود للعمل. {{fixHint}}"
+    }
   }
 }

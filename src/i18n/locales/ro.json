@@ -61,7 +61,8 @@
       "pickAnAgent": "Alege un agent",
       "dismiss": "Închide",
       "lockedHeartbeatTip": "Acest agent este oprit. Pornește-l din fila Agenți pentru a activa heartbeat-ul.",
-      "lockedRoutineTip": "Acest agent este oprit. Pornește-l din fila Agenți pentru a-i activa rutinele."
+      "lockedRoutineTip": "Acest agent este oprit. Pornește-l din fila Agenți pentru a-i activa rutinele.",
+      "avatar": "workspace.avatar"
     },
     "detail": {
       "clickToTurnOff": "Apasă pentru a dezactiva.",
@@ -1022,7 +1023,9 @@
       "getStarted": "Începeți"
     },
     "welcome": {
-      "paragraph": "Acasă vă aparține. În ea, veți configura camere pentru diferite aspecte ale vieții dumneavoastră: muncă, al doilea creier, cercetare, familie. Și fiecare cameră are dulapuri: notițele dumneavoastră, fișierele dumneavoastră și o echipă AI care lucrează discret în fundal."
+      "paragraph": "Acasă vă aparține. În ea, veți configura camere pentru diferite aspecte ale vieții dumneavoastră: muncă, al doilea creier, cercetare, familie. Și fiecare cameră are dulapuri: notițele dumneavoastră, fișierele dumneavoastră și o echipă AI care lucrează discret în fundal.",
+      "namePrompt": "Cum te numești?",
+      "heading": "Bun venit <accent>acasă</accent>"
     },
     "welcomeBack": {
       "heading": "Bun venit înapoi",
@@ -1051,6 +1054,107 @@
       "finish": "Finalizează",
       "complete": "Finalizează configurarea",
       "copyToClipboard": "Copiază în clipboard"
+    },
+    "cabinetCreated": {
+      "continue": "Continuă configurarea",
+      "heading": "Cabinetul tău a fost creat",
+      "subtitle": "Totul este configurat și gata de utilizare.",
+      "agentsReady_one": "{{count}} agent gata de lucru",
+      "agentsReady_other": "{{count}} agenți gata de lucru",
+      "scheduledJobs_one": "{{count}} sarcină programată",
+      "scheduledJobs_other": "{{count}} sarcini programate",
+      "subCabinets_one": "{{count}} sub-cabinet",
+      "subCabinets_other": "{{count}} sub-cabinete",
+      "agentsReady": "{{count}} agenți gata de lucru",
+      "scheduledJobs": "{{count}} sarcini programate",
+      "subCabinets": "{{count}} sub-cabinete"
+    },
+    "cloud": {
+      "alreadyOnList": "Ești deja pe listă — te vom contacta.",
+      "aside": "Cabinet Cloud va fi disponibil în curând. Același produs, fără complexitatea auto-găzduirii.",
+      "description": "Accesează-ți Cabinet de pe orice dispozitiv în timp ce agenții tăi AI continuă să lucreze — redactând, cercetând, organizând — chiar și când laptopul este închis.",
+      "error": "Ceva nu a mers bine. Verifică adresa de email și încearcă din nou.",
+      "joinWaitlist": "Înscrie-te pe lista de așteptare",
+      "onList": "Ești pe listă. Te vom anunța prin email când Cabinet Cloud va fi disponibil.",
+      "sending": "Se trimite…",
+      "title": "Cabinetul tău, oriunde. Echipa ta AI, mereu activă.",
+      "waitlistSubtitle": "Conectează-te de oriunde. Echipa ta AI lucrează 24/7."
+    },
+    "discord": {
+      "aside": "Dacă vrei funcționalități noi în primul rând și preferi 'hai să discutăm' în loc de 'te rugăm să trimiți un tichet', aceasta este camera ta.",
+      "description": "Aici feedback-ul devine funcționalități, capturile de ecran devin dezbateri, iar cineva găsește de obicei cazul limită înainte ca acesta să te găsească pe tine.",
+      "joinBadge": "Alătură-te",
+      "title": "Discord este locul unde se întâmplă lucrurile bune și neobișnuite."
+    },
+    "github": {
+      "aside": "Cabinet este open source. Dacă îți place viziunea, ajută-ne să o facem cunoscută.",
+      "description": "O stea pe GitHub ajută mai mulți oameni să descopere Cabinet și să se alăture comunității.",
+      "starsLabel": "{{stars}} stele GitHub",
+      "title": "Ajută comunitatea Cabinet să crească"
+    },
+    "launch": {
+      "beforeYouLaunch": "Înainte de lansare",
+      "defaultCabinetName": "Cabinetul tău",
+      "defaultDescription": "Bază de cunoștințe + echipă AI",
+      "launchCabinet": "Lansează Cabinet",
+      "settingUp": "Se configurează...",
+      "disclaimerAccess": "<strong>Agenții rulează cu acces complet.</strong> Cabinet utilizează <flag>--dangerously-skip-permissions</flag> (Claude Code) și flag-uri echivalente la alți furnizori. Acest lucru este identic cu rularea acestor instrumente CLI din propriul terminal. Orice servere sau instrumente MCP pe care le-ați configurat pot fi invocate automat de agenți.",
+      "disclaimerBackup": "<strong>Fă backup datelor tale regulat.</strong> Agenții pot citi, scrie și șterge fișiere din baza ta de cunoștințe (KB) și din depozitele legate. Cabinet nu este responsabil pentru pierderea datelor. Ești responsabil pentru furnizorii AI pe care îi alegi și pentru termenii lor de serviciu.",
+      "disclaimerBeta": "<strong>Software beta. Pot apărea erori.</strong> Livrăm rapid. Modificările majore pot apărea fără notificare.",
+      "legalNotice": "Continuând, ești de acord cu <terms>Termenii</terms> și <privacy>Confidențialitatea</privacy> noastră. Cabinet este un <oss>proiect open-source</oss>."
+    },
+    "provider": {
+      "agentType": "Agent {{type}}",
+      "close": "Închide",
+      "comingSoon": "În curând",
+      "guide": "Ghid",
+      "heading": "Furnizor agent",
+      "install": "Instalează",
+      "logIn": "Autentificare",
+      "openTerminalButton": "Deschide terminalul",
+      "openTerminalDetail": "Vei avea nevoie de un terminal pentru a rula pașii următori.",
+      "openTerminalError": "Nu s-a putut deschide terminalul automat. Deschide manual terminalul sistemului tău.",
+      "openTerminalTitle": "Deschide un terminal",
+      "recheck": "Verifică din nou furnizorii",
+      "rerunVerify": "Rulează din nou verificarea",
+      "runVerify": "Rulează verificarea",
+      "setupTitle": "Configurare {{name}}",
+      "skipForNow": "Omite pentru moment",
+      "subtitle": "Cabinet are nevoie de un AI CLI pentru a-ți alimenta agenții.",
+      "verifyExplanation": "Verificarea rulează promptul headless al furnizorului de la un capăt la altul și clasifică orice eșec, astfel încât să știi ce pas să revizitezi.",
+      "verifying": "Se verifică…",
+      "failedAtStep": "Eșuat la pasul: <strong>{{step}}</strong>"
+    },
+    "roomSetup": {
+      "subtitle": "Pentru ce este acest cabinet? Fiecare cameră vine cu propria echipă AI.",
+      "heading": "Alege o <accent>cameră</accent>"
+    },
+    "team": {
+      "browseAll": "Răsfoiește tot",
+      "browseCabinets": "Răsfoiește cabinete",
+      "cabinetNameLabel": "Nume cabinet",
+      "cancel": "Anulează",
+      "importButton": "Importă",
+      "importFailed": "Import eșuat",
+      "importFailedConnection": "Import eșuat. Verifică-ți conexiunea.",
+      "importTitle": "Importă {{name}}",
+      "orPickAgents": "Sau alege-ți agenții",
+      "required": "Obligatoriu",
+      "startFromTemplate": "Începe de la un șablon",
+      "subtitle": "Fiecare cabinet este o echipă AI — agenți, sarcini și o bază de cunoștințe partajată, lucrând împreună ca un tot unitar.",
+      "heading": "Construiește-ți <accent>echipa</accent>",
+      "agentCount_one": "{{count}} agent",
+      "agentCount_other": "{{count}} agenți",
+      "jobCount_one": "{{count}} sarcină",
+      "jobCount_other": "{{count}} sarcini",
+      "subCabinetCount_one": "{{count}} sub-cabinet",
+      "subCabinetCount_other": "{{count}} sub-cabinete",
+      "cabinetsImported_one": "{{count}} cabinet importat",
+      "cabinetsImported_other": "{{count}} cabinete importate",
+      "agentCount": "{{count}} agenți",
+      "cabinetsImported": "{{count}} cabinete importate",
+      "jobCount": "{{count}} sarcini",
+      "subCabinetCount": "{{count}} sub-cabinete"
     }
   },
   "search": {
@@ -1332,7 +1436,14 @@
       "savedAgoSeconds": "acum {{n}}s",
       "savedAgoMinutes": "acum {{n}}m",
       "savedAgoHours": "acum {{n}}h",
-      "savedAgoDays": "acum {{n}}z"
+      "savedAgoDays": "acum {{n}}z",
+      "saveFailedRetry": "Salvare eșuată — reîncearcă",
+      "savingText": "Se salvează…",
+      "savedText": "Salvat",
+      "editingText": "Se editează…",
+      "savedAgo": "Salvat · {{ago}}",
+      "word": "cuvânt",
+      "words": "cuvinte"
     },
     "git": {
       "statusModified": "Modificat",
@@ -1382,7 +1493,11 @@
       "syncAriaLabelWithLast": "Preia cele mai recente modificări de pe GitHub și reîmprospătează. Ultima sincronizare: {{when}}.",
       "terminal": "Terminal",
       "openTerminal": "Deschide terminalul",
-      "newTerminalTab": "Filă terminal nouă"
+      "newTerminalTab": "Filă terminal nouă",
+      "pulling": "Se extrage…",
+      "pulled": "Actualizat de la distanță",
+      "upToDate": "La zi",
+      "pullFailed": "Extragere eșuată"
     },
     "update2": {
       "updateAvailable": "Actualizare {{version}} disponibilă",
@@ -1392,6 +1507,9 @@
       "dismiss": "Ignoră",
       "close": "Închide",
       "openSettings": "Deschide Setări pentru a revizui actualizarea instalată"
+    },
+    "misc": {
+      "restartToFinishUpdate": "Reporniți pentru a finaliza actualizarea"
     }
   },
   "tasks": {
@@ -1442,5 +1560,47 @@
     "itemArchived": "{{title}} · arhivat",
     "itemDefault": "{{title}} · {{when}}",
     "toggleRunning": "{{count}} în execuție — afișează bara de sarcini"
+  },
+  "chrome": {
+    "nav": {
+      "home": "Acasă",
+      "agents": "Agenți",
+      "tasks": "Sarcini",
+      "ai": "AI",
+      "menu": "Meniu",
+      "primaryAriaLabel": "Principal"
+    },
+    "returnTo": {
+      "task": "Sarcină",
+      "tasks": "Sarcini",
+      "agent": "Agent",
+      "agents": "Agenți",
+      "cabinet": "Cabinet",
+      "home": "Acasă",
+      "settings": "Setări",
+      "registry": "Registru",
+      "back": "Înapoi",
+      "backTo": "Înapoi la {{label}}"
+    },
+    "theme": {
+      "defaultHeader": "Implicit",
+      "dark": "Întunecat",
+      "darkThemes": "Teme întunecate",
+      "lightThemes": "Teme luminoase"
+    },
+    "update": {
+      "restartTitle": "Reporniți Cabinet pentru a finaliza actualizarea",
+      "availableTitle": "Cabinet {{version}} este disponibil",
+      "updatesTitle": "Actualizări Cabinet",
+      "description": "Cabinet verifică automat dacă există versiuni noi. Deși produsul este încă experimental, păstrați o copie a datelor înainte de a instala actualizări.",
+      "later": "Mai târziu",
+      "releaseNotes": "Note de versiune"
+    },
+    "daemon": {
+      "fixHintElectron": "Închideți și relansați Cabinet pentru a reporni demonul agentului.",
+      "fixHintDev": "Rulați `npm run dev:daemon` (sau reporniți `npm run dev:all`) pentru a reporni demonul agentului.",
+      "notResponding": "Demonul agentului nu răspunde.",
+      "willFail": "Agenții, sarcinile și cererile AI vor eșua până când acesta va reveni. {{fixHint}}"
+    }
   }
 }

@@ -61,7 +61,8 @@
       "pickAnAgent": "Chọn tác nhân",
       "dismiss": "Bỏ qua",
       "lockedHeartbeatTip": "Tác nhân này đã dừng. Khởi động nó trên tab Tác nhân để bật nhịp tim.",
-      "lockedRoutineTip": "Tác nhân này đã dừng. Khởi động nó trên tab Tác nhân để bật các quy trình của nó."
+      "lockedRoutineTip": "Tác nhân này đã dừng. Khởi động nó trên tab Tác nhân để bật các quy trình của nó.",
+      "avatar": "workspace.avatar"
     },
     "detail": {
       "clickToTurnOff": "Nhấp để tắt.",
@@ -468,7 +469,7 @@
   "slideData": {
     "thailandRootLabel": "Chuyến đi Thái Lan",
     "thailandCaption": "Xem tất cả tệp của bạn ở một nơi.",
-    "videoTitle": "Night market.mp4",
+    "videoTitle": "Chợ đêm.mp4",
     "taxRootLabel": "Thuế 2026",
     "taxCaption": "Thuế 2026 — một ứng dụng web máy tính trực tiếp, được nhúng ngay trong cabinet của bạn.",
     "calculatorTitle": "Máy tính",
@@ -480,7 +481,7 @@
     "estimatedTax": "Thuế ước tính",
     "healthRootLabel": "Sức khỏe",
     "healthCaption": "Vitamin & xét nghiệm — một bảng tính giống như một trang.",
-    "csvTitle": "Daily vitamins.csv",
+    "csvTitle": "Vitamin hàng ngày.csv",
     "csvColVitamin": "Vitamin",
     "csvColDose": "Liều lượng",
     "csvColTime": "Thời gian",
@@ -1022,7 +1023,9 @@
       "getStarted": "Bắt đầu"
     },
     "welcome": {
-      "paragraph": "Trang chủ là của bạn. Tại đây, bạn sẽ thiết lập các phòng cho từng khía cạnh trong cuộc sống: công việc, bộ não thứ hai, nghiên cứu, gia đình. Và mỗi phòng đều có các tủ (cabinets): ghi chú, tệp của bạn và một đội ngũ AI âm thầm hoàn thành công việc ở chế độ nền."
+      "paragraph": "Trang chủ là của bạn. Tại đây, bạn sẽ thiết lập các phòng cho từng khía cạnh trong cuộc sống: công việc, bộ não thứ hai, nghiên cứu, gia đình. Và mỗi phòng đều có các tủ (cabinets): ghi chú, tệp của bạn và một đội ngũ AI âm thầm hoàn thành công việc ở chế độ nền.",
+      "namePrompt": "Tên của bạn là gì?",
+      "heading": "Chào mừng bạn về <accent>nhà</accent>"
     },
     "welcomeBack": {
       "heading": "Chào mừng trở lại",
@@ -1051,6 +1054,280 @@
       "finish": "Hoàn tất",
       "complete": "Hoàn tất thiết lập",
       "copyToClipboard": "Sao chép vào bộ nhớ tạm"
+    },
+    "cabinetCreated": {
+      "continue": "Tiếp tục thiết lập",
+      "heading": "Cabinet của bạn đã được tạo",
+      "subtitle": "Mọi thứ đã được thiết lập và sẵn sàng.",
+      "agentsReady_one": "{{count}} tác nhân sẵn sàng làm việc",
+      "agentsReady_other": "{{count}} tác nhân sẵn sàng làm việc",
+      "scheduledJobs_one": "{{count}} công việc đã lên lịch",
+      "scheduledJobs_other": "{{count}} công việc đã lên lịch",
+      "subCabinets_one": "{{count}} tủ con",
+      "subCabinets_other": "{{count}} tủ con",
+      "agentsReady": "{{count}} tác nhân sẵn sàng làm việc",
+      "scheduledJobs": "{{count}} công việc đã lên lịch",
+      "subCabinets": "{{count}} tủ con"
+    },
+    "cloud": {
+      "alreadyOnList": "Bạn đã có trong danh sách — chúng tôi sẽ liên hệ.",
+      "aside": "Cabinet Cloud sắp ra mắt. Cùng một sản phẩm, không cần tự quản lý hạ tầng.",
+      "description": "Mở Cabinet của bạn từ mọi thiết bị trong khi các tác nhân AI vẫn làm việc — soạn thảo, nghiên cứu, sắp xếp — ngay cả khi laptop của bạn đã đóng.",
+      "error": "Đã xảy ra lỗi. Vui lòng kiểm tra email và thử lại.",
+      "joinWaitlist": "Tham gia danh sách chờ",
+      "onList": "Bạn đã có trong danh sách. Chúng tôi sẽ gửi email cho bạn khi Cabinet Cloud ra mắt.",
+      "sending": "Đang gửi…",
+      "title": "Cabinet của bạn, mọi lúc mọi nơi. Đội ngũ AI của bạn, luôn hoạt động.",
+      "waitlistSubtitle": "Kết nối từ mọi nơi. Đội ngũ AI của bạn làm việc 24/7."
+    },
+    "discord": {
+      "aside": "Nếu bạn muốn trải nghiệm tính năng mới sớm nhất và thích 'trò chuyện' hơn 'gửi yêu cầu hỗ trợ', đây là nơi dành cho bạn.",
+      "description": "Đây là nơi phản hồi biến thành tính năng, ảnh chụp màn hình biến thành tranh luận, và ai đó thường tìm ra trường hợp ngoại lệ trước khi nó tìm đến bạn.",
+      "joinBadge": "Tham gia",
+      "title": "Discord là nơi những điều thú vị và độc đáo diễn ra."
+    },
+    "github": {
+      "aside": "Cabinet là mã nguồn mở. Nếu bạn thích tầm nhìn này, hãy giúp chúng tôi lan tỏa.",
+      "description": "Một lượt gắn sao trên GitHub giúp nhiều người khám phá Cabinet và tham gia cộng đồng hơn.",
+      "starsLabel": "{{stars}} lượt gắn sao trên GitHub",
+      "title": "Giúp cộng đồng Cabinet phát triển"
+    },
+    "launch": {
+      "beforeYouLaunch": "Trước khi khởi chạy",
+      "defaultCabinetName": "Cabinet của bạn",
+      "defaultDescription": "Cơ sở tri thức + Đội ngũ AI",
+      "launchCabinet": "Khởi chạy Cabinet",
+      "settingUp": "Đang thiết lập...",
+      "disclaimerAccess": "<strong>Các tác nhân chạy với quyền truy cập đầy đủ.</strong> Cabinet sử dụng <flag>--dangerously-skip-permissions</flag> (Claude Code) và các cờ tương đương ở các nhà cung cấp khác. Điều này giống hệt như việc chạy các công cụ CLI này từ terminal của riêng bạn. Bất kỳ máy chủ hoặc công cụ MCP nào bạn đã cấu hình đều có thể được các tác nhân tự động gọi.",
+      "disclaimerBackup": "<strong>Sao lưu dữ liệu của bạn thường xuyên.</strong> Các tác nhân có thể đọc, ghi và xóa tệp trên KB và các kho lưu trữ được liên kết của bạn. Cabinet không chịu trách nhiệm về việc mất dữ liệu. Bạn chịu trách nhiệm về các nhà cung cấp AI bạn chọn và điều khoản dịch vụ của họ.",
+      "disclaimerBeta": "<strong>Phần mềm Beta. Mọi thứ có thể gặp lỗi.</strong> Chúng tôi phát hành nhanh chóng. Các thay đổi gây lỗi có thể xuất hiện mà không báo trước.",
+      "legalNotice": "Bằng cách tiếp tục, bạn đồng ý với <terms>Điều khoản</terms> và <privacy>Quyền riêng tư</privacy> của chúng tôi. Cabinet là một <oss>dự án mã nguồn mở</oss>."
+    },
+    "provider": {
+      "agentType": "{{type}} tác nhân",
+      "close": "Đóng",
+      "comingSoon": "Sắp ra mắt",
+      "guide": "Hướng dẫn",
+      "heading": "Nhà cung cấp tác nhân",
+      "install": "Cài đặt",
+      "logIn": "Đăng nhập",
+      "openTerminalButton": "Mở terminal",
+      "openTerminalDetail": "Bạn sẽ cần một terminal để thực hiện các bước tiếp theo.",
+      "openTerminalError": "Không thể tự động mở terminal. Vui lòng mở terminal hệ thống của bạn theo cách thủ công.",
+      "openTerminalTitle": "Mở một terminal",
+      "recheck": "Kiểm tra lại nhà cung cấp",
+      "rerunVerify": "Chạy lại xác minh",
+      "runVerify": "Chạy xác minh",
+      "setupTitle": "Thiết lập {{name}}",
+      "skipForNow": "Bỏ qua bây giờ",
+      "subtitle": "Cabinet cần một AI CLI để cung cấp năng lượng cho các tác nhân của bạn.",
+      "verifyExplanation": "Xác minh chạy lời nhắc không giao diện người dùng của nhà cung cấp từ đầu đến cuối và phân loại mọi lỗi để bạn biết bước nào cần xem lại.",
+      "verifying": "Đang xác minh…",
+      "failedAtStep": "Thất bại ở bước: <strong>{{step}}</strong>"
+    },
+    "roomSetup": {
+      "subtitle": "Cabinet này dùng để làm gì? Mỗi phòng đi kèm với đội ngũ AI riêng.",
+      "heading": "Chọn một <accent>phòng</accent>"
+    },
+    "rooms": {
+      "office": {
+        "label": "Văn phòng",
+        "tagline": "Điều hành doanh nghiệp, startup hoặc dự án phụ.",
+        "workspaceLabel": "Tên công ty hoặc dự án",
+        "workspacePlaceholder": "Acme Corp",
+        "descriptionLabel": "Bạn làm gì?",
+        "descriptionPlaceholder": "Chúng tôi làm podcast về các startup AI",
+        "departmentNoun": "Phòng ban",
+        "teamSizeLabel": "Quy mô nhóm",
+        "exampleAgents": {
+          "0": "CEO",
+          "1": "Biên tập viên"
+        }
+      },
+      "study": {
+        "label": "Học tập",
+        "tagline": "Bộ não thứ hai của bạn — viết lách, ghi chú, trợ lý cá nhân.",
+        "workspaceLabel": "Đặt tên cho cabinet của bạn",
+        "workspacePlaceholder": "Học tập của tôi",
+        "descriptionLabel": "Bạn muốn được hỗ trợ trong những lĩnh vực nào của cuộc sống?",
+        "descriptionPlaceholder": "Viết lách, phân loại email, lịch, theo dõi thói quen",
+        "departmentNoun": "Lĩnh vực",
+        "exampleAgents": {
+          "0": "Trợ lý",
+          "1": "Thủ thư"
+        }
+      },
+      "lab": {
+        "label": "Phòng thí nghiệm nghiên cứu",
+        "tagline": "Công việc học thuật, tài liệu, giảng dạy, luận văn.",
+        "workspaceLabel": "Tên không gian làm việc",
+        "workspacePlaceholder": "Triết học tâm trí",
+        "descriptionLabel": "Lĩnh vực của bạn là gì hoặc bạn đang nghiên cứu gì?",
+        "descriptionPlaceholder": "Hiện tượng học, ý thức, giảng dạy Nhập môn Triết học",
+        "departmentNoun": "Lĩnh vực",
+        "exampleAgents": {
+          "0": "Trưởng nhóm nghiên cứu",
+          "1": "Thủ thư"
+        }
+      },
+      "family-room": {
+        "label": "Phòng Gia đình",
+        "tagline": "Gia đình, lịch gia đình, bữa ăn, con cái.",
+        "workspaceLabel": "Tên gia đình",
+        "workspacePlaceholder": "Gia đình Nguyễn",
+        "descriptionLabel": "Ai sống ở đây và bạn đang xoay sở những gì?",
+        "descriptionPlaceholder": "Hai phụ huynh, ba con, hai trường học, một chú chó",
+        "departmentNoun": "Khu vực",
+        "teamSizeLabel": "Quy mô gia đình",
+        "exampleAgents": {
+          "0": "Quản lý gia đình",
+          "1": "Người lập kế hoạch"
+        }
+      },
+      "blank": {
+        "label": "Phòng trống",
+        "tagline": "Chưa có gì. Tự mang tác nhân của bạn, tự định hình.",
+        "workspaceLabel": "Đặt tên cho cabinet của bạn",
+        "workspacePlaceholder": "Cabinet của tôi",
+        "descriptionLabel": "Nó dùng để làm gì?",
+        "descriptionPlaceholder": "Bất cứ điều gì — để trống nếu bạn chưa chắc chắn",
+        "departmentNoun": "Nhóm",
+        "exampleAgents": {
+          "0": "Tùy bạn"
+        }
+      }
+    },
+    "departments": {
+      "leadership": "Lãnh đạo",
+      "marketing": "Tiếp thị",
+      "content": "Nội dung",
+      "engineering": "Kỹ thuật",
+      "product-and-design": "Sản phẩm & Thiết kế",
+      "business": "Kinh doanh",
+      "research": "Nghiên cứu",
+      "finance-and-ops": "Tài chính & Vận hành",
+      "personal": "Cá nhân",
+      "second-brain": "Bộ não thứ hai",
+      "writing": "Viết lách",
+      "tools": "Công cụ",
+      "life-admin": "Quản lý cuộc sống",
+      "from-the-office": "Từ Văn phòng",
+      "writing-and-notes": "Viết & ghi chú",
+      "other": "Khác",
+      "household": "Gia đình",
+      "admin": "Hành chính",
+      "money": "Tiền bạc",
+      "product": "Sản phẩm",
+      "design": "Thiết kế",
+      "sales": "Bán hàng",
+      "support": "Hỗ trợ",
+      "analytics": "Phân tích",
+      "finance": "Tài chính",
+      "legal": "Pháp lý",
+      "people": "Con người"
+    },
+    "demo": {
+      "greeting": {
+        "office": "Chào buổi sáng cả đội! Chào mừng đến với {{workspace}}. Hãy bắt tay vào việc ngay nhé.",
+        "study": "Chào buổi sáng. Bộ não thứ hai của bạn đã trực tuyến — chào mừng trở lại {{home}}.",
+        "lab": "Bàn nghiên cứu đã sẵn sàng — \"{{workspace}}\". Hôm nay chúng ta sẽ tìm hiểu gì?",
+        "family-room": "Trụ sở chính đang khởi động — {{home}}. Hãy đưa mọi người đến nơi cần đến.",
+        "blank": "Khởi đầu mới — \"{{workspace}}\". Bạn muốn xây dựng gì ở đây, {{home}}?"
+      },
+      "assign": "{{name}}, bạn có thể đảm nhận {{topic}} không?",
+      "fallbackTopic": "việc tiếp theo",
+      "office": {
+        "replies": {
+          "0": "Đã rõ. Tôi sẽ có bản tổng quan sẵn sàng vào cuối ngày.",
+          "1": "Đã bắt đầu phác thảo kế hoạch. Tôi sẽ chia sẻ trong #content sớm thôi.",
+          "2": "Đang thiết lập các quy trình nền tảng. Mọi thứ đang tiến triển tốt."
+        },
+        "topics": {
+          "0": "nghiên cứu đối thủ cạnh tranh",
+          "1": "lịch nội dung",
+          "2": "kế hoạch ra mắt"
+        },
+        "closing": "Mọi người rất năng lượng. Hãy biến tuần đầu tiên này thật hiệu quả."
+      },
+      "study": {
+        "replies": {
+          "0": "Tôi sẽ phân loại hộp thư đến và đưa ra những gì cần bạn.",
+          "1": "Lịch trống đến 3 giờ chiều — thời gian tốt để viết.",
+          "2": "Tôi đã liên kết ba ghi chú mới vào mục 'Hàng ngày' rồi."
+        },
+        "topics": {
+          "0": "phân loại hộp thư đến hôm nay",
+          "1": "bài viết tuần này",
+          "2": "danh sách đọc của tôi"
+        },
+        "closing": "Tốt. Thông báo cho tôi nếu có gì cần tôi — nếu không tôi sẽ không làm phiền."
+      },
+      "lab": {
+        "replies": {
+          "0": "Đang tìm tài liệu mới nhất về vấn đề này — bản tóm tắt nháp trong một giờ.",
+          "1": "Tôi sẽ đồng bộ danh mục tài liệu sau đó và đánh dấu các bản trùng lặp.",
+          "2": "Đề cương bài giảng cho thứ Năm gần như đã sẵn sàng để xem xét."
+        },
+        "topics": {
+          "0": "đánh giá tài liệu",
+          "1": "chuẩn bị bài giảng thứ Năm",
+          "2": "danh sách tài liệu tham khảo"
+        },
+        "closing": "Hãy cập nhật cho tôi. Tôi sẽ xem xét bất cứ điều gì bạn gửi vào cuối ngày."
+      },
+      "family-room": {
+        "replies": {
+          "0": "Lịch trống sau 4 giờ. Đang đánh dấu các lịch trình trùng lặp.",
+          "1": "Thực đơn tuần đã được phác thảo — danh sách mua sắm đã sẵn sàng để xem xét.",
+          "2": "Hoạt động của trẻ đã được đồng bộ. Đêm DnD vẫn diễn ra vào thứ Sáu."
+        },
+        "topics": {
+          "0": "lịch trình hôm nay",
+          "1": "kế hoạch bữa ăn",
+          "2": "các hoạt động của trẻ"
+        },
+        "closing": "Cảm ơn mọi người. Thông báo cho tôi nếu có bất kỳ thay đổi nào trong ngày."
+      },
+      "blank": {
+        "replies": {
+          "0": "Đã hiểu. Sẵn sàng bất cứ khi nào bạn cần.",
+          "1": "Đang chờ.",
+          "2": "Tôi sẽ chờ chỉ đạo."
+        },
+        "topics": {
+          "0": "việc đầu tiên",
+          "1": "bất cứ điều gì tiếp theo",
+          "2": "câu hỏi còn bỏ ngỏ"
+        },
+        "closing": "Khi nào bạn sẵn sàng, hãy cho chúng tôi biết phải làm gì."
+      }
+    },
+    "team": {
+      "browseAll": "Duyệt tất cả",
+      "browseCabinets": "Duyệt các cabinet",
+      "cabinetNameLabel": "Tên cabinet",
+      "cancel": "Hủy",
+      "importButton": "Nhập",
+      "importFailed": "Nhập thất bại",
+      "importFailedConnection": "Nhập thất bại. Kiểm tra kết nối của bạn.",
+      "importTitle": "Nhập {{name}}",
+      "orPickAgents": "Hoặc chọn các tác nhân của bạn",
+      "required": "Bắt buộc",
+      "startFromTemplate": "Bắt đầu từ một mẫu",
+      "subtitle": "Mỗi cabinet là một đội ngũ AI — các tác nhân, nhiệm vụ và một cơ sở tri thức chung, cùng nhau hoạt động như một thể thống nhất.",
+      "heading": "Xây dựng đội ngũ <accent>của bạn</accent>",
+      "agentCount_one": "{{count}} tác nhân",
+      "agentCount_other": "{{count}} tác nhân",
+      "jobCount_one": "{{count}} công việc",
+      "jobCount_other": "{{count}} công việc",
+      "subCabinetCount_one": "{{count}} tủ con",
+      "subCabinetCount_other": "{{count}} tủ con",
+      "cabinetsImported_one": "{{count}} Cabinet đã nhập",
+      "cabinetsImported_other": "{{count}} Cabinet đã nhập",
+      "agentCount": "{{count}} tác nhân",
+      "cabinetsImported": "{{count}} Cabinet đã nhập",
+      "jobCount": "{{count}} công việc",
+      "subCabinetCount": "{{count}} tủ con"
     }
   },
   "search": {
@@ -1075,9 +1352,9 @@
       "title": "Ngôn ngữ",
       "description": "Thay đổi ngôn ngữ và hướng đọc. Các trang hiện có giữ nguyên hướng đọc theo tài liệu.",
       "english": "Tiếng Anh",
-      "hebrew": "עברית",
-      "chineseSimplified": "简体中文",
-      "chineseTraditional": "繁體中文",
+      "hebrew": "Tiếng Do Thái",
+      "chineseSimplified": "Tiếng Trung giản thể",
+      "chineseTraditional": "Tiếng Trung phồn thể",
       "moreLanguages": "Thêm ngôn ngữ",
       "moreLanguagesHint": "Nhấp vào bất kỳ ngôn ngữ nào để cho chúng tôi biết bạn muốn Cabinet bằng ngôn ngữ đó — chúng tôi sẽ ưu tiên những ngôn ngữ được yêu cầu nhiều nhất.",
       "comingSoon": "Sắp ra mắt",
@@ -1332,7 +1609,14 @@
       "savedAgoSeconds": "{{n}} giây trước",
       "savedAgoMinutes": "{{n}} phút trước",
       "savedAgoHours": "{{n}} giờ trước",
-      "savedAgoDays": "{{n}} ngày trước"
+      "savedAgoDays": "{{n}} ngày trước",
+      "saveFailedRetry": "Lưu thất bại — thử lại",
+      "savingText": "Đang lưu…",
+      "savedText": "Đã lưu",
+      "editingText": "Đang chỉnh sửa…",
+      "savedAgo": "Đã lưu · {{ago}}",
+      "word": "từ",
+      "words": "từ"
     },
     "git": {
       "statusModified": "Đã sửa đổi",
@@ -1373,7 +1657,7 @@
       "commitDefault": "Cập nhật {{count}} tệp",
       "commitDefaultPlural": "Cập nhật {{count}} tệp",
       "committing": "Đang commit…",
-      "commit": "Commit",
+      "commit": "Ghi nhận",
       "commitFailed": "Commit thất bại",
       "sync": "Đồng bộ",
       "syncTitle": "Kéo bản mới nhất từ GitHub & làm mới",
@@ -1382,7 +1666,11 @@
       "syncAriaLabelWithLast": "Kéo các thay đổi mới nhất từ GitHub và làm mới. Lần cuối đồng bộ {{when}}.",
       "terminal": "Thiết bị đầu cuối",
       "openTerminal": "Mở terminal",
-      "newTerminalTab": "Tab terminal mới"
+      "newTerminalTab": "Tab terminal mới",
+      "pulling": "Đang kéo…",
+      "pulled": "Đã cập nhật từ xa",
+      "upToDate": "Đã cập nhật",
+      "pullFailed": "Kéo thất bại"
     },
     "update2": {
       "updateAvailable": "Bản cập nhật {{version}} có sẵn",
@@ -1392,6 +1680,9 @@
       "dismiss": "Bỏ qua",
       "close": "Đóng",
       "openSettings": "Mở Cài đặt để xem lại bản cập nhật đã cài đặt"
+    },
+    "misc": {
+      "restartToFinishUpdate": "Khởi động lại để hoàn tất cập nhật"
     }
   },
   "tasks": {
@@ -1442,5 +1733,47 @@
     "itemArchived": "{{title}} · đã lưu trữ",
     "itemDefault": "{{title}} · {{when}}",
     "toggleRunning": "{{count}} đang chạy — hiện thanh tác vụ"
+  },
+  "chrome": {
+    "nav": {
+      "home": "Trang chủ",
+      "agents": "Tác nhân",
+      "tasks": "Nhiệm vụ",
+      "ai": "AI",
+      "menu": "Menu",
+      "primaryAriaLabel": "Chính"
+    },
+    "returnTo": {
+      "task": "Nhiệm vụ",
+      "tasks": "Nhiệm vụ",
+      "agent": "Tác nhân",
+      "agents": "Tác nhân",
+      "cabinet": "Cabinet",
+      "home": "Trang chủ",
+      "settings": "Cài đặt",
+      "registry": "Sổ đăng ký",
+      "back": "Quay lại",
+      "backTo": "Quay lại {{label}}"
+    },
+    "theme": {
+      "defaultHeader": "Mặc định",
+      "dark": "Tối",
+      "darkThemes": "Chủ đề tối",
+      "lightThemes": "Chủ đề sáng"
+    },
+    "update": {
+      "restartTitle": "Khởi động lại Cabinet để hoàn tất cập nhật",
+      "availableTitle": "Cabinet {{version}} đã có sẵn",
+      "updatesTitle": "Cập nhật Cabinet",
+      "description": "Cabinet tự động kiểm tra các bản phát hành mới. Trong khi sản phẩm vẫn đang thử nghiệm, hãy sao lưu dữ liệu của bạn trước khi cài đặt bản cập nhật.",
+      "later": "Để sau",
+      "releaseNotes": "Ghi chú phát hành"
+    },
+    "daemon": {
+      "fixHintElectron": "Thoát và khởi chạy lại Cabinet để khởi động lại tiến trình nền tác nhân.",
+      "fixHintDev": "Chạy `npm run dev:daemon` (hoặc khởi động lại `npm run dev:all`) để khôi phục tiến trình nền tác nhân.",
+      "notResponding": "Tiến trình nền tác nhân không phản hồi.",
+      "willFail": "Các tác nhân, công việc và yêu cầu AI sẽ không thành công cho đến khi nó hoạt động trở lại. {{fixHint}}"
+    }
   }
 }

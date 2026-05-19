@@ -61,7 +61,8 @@
       "pickAnAgent": "Yan aṣojú kan",
       "dismiss": "Fòpin sí",
       "lockedHeartbeatTip": "Aṣojú yìí ti dúró. Bẹ̀rẹ̀ rẹ̀ lórí táàbù Àwọn Aṣojú láti mú ìgbìyànjú ọkàn ṣiṣẹ́.",
-      "lockedRoutineTip": "Aṣojú yìí ti dúró. Bẹ̀rẹ̀ rẹ̀ lórí táàbù Àwọn Aṣojú láti mú àwọn ìlànà rẹ̀ ṣiṣẹ́."
+      "lockedRoutineTip": "Aṣojú yìí ti dúró. Bẹ̀rẹ̀ rẹ̀ lórí táàbù Àwọn Aṣojú láti mú àwọn ìlànà rẹ̀ ṣiṣẹ́.",
+      "avatar": "workspace.avatar"
     },
     "detail": {
       "clickToTurnOff": "Tẹ láti pa á.",
@@ -184,7 +185,7 @@
     "nativeTranscriptTitle": "Akọsilẹ abinibi Cabinet — ṣiṣan JSON ti a ṣeto, awọn ohun elo, akopọ, iriri olumulo ni kikun",
     "ptyWarningTitle": "Nilo bọtini API OpenAI kan. Ko si lori awọn akọọlẹ Codex ti eto ChatGPT — yiyan awoṣe yii yoo kuna pẹlu 'awoṣe ko ni atilẹyin nigba lilo Codex pẹlu akọọlẹ ChatGPT kan'.",
     "native": "Abinibi",
-    "terminal": "Terminal",
+    "terminal": "Tẹminal",
     "terminalTitle": "Ṣiṣe CLI naa ni igba terminal PTY laaye (ipo adanwo fun awọn olosa)",
     "providers": "Awọn olupese",
     "modelCol": "Awoṣe",
@@ -1022,7 +1023,9 @@
       "getStarted": "Bẹrẹ"
     },
     "welcome": {
-      "paragraph": "Ile rẹ jẹ tirẹ. Nínú rẹ̀, ìwọ yóò ṣètò àwọn yàrá fún oríṣiríṣi apá ìgbésí ayé rẹ: iṣẹ́, ọpọlọ kejì, ìwádìí, ìdílé. Gbogbo yàrá sì ní àwọn àpótí: àwọn àkọsílẹ̀ rẹ, àwọn fáìlì rẹ, àti ẹgbẹ́ AI kan tí ó ń ṣe àwọn nǹkan ní ìkọ̀kọ̀ ní ẹ̀yìn."
+      "paragraph": "Ile rẹ jẹ tirẹ. Nínú rẹ̀, ìwọ yóò ṣètò àwọn yàrá fún oríṣiríṣi apá ìgbésí ayé rẹ: iṣẹ́, ọpọlọ kejì, ìwádìí, ìdílé. Gbogbo yàrá sì ní àwọn àpótí: àwọn àkọsílẹ̀ rẹ, àwọn fáìlì rẹ, àti ẹgbẹ́ AI kan tí ó ń ṣe àwọn nǹkan ní ìkọ̀kọ̀ ní ẹ̀yìn.",
+      "namePrompt": "Kí ni orúkọ rẹ?",
+      "heading": "Kaabọ <accent>ilé</accent>"
     },
     "welcomeBack": {
       "heading": "Káàbọ̀ padà",
@@ -1051,6 +1054,107 @@
       "finish": "Parí",
       "complete": "Parí ìṣètò",
       "copyToClipboard": "Ẹ̀dà sí àkọsílẹ̀"
+    },
+    "cabinetCreated": {
+      "continue": "Tẹsiwaju ìṣètò",
+      "heading": "A ti ṣẹda cabinet rẹ",
+      "subtitle": "Ohun gbogbo ti ṣeto, o si ti ṣetan.",
+      "agentsReady_one": "{{count}} aṣoju ti ṣetan lati ṣiṣẹ",
+      "agentsReady_other": "{{count}} àwọn aṣoju ti ṣetan lati ṣiṣẹ",
+      "scheduledJobs_one": "{{count}} iṣẹ ti a ṣeto",
+      "scheduledJobs_other": "{{count}} àwọn iṣẹ ti a ṣeto",
+      "subCabinets_one": "{{count}} sub-cabinet",
+      "subCabinets_other": "{{count}} àwọn sub-cabinet",
+      "agentsReady": "{{count}} àwọn aṣoju ti ṣetan lati ṣiṣẹ",
+      "scheduledJobs": "{{count}} àwọn iṣẹ ti a ṣeto",
+      "subCabinets": "{{count}} àwọn sub-cabinet"
+    },
+    "cloud": {
+      "alreadyOnList": "O ti wà lori àtòjọ tẹlẹ — a óò kan si ọ.",
+      "aside": "Cabinet Cloud n bọ laipẹ. Ọja kanna, kò si wahala ìṣàkóso tirẹ.",
+      "description": "Ṣi Cabinet rẹ lati eyikeyi ẹrọ nigba ti àwọn aṣoju AI rẹ n ṣiṣẹ lọwọ — kikọ, ṣiṣewadii, ṣiṣeto — paapaa nigba ti laptop rẹ ba ti wa ni pipade.",
+      "error": "Nkankan lọna. Ṣayẹwo imeeli naa ki o tun gbiyanju.",
+      "joinWaitlist": "Darapọ mọ àtòjọ ìdúró",
+      "onList": "O ti wà lori àtòjọ. A óò fi imeeli ranṣẹ si ọ nigba ti Cabinet Cloud ba ṣi.",
+      "sending": "N firanṣẹ…",
+      "title": "Cabinet rẹ, nibikibi. Ẹgbẹ AI rẹ, nigbagbogbo n ṣiṣẹ.",
+      "waitlistSubtitle": "Sopọ lati ibikibi. Ẹgbẹ AI rẹ n ṣiṣẹ 24/7."
+    },
+    "discord": {
+      "aside": "Ti o ba fẹ àwọn ẹya tuntun ni akọkọ ti o si fẹ 'wa sọrọ' ju 'jọwọ fi tikẹti ranṣẹ,' yara rẹ niyi.",
+      "description": "Eyi ni ibi ti àwọn esi ti di ẹya, àwọn sikirini ti di àwọn ijiroro, ati pe ẹnikan maa n rii àwọn ipo pataki ṣaaju ki o to rii ọ.",
+      "joinBadge": "Darapọ",
+      "title": "Discord ni ibi ti àwọn ohun àjèjì rere ti n ṣẹlẹ."
+    },
+    "github": {
+      "aside": "Cabinet jẹ́ orísun ṣíṣí. Tí o bá fẹ́ran ìran náà, ràn wá lọ́wọ́ láti tan ìròyìn náà ká.",
+      "description": "Ìràwọ̀ GitHub kan máa ń jẹ́ kí àwọn ènìyàn púpọ̀ sí i rí Cabinet, kí wọ́n sì darapọ̀ mọ́ àwùjọ.",
+      "starsLabel": "{{stars}} àwọn ìràwọ̀ GitHub",
+      "title": "Ràn àwùjọ Cabinet lọ́wọ́ láti dàgbà"
+    },
+    "launch": {
+      "beforeYouLaunch": "Ṣáájú ìgbà tí o bá bẹ̀rẹ̀",
+      "defaultCabinetName": "Cabinet rẹ",
+      "defaultDescription": "Ìpìlẹ̀ ìmọ̀ + ẹgbẹ́ AI",
+      "launchCabinet": "Bẹ̀rẹ̀ Cabinet",
+      "settingUp": "Ń ṣètò...",
+      "disclaimerAccess": "<strong>Àwọn aṣojú ń ṣiṣẹ́ pẹ̀lú àyè kíkún.</strong> Cabinet ń lo <flag>--dangerously-skip-permissions</flag> (Claude Code) àti àwọn àmì tó dọ́gba nínú àwọn olùpèsè mìíràn. Èyí jẹ́ bákan náà bíi ṣíṣe àwọn irinṣẹ́ CLI wọ̀nyí láti ojú ebúté rẹ. Àwọn sáfà MCP tàbí àwọn irinṣẹ́ tí o ti ṣètò lè jẹ́ pípè fúnra rẹ̀ láti ọwọ́ àwọn aṣojú.",
+      "disclaimerBackup": "<strong>Ṣe àtìlẹyìn dáta rẹ déédéé.</strong> Àwọn aṣojú lè kà, kọ, àti pa àwọn fáìlì rẹ́ kọjá KB rẹ àti àwọn ibi ìpamọ́ tí ó so pọ̀. Cabinet kò ṣe onídùúró fún ìpàdánù dáta. Ìwọ ni ó jẹ́ onídùúró fún àwọn olùpèsè AI tí o yàn àti àwọn àdéhùn iṣẹ́ wọn.",
+      "disclaimerBeta": "<strong>Sófítíwé Beta. Àwọn nǹkan lè bàjẹ́.</strong> A máa ń fi nǹkan ránṣẹ́ ní kíákíá. Àwọn ìyípadà tó lè fa ìṣòro lè dé láìsí ìkìlọ̀.",
+      "legalNotice": "Nípa títẹ̀síwájú, o gbà sí <terms>Àwọn Àdéhùn</terms> àti <privacy>Ìpamọ́</privacy> wa. Cabinet jẹ́ <oss>iṣẹ́ orísun ṣíṣí</oss>."
+    },
+    "provider": {
+      "agentType": "Aṣojú {{type}}",
+      "close": "Pàdé",
+      "comingSoon": "Ń bọ̀ láìpẹ́",
+      "guide": "Ìtọ́sọ́nà",
+      "heading": "Olùpèsè Aṣojú",
+      "install": "Fi sori ẹrọ",
+      "logIn": "Wọlé",
+      "openTerminalButton": "Ṣí ebúté",
+      "openTerminalDetail": "O máa nílò ebúté láti ṣe àwọn ìgbésẹ̀ tó tẹ̀lé.",
+      "openTerminalError": "Kò lè ṣí ebúté fúnra rẹ̀. Ṣí ebúté ètò rẹ pẹ̀lú ọwọ́.",
+      "openTerminalTitle": "Ṣí ebúté kan",
+      "recheck": "Tún yẹ àwọn olùpèsè wò",
+      "rerunVerify": "Tún ṣe ìdánilójú",
+      "runVerify": "Ṣe ìdánilójú",
+      "setupTitle": "Ìṣètò {{name}}",
+      "skipForNow": "Fò ó dáyà fún ìgbà díẹ̀",
+      "subtitle": "Cabinet nílò AI CLI láti fi agbára fún àwọn aṣojú rẹ.",
+      "verifyExplanation": "Ìdánilójú ń ṣiṣẹ́ ìbéèrè aláìní orí ti olùpèsè láti ìbẹ̀rẹ̀ dé òpin, ó sì ń pín gbogbo àṣìṣe sí ìsọ̀rí kí o lè mọ ìgbésẹ̀ wo ni o yẹ kí o tún ṣe.",
+      "verifying": "Ń ṣe ìdánilójú…",
+      "failedAtStep": "Kò kọjá ní ìgbésẹ̀: <strong>{{step}}</strong>"
+    },
+    "roomSetup": {
+      "subtitle": "Kí ni cabinet yìí fún? Yàrá kọ̀ọ̀kan wá pẹ̀lú ẹgbẹ́ AI tirẹ̀.",
+      "heading": "Yan <accent>yàrá</accent> kan"
+    },
+    "team": {
+      "browseAll": "Wò gbogbo rẹ̀",
+      "browseCabinets": "Wò àwọn cabinet",
+      "cabinetNameLabel": "Orúkọ cabinet",
+      "cancel": "Fagilé",
+      "importButton": "Kó wọlé",
+      "importFailed": "Kíkó wọlé kò kọjá",
+      "importFailedConnection": "Kíkó wọlé kò kọjá. Yẹ àsopọ̀ rẹ wò.",
+      "importTitle": "Kó {{name}} wọlé",
+      "orPickAgents": "Tàbí yan àwọn aṣojú rẹ",
+      "required": "Nílò",
+      "startFromTemplate": "Bẹ̀rẹ̀ láti àwòkọ́ṣe",
+      "subtitle": "Cabinet kọ̀ọ̀kan jẹ́ ẹgbẹ́ AI kan — àwọn aṣojú, àwọn iṣẹ́, àti ìpìlẹ̀ ìmọ̀ pínpín, tí ń ṣiṣẹ́ pọ̀ gẹ́gẹ́ bí ọ̀kan.",
+      "heading": "Kọ́ ẹgbẹ́ <accent>rẹ</accent>",
+      "agentCount_one": "{{count}} aṣoju",
+      "agentCount_other": "{{count}} àwọn aṣoju",
+      "jobCount_one": "{{count}} iṣẹ́",
+      "jobCount_other": "{{count}} àwọn iṣẹ́",
+      "subCabinetCount_one": "{{count}} àpótí-ìwé kékeré",
+      "subCabinetCount_other": "{{count}} àwọn àpótí-ìwé kékeré",
+      "cabinetsImported_one": "{{count}} àpótí-ìwé tí a kó wọlé",
+      "cabinetsImported_other": "{{count}} àwọn àpótí-ìwé tí a kó wọlé",
+      "agentCount": "{{count}} àwọn aṣoju",
+      "cabinetsImported": "{{count}} àwọn àpótí-ìwé tí a kó wọlé",
+      "jobCount": "{{count}} àwọn iṣẹ́",
+      "subCabinetCount": "{{count}} àwọn àpótí-ìwé kékeré"
     }
   },
   "search": {
@@ -1332,7 +1436,14 @@
       "savedAgoSeconds": "{{n}}s sẹhin",
       "savedAgoMinutes": "{{n}}m sẹhin",
       "savedAgoHours": "{{n}}h sẹhin",
-      "savedAgoDays": "{{n}}d sẹhin"
+      "savedAgoDays": "{{n}}d sẹhin",
+      "saveFailedRetry": "Ìgbìyànjú ìfipamọ́ kùnà — tún gbìyànjú",
+      "savingText": "Ní fífipamọ́…",
+      "savedText": "Ti fipamọ́",
+      "editingText": "Ní ṣíṣàtúnṣe…",
+      "savedAgo": "Ti fipamọ́ · {{ago}}",
+      "word": "ọ̀rọ̀",
+      "words": "àwọn ọ̀rọ̀"
     },
     "git": {
       "statusModified": "Ṣe atunṣe",
@@ -1382,7 +1493,11 @@
       "syncAriaLabelWithLast": "Fa awọn ayipada tuntun lati GitHub ki o tunṣe. Ti muṣiṣẹpọ kẹhin {{when}}.",
       "terminal": "Ebute",
       "openTerminal": "Ṣi ebute",
-      "newTerminalTab": "Taabu ebute tuntun"
+      "newTerminalTab": "Taabu ebute tuntun",
+      "pulling": "Ní fífà wá…",
+      "pulled": "Ti ṣe àtúnṣe láti ibi jíjìnnà",
+      "upToDate": "Tí ó bámu pẹ̀lú àkókò",
+      "pullFailed": "Ìfà wá kùnà"
     },
     "update2": {
       "updateAvailable": "Imudojuiwọn {{version}} wa",
@@ -1392,6 +1507,9 @@
       "dismiss": "Kọ silẹ",
       "close": "Pa",
       "openSettings": "Ṣi Eto lati ṣe ayẹwo imudojuiwọn ti a fi sori ẹrọ"
+    },
+    "misc": {
+      "restartToFinishUpdate": "Tún bẹ̀rẹ̀ láti parí àtúnṣe"
     }
   },
   "tasks": {
@@ -1442,5 +1560,47 @@
     "itemArchived": "{{title}} · ti wà ní ìpamọ́",
     "itemDefault": "{{title}} · {{when}}",
     "toggleRunning": "{{count}} ń lọ lọ́wọ́ — fihàn ọ̀nà iṣẹ́"
+  },
+  "chrome": {
+    "nav": {
+      "home": "Ilé",
+      "agents": "Àwọn Aṣojú",
+      "tasks": "Àwọn Iṣẹ́",
+      "ai": "AI",
+      "menu": "Àtòjọ",
+      "primaryAriaLabel": "Àkọ́kọ́"
+    },
+    "returnTo": {
+      "task": "Iṣẹ́",
+      "tasks": "Awọn iṣẹ-ṣiṣe",
+      "agent": "Aṣoju",
+      "agents": "Awọn aṣoju",
+      "cabinet": "Cabinet",
+      "home": "Ile",
+      "settings": "Eto",
+      "registry": "Iforukọsilẹ",
+      "back": "Pada",
+      "backTo": "Pada si {{label}}"
+    },
+    "theme": {
+      "defaultHeader": "Aiyipada",
+      "dark": "Dudu",
+      "darkThemes": "Awọn akori dudu",
+      "lightThemes": "Awọn akori imọlẹ"
+    },
+    "update": {
+      "restartTitle": "Tun bẹrẹ Cabinet lati pari imudojuiwọn",
+      "availableTitle": "Cabinet {{version}} wa",
+      "updatesTitle": "Awọn imudojuiwọn Cabinet",
+      "description": "Cabinet n ṣayẹwo fun awọn idasilẹ laifọwọyi. Lakoko ti ọja naa tun jẹ idanwo, tọju ẹda data rẹ ṣaaju fifi awọn imudojuiwọn sori ẹrọ.",
+      "later": "Nigbamii",
+      "releaseNotes": "Awọn akọsilẹ idasilẹ"
+    },
+    "daemon": {
+      "fixHintElectron": "Jade ki o tun bẹrẹ Cabinet lati tun bẹrẹ aṣoju daemon.",
+      "fixHintDev": "Ṣiṣe `npm run dev:daemon` (tabi tun bẹrẹ `npm run dev:all`) lati mu aṣoju daemon pada wa.",
+      "notResponding": "Aṣoju daemon ko dahun.",
+      "willFail": "Awọn aṣoju, awọn iṣẹ, ati awọn ibeere AI yoo kuna titi yoo fi pada wa. {{fixHint}}"
+    }
   }
 }

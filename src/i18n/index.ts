@@ -223,6 +223,40 @@ export function localeToDir(locale: Locale): "ltr" | "rtl" {
     : "ltr";
 }
 
+/**
+ * Best-effort BCP-47 → shipped-locale resolver. Walks `candidates`
+ * most-preferred first and returns the first that maps, by: exact tag
+ * (case-insensitive, so `zh-cn` → `zh-CN`), then Chinese script/region
+ * disambiguation (we ship Simplified `zh-CN` + Traditional `zh-TW`), then
+ * base language (`de-DE` → `de`, `pt-BR` → `pt`, `en-GB` → `en`). Returns
+ * null when nothing maps — callers fall back to DEFAULT_LOCALE.
+ */
+export function matchSupportedLocale(
+  candidates: readonly string[],
+): Locale | null {
+  const supported = SUPPORTED_LOCALES as readonly string[];
+  for (const raw of candidates) {
+    const lower = (raw ?? "").trim().toLowerCase();
+    if (!lower) continue;
+    const [base, ...subtags] = lower.split("-");
+
+    const exact = supported.find((s) => s.toLowerCase() === lower);
+    if (exact) return exact as Locale;
+
+    if (base === "zh") {
+      if (subtags.includes("hant")) return "zh-TW";
+      if (subtags.includes("hans")) return "zh-CN";
+      const region = subtags.find((s) => s.length === 2);
+      if (region === "tw" || region === "hk" || region === "mo") return "zh-TW";
+      return "zh-CN"; // cn / sg / my / unspecified → Simplified
+    }
+
+    const byBase = supported.find((s) => s.toLowerCase() === base);
+    if (byBase) return byBase as Locale;
+  }
+  return null;
+}
+
 function getInitialLocale(): Locale {
   if (typeof window === "undefined") return DEFAULT_LOCALE;
   const stored = window.localStorage.getItem(LOCALE_STORAGE_KEY);

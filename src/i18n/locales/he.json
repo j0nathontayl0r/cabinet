@@ -61,7 +61,8 @@
       "pickAnAgent": "בחרו סוכן",
       "dismiss": "סגירה",
       "lockedHeartbeatTip": "הסוכן הזה כבוי. הפעילו אותו בטאב הסוכנים כדי לאפשר את ה-heartbeat.",
-      "lockedRoutineTip": "הסוכן הזה כבוי. הפעילו אותו בטאב הסוכנים כדי לאפשר את השגרות שלו."
+      "lockedRoutineTip": "הסוכן הזה כבוי. הפעילו אותו בטאב הסוכנים כדי לאפשר את השגרות שלו.",
+      "avatar": "workspace.avatar"
     },
     "detail": {
       "clickToTurnOff": "לחיצה לכיבוי.",
@@ -305,9 +306,9 @@
     "placeholder": "הדביקו קישור (YouTube, X, Vimeo, Loom, TikTok, Facebook, Instagram, Spotify, או כל URL)",
     "notValidUrl": "לא URL תקין",
     "anyUrlWorks": "כל URL ציבורי עובד.",
-    "facebook": "Facebook",
-    "instagram": "Instagram",
-    "spotify": "Spotify",
+    "facebook": "פייסבוק",
+    "instagram": "אינסטגרם",
+    "spotify": "ספוטיפיי",
     "anyIframe": "כל URL של iframe"
   },
   "rowActions": {
@@ -437,7 +438,7 @@
     "noTranscript": "אין עדיין תמלול."
   },
   "conversationResult": {
-    "prompt": "Prompt",
+    "prompt": "הנחיה",
     "result": "תוצאה",
     "noSummary": "לא נלכד תקציר."
   },
@@ -1022,7 +1023,9 @@
       "getStarted": "בואו נתחיל"
     },
     "welcome": {
-      "paragraph": "הבית שלכם הוא שלכם. בתוכו תקימו חדרים לתחומי החיים השונים: עבודה, מוח שני, מחקר, משפחה. בכל חדר יש ארוניות: ההערות שלכם, הקבצים שלכם, וצוות AI שעובד ברקע ודואג שדברים יקרו."
+      "paragraph": "הבית שלכם הוא שלכם. בתוכו תקימו חדרים לתחומי החיים השונים: עבודה, מוח שני, מחקר, משפחה. בכל חדר יש ארוניות: ההערות שלכם, הקבצים שלכם, וצוות AI שעובד ברקע ודואג שדברים יקרו.",
+      "namePrompt": "מה שמך?",
+      "heading": "ברוכים הבאים <accent>הביתה</accent>"
     },
     "welcomeBack": {
       "heading": "ברוכים השבים",
@@ -1051,6 +1054,107 @@
       "finish": "סיום",
       "complete": "סיום ההגדרה",
       "copyToClipboard": "העתקה ללוח"
+    },
+    "cabinetCreated": {
+      "continue": "המשך הגדרה",
+      "heading": "ה-Cabinet שלך נוצר",
+      "subtitle": "הכל הוגדר ומוכן לפעולה.",
+      "agentsReady_one": "{{count}} סוכן מוכן לעבודה",
+      "agentsReady_other": "{{count}} סוכנים מוכנים לעבודה",
+      "scheduledJobs_one": "{{count}} משימה מתוזמנת",
+      "scheduledJobs_other": "{{count}} משימות מתוזמנות",
+      "subCabinets_one": "{{count}} תת-Cabinet",
+      "subCabinets_other": "{{count}} תת-Cabinets",
+      "agentsReady": "{{count}} סוכנים מוכנים לעבודה",
+      "scheduledJobs": "{{count}} משימות מתוזמנות",
+      "subCabinets": "{{count}} תת-Cabinets"
+    },
+    "cloud": {
+      "alreadyOnList": "אתם כבר ברשימה — ניצור קשר.",
+      "aside": "Cabinet Cloud מגיע בקרוב. אותו מוצר, ללא צורך בתשתית אירוח עצמי.",
+      "description": "פתחו את ה-Cabinet שלכם מכל מכשיר בזמן שסוכני ה-AI שלכם ממשיכים לעבוד — בניסוח, מחקר וארגון — גם כשהמחשב הנייד שלכם סגור.",
+      "error": "משהו השתבש. בדקו את האימייל ונסו שוב.",
+      "joinWaitlist": "הצטרפו לרשימת המתנה",
+      "onList": "אתם ברשימה. נשלח לכם אימייל כש-Cabinet Cloud ייפתח.",
+      "sending": "שולח…",
+      "title": "ה-Cabinet שלכם, בכל מקום. צוות ה-AI שלכם, תמיד פעיל.",
+      "waitlistSubtitle": "התחברו מכל מקום. צוות ה-AI שלכם עובד 24/7."
+    },
+    "discord": {
+      "aside": "אם אתם רוצים תכונות חדשות ראשונים ומעדיפים 'בואו נדבר' על פני 'אנא שלחו פנייה', זה החדר שלכם.",
+      "description": "כאן פידבק הופך לתכונות, צילומי מסך הופכים לוויכוחים, ובדרך כלל מישהו מוצא את מקרה הקצה לפני שהוא מוצא אתכם.",
+      "joinBadge": "הצטרפו",
+      "title": "דיסקורד הוא המקום שבו קורים הדברים המוזרים הטובים."
+    },
+    "github": {
+      "aside": "Cabinet הוא קוד פתוח. אם אתם אוהבים את החזון, עזרו לנו להפיץ את הבשורה.",
+      "description": "כוכב ב-GitHub עוזר ליותר אנשים לגלות את Cabinet ולהצטרף לקהילה.",
+      "starsLabel": "{{stars}} כוכבי GitHub",
+      "title": "עזרו לקהילת Cabinet לגדול"
+    },
+    "launch": {
+      "beforeYouLaunch": "לפני ההשקה",
+      "defaultCabinetName": "ה-Cabinet שלך",
+      "defaultDescription": "בסיס ידע + צוות AI",
+      "launchCabinet": "הפעל את Cabinet",
+      "settingUp": "מגדיר...",
+      "disclaimerAccess": "<strong>סוכנים פועלים עם גישה מלאה.</strong> Cabinet משתמש ב-<flag>--dangerously-skip-permissions</flag> (Claude Code) ודגלים מקבילים בספקים אחרים. זהה להפעלת כלי CLI אלה מהטרמינל שלך. כל שרתי MCP או כלים שהגדרתם עשויים להיות מופעלים אוטומטית על ידי סוכנים.",
+      "disclaimerBackup": "<strong>גבה את הנתונים שלך באופן קבוע.</strong> סוכנים יכולים לקרוא, לכתוב ולמחוק קבצים בבסיס הידע שלך ובמאגרים המקושרים. Cabinet אינו אחראי לאובדן נתונים. אתה אחראי על ספקי ה-AI שתבחר ועל תנאי השירות שלהם.",
+      "disclaimerBeta": "<strong>תוכנת בטא. דברים עלולים להישבר.</strong> אנו משיקים במהירות. שינויים שוברים יכולים להגיע ללא הודעה מוקדמת.",
+      "legalNotice": "בהמשך אתה מסכים ל-<terms>תנאים</terms> ו-<privacy>פרטיות</privacy>. Cabinet הוא <oss>פרויקט קוד פתוח</oss>."
+    },
+    "provider": {
+      "agentType": "{{type}} סוכן",
+      "close": "סגור",
+      "comingSoon": "בקרוב",
+      "guide": "מדריך",
+      "heading": "ספק סוכן",
+      "install": "התקן",
+      "logIn": "התחבר",
+      "openTerminalButton": "פתח טרמינל",
+      "openTerminalDetail": "תצטרך טרמינל כדי להריץ את השלבים הבאים.",
+      "openTerminalError": "לא ניתן היה לפתוח טרמינל אוטומטית. פתח את הטרמינל של המערכת שלך ידנית.",
+      "openTerminalTitle": "פתח טרמינל",
+      "recheck": "בדוק ספקים מחדש",
+      "rerunVerify": "הרץ אימות מחדש",
+      "runVerify": "הרץ אימות",
+      "setupTitle": "הגדרת {{name}}",
+      "skipForNow": "דלג לעת עתה",
+      "subtitle": "Cabinet זקוק ל-CLI של AI כדי להפעיל את הסוכנים שלך.",
+      "verifyExplanation": "אימות מריץ את הפרומפט חסר הראש של הספק מקצה לקצה ומסווג כל כשל כדי שתדע לאיזה שלב לחזור.",
+      "verifying": "מאמת…",
+      "failedAtStep": "נכשל בשלב: <strong>{{step}}</strong>"
+    },
+    "roomSetup": {
+      "subtitle": "לשם מה ה-Cabinet הזה? כל חדר מגיע עם צוות AI משלו.",
+      "heading": "בחר <accent>חדר</accent>"
+    },
+    "team": {
+      "browseAll": "הצג הכל",
+      "browseCabinets": "הצג Cabinets",
+      "cabinetNameLabel": "שם Cabinet",
+      "cancel": "ביטול",
+      "importButton": "ייבוא",
+      "importFailed": "הייבוא נכשל",
+      "importFailedConnection": "הייבוא נכשל. בדוק את החיבור שלך.",
+      "importTitle": "ייבא את {{name}}",
+      "orPickAgents": "או בחר את הסוכנים שלך",
+      "required": "נדרש",
+      "startFromTemplate": "התחל מתבנית",
+      "subtitle": "כל Cabinet הוא צוות AI — סוכנים, משימות ובסיס ידע משותף, הפועלים יחד כאחד.",
+      "heading": "בנה את <accent>הצוות שלך</accent>",
+      "agentCount_one": "{{count}} סוכן",
+      "agentCount_other": "{{count}} סוכנים",
+      "jobCount_one": "{{count}} משימה",
+      "jobCount_other": "{{count}} משימות",
+      "subCabinetCount_one": "{{count}} קבינט משנה",
+      "subCabinetCount_other": "{{count}} קבינטים משנה",
+      "cabinetsImported_one": "{{count}} קבינט יובא",
+      "cabinetsImported_other": "{{count}} קבינטים יובאו",
+      "agentCount": "{{count}} סוכנים",
+      "cabinetsImported": "{{count}} קבינטים יובאו",
+      "jobCount": "{{count}} משימות",
+      "subCabinetCount": "{{count}} קבינטים משנה"
     }
   },
   "search": {
@@ -1074,7 +1178,7 @@
     "language": {
       "title": "שפה",
       "description": "משנה שפה וכיוון קריאה. דפים קיימים שומרים על הכיוון שהוגדר להם.",
-      "english": "English",
+      "english": "אנגלית",
       "hebrew": "עברית",
       "chineseSimplified": "简体中文",
       "chineseTraditional": "繁體中文",
@@ -1380,7 +1484,7 @@
       "commitDefault": "עדכון של {{count}} קובץ",
       "commitDefaultPlural": "עדכון של {{count}} קבצים",
       "committing": "מקומיט…",
-      "commit": "Commit",
+      "commit": "אישור",
       "commitFailed": "ה-commit נכשל",
       "sync": "סנכרון",
       "syncTitle": "משוך מ-GitHub ורענן",

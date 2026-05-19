@@ -61,7 +61,8 @@
       "pickAnAgent": "Vybrat agenta",
       "dismiss": "Zavřít",
       "lockedHeartbeatTip": "Tento agent je zastaven. Spusťte jej na záložce Agenti, abyste povolili heartbeat.",
-      "lockedRoutineTip": "Tento agent je zastaven. Spusťte jej na záložce Agenti, abyste povolili jeho rutiny."
+      "lockedRoutineTip": "Tento agent je zastaven. Spusťte jej na záložce Agenti, abyste povolili jeho rutiny.",
+      "avatar": "workspace.avatar"
     },
     "detail": {
       "clickToTurnOff": "Kliknutím vypnete.",
@@ -1022,7 +1023,9 @@
       "getStarted": "Začínáme"
     },
     "welcome": {
-      "paragraph": "Váš Domov je jen váš. V něm si nastavíte místnosti pro různé části vašeho života: práci, druhý mozek, výzkum, rodinu. A každá místnost má skříně: vaše poznámky, vaše soubory a tým AI, který tiše pracuje na pozadí."
+      "paragraph": "Váš Domov je jen váš. V něm si nastavíte místnosti pro různé části vašeho života: práci, druhý mozek, výzkum, rodinu. A každá místnost má skříně: vaše poznámky, vaše soubory a tým AI, který tiše pracuje na pozadí.",
+      "namePrompt": "Jak se jmenujete?",
+      "heading": "Vítejte <accent>doma</accent>"
     },
     "welcomeBack": {
       "heading": "Vítejte zpět",
@@ -1051,6 +1054,107 @@
       "finish": "Dokončit",
       "complete": "Dokončit nastavení",
       "copyToClipboard": "Kopírovat do schránky"
+    },
+    "cabinetCreated": {
+      "continue": "Pokračovat v nastavení",
+      "heading": "Váš cabinet byl vytvořen",
+      "subtitle": "Vše je nastaveno a připraveno k použití.",
+      "agentsReady_one": "{{count}} agent připraven k práci",
+      "agentsReady_other": "{{count}} agenti připraveni k práci",
+      "scheduledJobs_one": "{{count}} naplánovaná úloha",
+      "scheduledJobs_other": "{{count}} naplánované úlohy",
+      "subCabinets_one": "{{count}} pod-cabinet",
+      "subCabinets_other": "{{count}} pod-cabinety",
+      "agentsReady": "{{count}} agenti připraveni k práci",
+      "scheduledJobs": "{{count}} naplánované úlohy",
+      "subCabinets": "{{count}} pod-cabinety"
+    },
+    "cloud": {
+      "alreadyOnList": "Jste již na seznamu — ozveme se.",
+      "aside": "Cabinet Cloud již brzy. Stejný produkt, bez starostí se samoobslužným hostingem.",
+      "description": "Otevřete svůj Cabinet z jakéhokoli zařízení, zatímco vaši AI agenti pracují — navrhují, zkoumají, organizují — i když je váš notebook zavřený.",
+      "error": "Něco se pokazilo. Zkontrolujte e-mail a zkuste to znovu.",
+      "joinWaitlist": "Připojit se k čekací listině",
+      "onList": "Jste na seznamu. Až se Cabinet Cloud spustí, pošleme vám e-mail.",
+      "sending": "Odesílám…",
+      "title": "Váš Cabinet, kdekoli. Váš AI tým, vždy online.",
+      "waitlistSubtitle": "Připojte se odkudkoli. Váš AI tým pracuje 24/7."
+    },
+    "discord": {
+      "aside": "Pokud chcete nové funkce jako první a preferujete „pojďte si popovídat“ před „prosím, odešlete ticket“, toto je vaše místnost.",
+      "description": "Zde se zpětná vazba mění ve funkce, snímky obrazovky v debaty a někdo obvykle najde okrajový případ dříve, než najde vás.",
+      "joinBadge": "Připojit se",
+      "title": "Na Discordu se dějí ty správné podivnosti."
+    },
+    "github": {
+      "aside": "Cabinet je open source. Pokud se vám líbí naše vize, pomozte nám ji šířit.",
+      "description": "Hvězdička na GitHubu pomůže více lidem objevit Cabinet a připojit se ke komunitě.",
+      "starsLabel": "{{stars}} hvězdiček na GitHubu",
+      "title": "Pomozte komunitě Cabinet růst"
+    },
+    "launch": {
+      "beforeYouLaunch": "Před spuštěním",
+      "defaultCabinetName": "Váš Cabinet",
+      "defaultDescription": "Znalostní báze + AI tým",
+      "launchCabinet": "Spustit Cabinet",
+      "settingUp": "Nastavuji...",
+      "disclaimerAccess": "<strong>Agenti běží s plným přístupem.</strong> Cabinet používá <flag>--dangerously-skip-permissions</flag> (Claude Code) a ekvivalentní příznaky u jiných poskytovatelů. To je totožné se spouštěním těchto nástrojů CLI z vašeho vlastního terminálu. Jakékoli servery MCP nebo nástroje, které jste nakonfigurovali, mohou být agenty automaticky vyvolány.",
+      "disclaimerBackup": "<strong>Pravidelně zálohujte svá data.</strong> Agenti mohou číst, zapisovat a mazat soubory napříč vaší KB a propojenými repozitáři. Cabinet nenese odpovědnost za ztrátu dat. Jste zodpovědní za poskytovatele AI, které si vyberete, a jejich podmínky služby.",
+      "disclaimerBeta": "<strong>Beta software. Věci se mohou rozbít.</strong> Dodáváme rychle. Zásadní změny mohou přijít bez upozornění.",
+      "legalNotice": "Pokračováním souhlasíte s našimi <terms>Podmínkami</terms> a <privacy>Zásadami ochrany osobních údajů</privacy>. Cabinet je <oss>open-source projekt</oss>."
+    },
+    "provider": {
+      "agentType": "{{type}} agent",
+      "close": "Zavřít",
+      "comingSoon": "Již brzy",
+      "guide": "Průvodce",
+      "heading": "Poskytovatel agenta",
+      "install": "Instalovat",
+      "logIn": "Přihlásit se",
+      "openTerminalButton": "Otevřít terminál",
+      "openTerminalDetail": "K provedení dalších kroků budete potřebovat terminál.",
+      "openTerminalError": "Terminál se nepodařilo otevřít automaticky. Otevřete systémový terminál ručně.",
+      "openTerminalTitle": "Otevřít terminál",
+      "recheck": "Znovu zkontrolovat poskytovatele",
+      "rerunVerify": "Znovu spustit ověření",
+      "runVerify": "Spustit ověření",
+      "setupTitle": "Nastavení {{name}}",
+      "skipForNow": "Prozatím přeskočit",
+      "subtitle": "Cabinet potřebuje AI CLI pro napájení vašich agentů.",
+      "verifyExplanation": "Ověření spustí bezhlavou výzvu poskytovatele od začátku do konce a klasifikuje jakékoli selhání, abyste věděli, který krok je třeba znovu navštívit.",
+      "verifying": "Ověřuji…",
+      "failedAtStep": "Selhalo v kroku: <strong>{{step}}</strong>"
+    },
+    "roomSetup": {
+      "subtitle": "K čemu je tento Cabinet? Každá místnost má svůj vlastní AI tým.",
+      "heading": "Vyberte <accent>místnost</accent>"
+    },
+    "team": {
+      "browseAll": "Procházet vše",
+      "browseCabinets": "Procházet kabinety",
+      "cabinetNameLabel": "Název kabinetu",
+      "cancel": "Zrušit",
+      "importButton": "Importovat",
+      "importFailed": "Import se nezdařil",
+      "importFailedConnection": "Import se nezdařil. Zkontrolujte připojení.",
+      "importTitle": "Importovat {{name}}",
+      "orPickAgents": "Nebo si vyberte agenty",
+      "required": "Povinné",
+      "startFromTemplate": "Začít ze šablony",
+      "subtitle": "Každý kabinet je tým AI — agenti, úkoly a sdílená znalostní báze, pracující společně.",
+      "heading": "Sestavte <accent>svůj</accent> tým",
+      "agentCount_one": "{{count}} agent",
+      "agentCount_other": "{{count}} agentů",
+      "jobCount_one": "{{count}} úloha",
+      "jobCount_other": "{{count}} úloh",
+      "subCabinetCount_one": "{{count}} podkabinet",
+      "subCabinetCount_other": "{{count}} podkabinetů",
+      "cabinetsImported_one": "{{count}} kabinet importován",
+      "cabinetsImported_other": "{{count}} kabinetů importováno",
+      "agentCount": "{{count}} agentů",
+      "cabinetsImported": "{{count}} kabinetů importováno",
+      "jobCount": "{{count}} úloh",
+      "subCabinetCount": "{{count}} podkabinetů"
     }
   },
   "search": {
@@ -1332,7 +1436,14 @@
       "savedAgoSeconds": "před {{n}}s",
       "savedAgoMinutes": "před {{n}}m",
       "savedAgoHours": "před {{n}}h",
-      "savedAgoDays": "před {{n}}d"
+      "savedAgoDays": "před {{n}}d",
+      "saveFailedRetry": "Uložení se nezdařilo — zkuste to znovu",
+      "savingText": "Ukládání…",
+      "savedText": "Uloženo",
+      "editingText": "Úprava…",
+      "savedAgo": "Uloženo · {{ago}}",
+      "word": "slovo",
+      "words": "slov"
     },
     "git": {
       "statusModified": "Upraveno",
@@ -1382,7 +1493,11 @@
       "syncAriaLabelWithLast": "Stáhnout nejnovější změny z GitHubu a obnovit. Naposledy synchronizováno {{when}}.",
       "terminal": "Terminál",
       "openTerminal": "Otevřít terminál",
-      "newTerminalTab": "Nová záložka terminálu"
+      "newTerminalTab": "Nová záložka terminálu",
+      "pulling": "Stahuji…",
+      "pulled": "Aktualizováno ze vzdáleného",
+      "upToDate": "Aktuální",
+      "pullFailed": "Stažení selhalo"
     },
     "update2": {
       "updateAvailable": "Aktualizace {{version}} je k dispozici",
@@ -1392,6 +1507,9 @@
       "dismiss": "Zavřít",
       "close": "Zavřít",
       "openSettings": "Otevřít Nastavení pro kontrolu nainstalované aktualizace"
+    },
+    "misc": {
+      "restartToFinishUpdate": "Restartujte pro dokončení aktualizace"
     }
   },
   "tasks": {
@@ -1442,5 +1560,47 @@
     "itemArchived": "{{title}} · archivováno",
     "itemDefault": "{{title}} · {{when}}",
     "toggleRunning": "{{count}} běží — zobrazit panel úkolů"
+  },
+  "chrome": {
+    "nav": {
+      "home": "Domů",
+      "agents": "Agenti",
+      "tasks": "Úkoly",
+      "ai": "AI",
+      "menu": "Menu",
+      "primaryAriaLabel": "Primární"
+    },
+    "returnTo": {
+      "task": "Úkol",
+      "tasks": "Úkoly",
+      "agent": "Agent",
+      "agents": "Agenti",
+      "cabinet": "Cabinet",
+      "home": "Domů",
+      "settings": "Nastavení",
+      "registry": "Registr",
+      "back": "Zpět",
+      "backTo": "Zpět na {{label}}"
+    },
+    "theme": {
+      "defaultHeader": "Výchozí",
+      "dark": "Tmavý",
+      "darkThemes": "Tmavá témata",
+      "lightThemes": "Světlá témata"
+    },
+    "update": {
+      "restartTitle": "Restartujte Cabinet pro dokončení aktualizace",
+      "availableTitle": "Je k dispozici Cabinet {{version}}",
+      "updatesTitle": "Aktualizace Cabinet",
+      "description": "Cabinet automaticky kontroluje nové verze. Jelikož je produkt stále experimentální, uchovejte si kopii svých dat před instalací aktualizací.",
+      "later": "Později",
+      "releaseNotes": "Poznámky k vydání"
+    },
+    "daemon": {
+      "fixHintElectron": "Ukončete a znovu spusťte Cabinet pro restart démona agentů.",
+      "fixHintDev": "Spusťte `npm run dev:daemon` (nebo restartujte `npm run dev:all`) pro obnovení démona agentů.",
+      "notResponding": "Démon agentů nereaguje.",
+      "willFail": "Agenti, úlohy a požadavky AI selžou, dokud nebude opět funkční. {{fixHint}}"
+    }
   }
 }

@@ -61,7 +61,8 @@
       "pickAnAgent": "에이전트 선택",
       "dismiss": "닫기",
       "lockedHeartbeatTip": "이 에이전트가 중지되었습니다. 심박수를 활성화하려면 에이전트 탭에서 시작하세요.",
-      "lockedRoutineTip": "이 에이전트가 중지되었습니다. 루틴을 활성화하려면 에이전트 탭에서 시작하세요."
+      "lockedRoutineTip": "이 에이전트가 중지되었습니다. 루틴을 활성화하려면 에이전트 탭에서 시작하세요.",
+      "avatar": "workspace.avatar"
     },
     "detail": {
       "clickToTurnOff": "클릭하여 끄기.",
@@ -1009,7 +1010,7 @@
     "goodMorning": "좋은 아침입니다",
     "goodAfternoon": "좋은 오후입니다",
     "goodEvening": "좋은 저녁입니다",
-    "greetingWithName": "{{greeting}}, {{name}}.",
+    "greetingWithName": "{{greeting}}, {{name}}님.",
     "greetingNoName": "{{greeting}}.",
     "composerPlaceholder": "만들고 싶어요…",
     "composerDaemonDown": "에이전트 데몬 오프라인 — 전송하려면 다시 시작하세요"
@@ -1022,7 +1023,9 @@
       "getStarted": "시작하기"
     },
     "welcome": {
-      "paragraph": "나만의 홈을 만드세요. 그 안에서 업무, 세컨드 브레인, 연구, 가족 등 삶의 다양한 영역을 위한 공간을 설정할 수 있습니다. 각 공간에는 노트, 파일, 그리고 백그라운드에서 조용히 작업을 처리하는 AI 팀으로 구성된 캐비닛이 있습니다."
+      "paragraph": "나만의 홈을 만드세요. 그 안에서 업무, 세컨드 브레인, 연구, 가족 등 삶의 다양한 영역을 위한 공간을 설정할 수 있습니다. 각 공간에는 노트, 파일, 그리고 백그라운드에서 조용히 작업을 처리하는 AI 팀으로 구성된 캐비닛이 있습니다.",
+      "namePrompt": "이름이 무엇인가요?",
+      "heading": "<accent>집</accent>에 오신 것을 환영합니다"
     },
     "welcomeBack": {
       "heading": "다시 오신 것을 환영합니다",
@@ -1051,6 +1054,280 @@
       "finish": "완료",
       "complete": "설정 완료",
       "copyToClipboard": "클립보드에 복사"
+    },
+    "cabinetCreated": {
+      "continue": "설정 계속",
+      "heading": "Cabinet이 생성되었습니다",
+      "subtitle": "모든 준비가 완료되었습니다.",
+      "agentsReady_one": "{{count}}개 에이전트 작업 준비 완료",
+      "agentsReady_other": "{{count}}개 에이전트 작업 준비 완료",
+      "scheduledJobs_one": "{{count}}개 예약 작업",
+      "scheduledJobs_other": "{{count}}개 예약 작업",
+      "subCabinets_one": "{{count}}개 하위 Cabinet",
+      "subCabinets_other": "{{count}}개 하위 Cabinet",
+      "agentsReady": "{{count}}개 에이전트 작업 준비 완료",
+      "scheduledJobs": "{{count}}개 예약 작업",
+      "subCabinets": "{{count}}개 하위 Cabinet"
+    },
+    "cloud": {
+      "alreadyOnList": "이미 대기 목록에 있습니다. 곧 연락드리겠습니다.",
+      "aside": "Cabinet Cloud가 곧 출시됩니다. 동일한 제품을 자체 호스팅 없이 이용하세요.",
+      "description": "노트북이 닫혀 있어도 AI 에이전트가 (초안 작성, 조사, 정리 등) 계속 작업하는 동안, 어떤 기기에서든 Cabinet을 열 수 있습니다.",
+      "error": "문제가 발생했습니다. 이메일을 확인하고 다시 시도해주세요.",
+      "joinWaitlist": "대기 목록 가입",
+      "onList": "대기 목록에 등록되었습니다. Cabinet Cloud가 출시되면 이메일로 알려드리겠습니다.",
+      "sending": "전송 중…",
+      "title": "어디서든 당신의 Cabinet. 항상 작동하는 당신의 AI 팀.",
+      "waitlistSubtitle": "어디서든 연결하세요. AI 팀은 24시간 내내 작동합니다."
+    },
+    "discord": {
+      "aside": "새로운 기능을 먼저 사용하고 싶고, '티켓 제출'보다 '대화'를 선호한다면, 이곳이 바로 당신을 위한 공간입니다.",
+      "description": "이곳에서는 피드백이 기능이 되고, 스크린샷이 토론이 되며, 누군가 당신보다 먼저 예외 상황을 찾아냅니다.",
+      "joinBadge": "참여",
+      "title": "Discord는 좋은 의미의 기발함이 탄생하는 곳입니다."
+    },
+    "github": {
+      "aside": "Cabinet은 오픈 소스입니다. 비전이 마음에 드신다면, 저희가 널리 알릴 수 있도록 도와주세요.",
+      "description": "GitHub 스타는 더 많은 사람이 Cabinet을 발견하고 커뮤니티에 참여하는 데 도움이 됩니다.",
+      "starsLabel": "{{stars}} GitHub 스타",
+      "title": "Cabinet 커뮤니티 성장을 도와주세요."
+    },
+    "launch": {
+      "beforeYouLaunch": "시작하기 전에",
+      "defaultCabinetName": "내 Cabinet",
+      "defaultDescription": "지식 기반 + AI 팀",
+      "launchCabinet": "Cabinet 실행",
+      "settingUp": "설정 중...",
+      "disclaimerAccess": "<strong>에이전트는 모든 권한으로 실행됩니다.</strong> Cabinet은 <flag>--dangerously-skip-permissions</flag> (Claude Code) 및 다른 제공업체의 동등한 플래그를 사용합니다. 이는 터미널에서 CLI 도구를 직접 실행하는 것과 동일합니다. 구성한 모든 MCP 서버 또는 도구는 에이전트에 의해 자동으로 호출될 수 있습니다.",
+      "disclaimerBackup": "<strong>데이터를 정기적으로 백업하세요.</strong> 에이전트는 KB 및 연결된 저장소의 파일을 읽고, 쓰고, 삭제할 수 있습니다. Cabinet은 데이터 손실에 대해 책임지지 않습니다. 선택한 AI 제공업체 및 해당 서비스 약관에 대한 책임은 사용자에게 있습니다.",
+      "disclaimerBeta": "<strong>베타 소프트웨어입니다. 문제가 발생할 수 있습니다.</strong> 저희는 빠르게 배포합니다. 예고 없이 호환성이 깨지는 변경 사항이 적용될 수 있습니다.",
+      "legalNotice": "계속 진행하면 당사의 <terms>약관</terms> 및 <privacy>개인정보처리방침</privacy>에 동의하는 것입니다. Cabinet은 <oss>오픈 소스 프로젝트</oss>입니다."
+    },
+    "provider": {
+      "agentType": "{{type}} 에이전트",
+      "close": "닫기",
+      "comingSoon": "출시 예정",
+      "guide": "가이드",
+      "heading": "에이전트 제공업체",
+      "install": "설치",
+      "logIn": "로그인",
+      "openTerminalButton": "터미널 열기",
+      "openTerminalDetail": "다음 단계를 실행하려면 터미널이 필요합니다.",
+      "openTerminalError": "터미널을 자동으로 열 수 없습니다. 시스템 터미널을 수동으로 여세요.",
+      "openTerminalTitle": "터미널 열기",
+      "recheck": "제공업체 다시 확인",
+      "rerunVerify": "확인 다시 실행",
+      "runVerify": "확인 실행",
+      "setupTitle": "{{name}} 설정",
+      "skipForNow": "지금은 건너뛰기",
+      "subtitle": "Cabinet은 에이전트를 구동하기 위해 AI CLI가 필요합니다.",
+      "verifyExplanation": "확인은 제공업체의 헤드리스 프롬프트를 처음부터 끝까지 실행하고 모든 실패를 분류하여 어떤 단계를 다시 확인해야 하는지 알려줍니다.",
+      "verifying": "확인 중...",
+      "failedAtStep": "단계 실패: <strong>{{step}}</strong>"
+    },
+    "roomSetup": {
+      "subtitle": "이 캐비닛은 무엇인가요? 각 룸에는 자체 AI 팀이 있습니다.",
+      "heading": "<accent>룸</accent> 선택"
+    },
+    "rooms": {
+      "office": {
+        "label": "오피스",
+        "tagline": "사업, 스타트업, 사이드 프로젝트를 운영하세요.",
+        "workspaceLabel": "회사/프로젝트 이름",
+        "workspacePlaceholder": "Acme Corp",
+        "descriptionLabel": "어떤 일을 하시나요?",
+        "descriptionPlaceholder": "AI 스타트업 팟캐스트를 제작합니다.",
+        "departmentNoun": "부서",
+        "teamSizeLabel": "팀 규모",
+        "exampleAgents": {
+          "0": "CEO",
+          "1": "편집자"
+        }
+      },
+      "study": {
+        "label": "서재",
+        "tagline": "당신의 두 번째 뇌 — 글쓰기, 메모, 개인 비서.",
+        "workspaceLabel": "캐비닛 이름",
+        "workspacePlaceholder": "내 서재",
+        "descriptionLabel": "어떤 삶의 영역에서 도움을 받고 싶으신가요?",
+        "descriptionPlaceholder": "글쓰기, 이메일 분류, 캘린더, 습관 추적",
+        "departmentNoun": "영역",
+        "exampleAgents": {
+          "0": "비서",
+          "1": "사서"
+        }
+      },
+      "lab": {
+        "label": "연구실",
+        "tagline": "학술 작업, 문헌, 교육, 논문.",
+        "workspaceLabel": "워크스페이스 이름",
+        "workspacePlaceholder": "정신 철학",
+        "descriptionLabel": "당신의 분야는 무엇이며 무엇을 연구하고 계신가요?",
+        "descriptionPlaceholder": "현상학, 의식, 철학 개론 강의",
+        "departmentNoun": "영역",
+        "exampleAgents": {
+          "0": "연구 책임자",
+          "1": "사서"
+        }
+      },
+      "family-room": {
+        "label": "가족실",
+        "tagline": "가정, 가족 캘린더, 식사, 자녀.",
+        "workspaceLabel": "가정 이름",
+        "workspacePlaceholder": "응우옌 가족",
+        "descriptionLabel": "누가 살고, 어떤 일을 처리하시나요?",
+        "descriptionPlaceholder": "부모님 두 분, 자녀 세 명, 학교 두 곳, 반려견 한 마리",
+        "departmentNoun": "영역",
+        "teamSizeLabel": "가구원 수",
+        "exampleAgents": {
+          "0": "가정 관리자",
+          "1": "플래너"
+        }
+      },
+      "blank": {
+        "label": "빈 공간",
+        "tagline": "아직 아무것도 없습니다. 나만의 에이전트와 형태를 가져오세요.",
+        "workspaceLabel": "cabinet 이름 지정",
+        "workspacePlaceholder": "내 cabinet",
+        "descriptionLabel": "무엇을 위한 것인가요?",
+        "descriptionPlaceholder": "무엇이든 — 아직 확실하지 않다면 비워두세요",
+        "departmentNoun": "그룹",
+        "exampleAgents": {
+          "0": "자유롭게"
+        }
+      }
+    },
+    "departments": {
+      "leadership": "리더십",
+      "marketing": "마케팅",
+      "content": "콘텐츠",
+      "engineering": "엔지니어링",
+      "product-and-design": "제품 및 디자인",
+      "business": "비즈니스",
+      "research": "연구",
+      "finance-and-ops": "재무 및 운영",
+      "personal": "개인",
+      "second-brain": "세컨드 브레인",
+      "writing": "글쓰기",
+      "tools": "도구",
+      "life-admin": "생활 관리",
+      "from-the-office": "사무실에서",
+      "writing-and-notes": "글쓰기 및 메모",
+      "other": "기타",
+      "household": "가정",
+      "admin": "관리",
+      "money": "자금",
+      "product": "제품",
+      "design": "디자인",
+      "sales": "영업",
+      "support": "지원",
+      "analytics": "분석",
+      "finance": "재무",
+      "legal": "법률",
+      "people": "인사"
+    },
+    "demo": {
+      "greeting": {
+        "office": "좋은 아침입니다, 팀! {{workspace}}에 오신 것을 환영합니다. 바로 시작해 봅시다.",
+        "study": "좋은 아침입니다. 세컨드 브레인이 온라인 상태입니다 — {{home}}에 다시 오신 것을 환영합니다.",
+        "lab": "연구 데스크 준비 완료 — \"{{workspace}}\". 오늘 무엇을 파고들까요?",
+        "family-room": "홈 HQ 부팅 중 — {{home}}. 모두가 필요한 곳에 있도록 합시다.",
+        "blank": "새로운 시작 — \"{{workspace}}\". {{home}}에서 무엇을 만들고 싶으신가요?"
+      },
+      "assign": "{{name}}님, {{topic}}을 맡아주시겠어요?",
+      "fallbackTopic": "다음 할 일",
+      "office": {
+        "replies": {
+          "0": "알겠습니다. 오늘 중으로 전체 개요를 준비해 두겠습니다.",
+          "1": "이미 계획 초안을 작성 중입니다. 곧 #content에 공유하겠습니다.",
+          "2": "기본 워크플로를 설정 중입니다. 지금까지는 좋습니다."
+        },
+        "topics": {
+          "0": "경쟁사 조사",
+          "1": "콘텐츠 캘린더",
+          "2": "출시 계획"
+        },
+        "closing": "모두 좋은 에너지입니다. 이번 주를 성공적인 첫 주로 만듭시다."
+      },
+      "study": {
+        "replies": {
+          "0": "받은 편지함을 분류하고 필요한 것을 알려드리겠습니다.",
+          "1": "오후 3시까지 일정은 비어 있습니다. 글쓰기 좋은 시간입니다.",
+          "2": "이미 '일일' 색인에 새 노트 3개를 연결했습니다."
+        },
+        "topics": {
+          "0": "오늘 받은 편지함 분류",
+          "1": "이번 주 글쓰기",
+          "2": "내 독서 목록"
+        },
+        "closing": "좋습니다. 저에게 필요한 것이 있으면 알려주세요. 그렇지 않으면 방해하지 않겠습니다."
+      },
+      "lab": {
+        "replies": {
+          "0": "지금 이 주제에 대한 최신 논문을 가져오는 중입니다. 한 시간 내에 요약 초안을 드리겠습니다.",
+          "1": "이후 참고문헌을 동기화하고 중복을 표시하겠습니다.",
+          "2": "목요일 강의 개요는 거의 검토 준비가 되었습니다."
+        },
+        "topics": {
+          "0": "문헌 검토",
+          "1": "목요일 강의 준비",
+          "2": "참고 자료 목록"
+        },
+        "closing": "계속 알려주세요. 오늘 중으로 보내주시는 모든 것을 검토하겠습니다."
+      },
+      "family-room": {
+        "replies": {
+          "0": "4시 이후 일정은 비어 있습니다. 겹치는 하차 일정을 표시합니다.",
+          "1": "주간 메뉴 초안이 작성되었습니다. 장보기 목록을 검토할 준비가 되었습니다.",
+          "2": "아이들 활동이 동기화되었습니다. 금요일 DnD 밤은 여전히 진행됩니다."
+        },
+        "topics": {
+          "0": "오늘 일정",
+          "1": "식단 계획",
+          "2": "아이들 활동"
+        },
+        "closing": "모두 감사합니다. 낮 동안 변경 사항이 있으면 알려주세요."
+      },
+      "blank": {
+        "replies": {
+          "0": "알겠습니다. 준비되시면 언제든지 말씀해주세요.",
+          "1": "대기 중입니다.",
+          "2": "지시를 기다리겠습니다."
+        },
+        "topics": {
+          "0": "첫 번째 할 일",
+          "1": "다음 무엇이든",
+          "2": "미해결 질문"
+        },
+        "closing": "준비되시면 무엇을 해야 할지 알려주세요."
+      }
+    },
+    "team": {
+      "browseAll": "모두 찾아보기",
+      "browseCabinets": "캐비닛 찾아보기",
+      "cabinetNameLabel": "캐비닛 이름",
+      "cancel": "취소",
+      "importButton": "가져오기",
+      "importFailed": "가져오기 실패",
+      "importFailedConnection": "가져오기 실패. 연결을 확인하세요.",
+      "importTitle": "{{name}} 가져오기",
+      "orPickAgents": "또는 에이전트 선택",
+      "required": "필수",
+      "startFromTemplate": "템플릿에서 시작",
+      "subtitle": "각 캐비닛은 에이전트, 작업, 공유 지식 기반으로 구성된 AI 팀이며, 하나로 통합되어 작동합니다.",
+      "heading": "<accent>나만의</accent> 팀 구축",
+      "agentCount_one": "{{count}} 에이전트",
+      "agentCount_other": "{{count}} 에이전트",
+      "jobCount_one": "{{count}} 작업",
+      "jobCount_other": "{{count}} 작업",
+      "subCabinetCount_one": "{{count}}개 하위 캐비닛",
+      "subCabinetCount_other": "{{count}}개 하위 캐비닛",
+      "cabinetsImported_one": "{{count}}개 캐비닛 가져옴",
+      "cabinetsImported_other": "{{count}}개 캐비닛 가져옴",
+      "agentCount": "{{count}}명 에이전트",
+      "cabinetsImported": "{{count}}개 캐비닛 가져옴",
+      "jobCount": "{{count}}개 작업",
+      "subCabinetCount": "{{count}}개 하위 캐비닛"
     }
   },
   "search": {
@@ -1075,9 +1352,9 @@
       "title": "언어",
       "description": "언어 및 읽기 방향을 변경합니다. 기존 페이지는 문서별 방향을 유지합니다.",
       "english": "영어",
-      "hebrew": "עברית",
-      "chineseSimplified": "简体中文",
-      "chineseTraditional": "繁體中文",
+      "hebrew": "히브리어",
+      "chineseSimplified": "중국어 간체",
+      "chineseTraditional": "중국어 번체",
       "moreLanguages": "더 많은 언어",
       "moreLanguagesHint": "원하는 언어로 Cabinet을 사용하고 싶다면 클릭해 주세요. 가장 많이 요청된 언어를 우선적으로 지원합니다.",
       "comingSoon": "출시 예정",
@@ -1332,7 +1609,14 @@
       "savedAgoSeconds": "{{n}}초 전",
       "savedAgoMinutes": "{{n}}분 전",
       "savedAgoHours": "{{n}}시간 전",
-      "savedAgoDays": "{{n}}일 전"
+      "savedAgoDays": "{{n}}일 전",
+      "saveFailedRetry": "저장 실패 — 다시 시도",
+      "savingText": "저장 중…",
+      "savedText": "저장됨",
+      "editingText": "편집 중…",
+      "savedAgo": "저장됨 · {{ago}}",
+      "word": "단어",
+      "words": "단어"
     },
     "git": {
       "statusModified": "수정됨",
@@ -1382,7 +1666,11 @@
       "syncAriaLabelWithLast": "GitHub에서 최신 변경 사항 가져오기 및 새로고침. 마지막 동기화: {{when}}.",
       "terminal": "터미널",
       "openTerminal": "터미널 열기",
-      "newTerminalTab": "새 터미널 탭"
+      "newTerminalTab": "새 터미널 탭",
+      "pulling": "가져오는 중…",
+      "pulled": "원격에서 업데이트됨",
+      "upToDate": "최신 상태",
+      "pullFailed": "가져오기 실패"
     },
     "update2": {
       "updateAvailable": "{{version}} 업데이트 사용 가능",
@@ -1392,6 +1680,9 @@
       "dismiss": "닫기",
       "close": "닫기",
       "openSettings": "설정을 열어 설치된 업데이트를 확인하세요."
+    },
+    "misc": {
+      "restartToFinishUpdate": "업데이트 완료를 위해 다시 시작"
     }
   },
   "tasks": {
@@ -1442,5 +1733,47 @@
     "itemArchived": "{{title}} · 보관됨",
     "itemDefault": "{{title}} · {{when}}",
     "toggleRunning": "{{count}}개 실행 중 — 작업 레일 표시"
+  },
+  "chrome": {
+    "nav": {
+      "home": "홈",
+      "agents": "에이전트",
+      "tasks": "작업",
+      "ai": "AI",
+      "menu": "메뉴",
+      "primaryAriaLabel": "기본"
+    },
+    "returnTo": {
+      "task": "작업",
+      "tasks": "작업",
+      "agent": "에이전트",
+      "agents": "에이전트",
+      "cabinet": "Cabinet",
+      "home": "홈",
+      "settings": "설정",
+      "registry": "레지스트리",
+      "back": "뒤로",
+      "backTo": "{{label}}으로 돌아가기"
+    },
+    "theme": {
+      "defaultHeader": "기본",
+      "dark": "다크",
+      "darkThemes": "다크 테마",
+      "lightThemes": "라이트 테마"
+    },
+    "update": {
+      "restartTitle": "업데이트를 완료하려면 Cabinet을 재시작하세요.",
+      "availableTitle": "Cabinet {{version}}이(가) 출시되었습니다.",
+      "updatesTitle": "Cabinet 업데이트",
+      "description": "Cabinet은(는) 자동으로 새 버전을 확인합니다. 제품이 아직 실험 단계이므로, 업데이트를 설치하기 전에 데이터를 백업해 두세요.",
+      "later": "나중에",
+      "releaseNotes": "릴리스 노트"
+    },
+    "daemon": {
+      "fixHintElectron": "에이전트 데몬을 재시작하려면 Cabinet을(를) 종료하고 다시 시작하세요.",
+      "fixHintDev": "에이전트 데몬을 다시 시작하려면 `npm run dev:daemon`을(를) 실행하거나 `npm run dev:all`을(를) 재시작하세요.",
+      "notResponding": "에이전트 데몬이(가) 응답하지 않습니다.",
+      "willFail": "에이전트, 작업 및 AI 요청이(가) 다시 시작될 때까지 실패합니다. {{fixHint}}"
+    }
   }
 }

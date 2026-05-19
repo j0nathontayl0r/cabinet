@@ -61,7 +61,8 @@
       "pickAnAgent": "Chagua ajenti",
       "dismiss": "Funga",
       "lockedHeartbeatTip": "Ajenti huyu amesimamishwa. Muanzishe kwenye kichupo cha Ajenti ili kuwezesha heartbeat.",
-      "lockedRoutineTip": "Ajenti huyu amesimamishwa. Muanzishe kwenye kichupo cha Ajenti ili kuwezesha taratibu zake."
+      "lockedRoutineTip": "Ajenti huyu amesimamishwa. Muanzishe kwenye kichupo cha Ajenti ili kuwezesha taratibu zake.",
+      "avatar": "workspace.avatar"
     },
     "detail": {
       "clickToTurnOff": "Bofya ili kuzima.",
@@ -1022,7 +1023,9 @@
       "getStarted": "Anza"
     },
     "welcome": {
-      "paragraph": "Nyumbani kwako ni kwako. Ndani yake, utaweka vyumba kwa ajili ya sehemu mbalimbali za maisha yako: kazi, akili ya pili, utafiti, familia. Na kila chumba kina kabati: noti zako, faili zako, na timu ya AI inayofanya kazi kimya kimya nyuma ya pazia."
+      "paragraph": "Nyumbani kwako ni kwako. Ndani yake, utaweka vyumba kwa ajili ya sehemu mbalimbali za maisha yako: kazi, akili ya pili, utafiti, familia. Na kila chumba kina kabati: noti zako, faili zako, na timu ya AI inayofanya kazi kimya kimya nyuma ya pazia.",
+      "namePrompt": "Unaitwa nani?",
+      "heading": "Karibu <accent>nyumbani</accent>"
     },
     "welcomeBack": {
       "heading": "Karibu tena",
@@ -1051,6 +1054,107 @@
       "finish": "Maliza",
       "complete": "Kamilisha usanidi",
       "copyToClipboard": "Nakili kwenye ubao wa kunakili"
+    },
+    "cabinetCreated": {
+      "continue": "Endelea na usanidi",
+      "heading": "Cabinet yako imeundwa",
+      "subtitle": "Kila kitu kimesanidiwa na kiko tayari.",
+      "agentsReady_one": "Ajenti {{count}} yuko tayari kufanya kazi",
+      "agentsReady_other": "Maajenti {{count}} wako tayari kufanya kazi",
+      "scheduledJobs_one": "Kazi {{count}} iliyopangwa",
+      "scheduledJobs_other": "Kazi {{count}} zilizopangwa",
+      "subCabinets_one": "Sub-cabinet {{count}}",
+      "subCabinets_other": "Sub-cabinets {{count}}",
+      "agentsReady": "Maajenti {{count}} wako tayari kufanya kazi",
+      "scheduledJobs": "Kazi {{count}} zilizopangwa",
+      "subCabinets": "Sub-cabinets {{count}}"
+    },
+    "cloud": {
+      "alreadyOnList": "Tayari uko kwenye orodha — tutawasiliana nawe.",
+      "aside": "Cabinet Cloud inakuja hivi karibuni. Bidhaa ileile, bila usumbufu wa kujisanidi mwenyewe.",
+      "description": "Fungua Cabinet yako kutoka kifaa chochote huku maajenti wako wa AI wakiendelea kufanya kazi — kuandaa, kutafiti, kupanga — hata kama kompyuta yako imefungwa.",
+      "error": "Kuna tatizo limetokea. Angalia barua pepe na ujaribu tena.",
+      "joinWaitlist": "Jiunge na orodha ya kusubiri",
+      "onList": "Uko kwenye orodha. Tutakutumia barua pepe Cabinet Cloud itakapofunguliwa.",
+      "sending": "Inatuma…",
+      "title": "Cabinet yako, popote. Timu yako ya AI, inafanya kazi kila wakati.",
+      "waitlistSubtitle": "Unganisha kutoka popote. Timu yako ya AI inafanya kazi 24/7."
+    },
+    "discord": {
+      "aside": "Kama unataka vipengele vipya kwanza na unapendelea 'njoo tuzungumze' badala ya 'tafadhali wasilisha tiketi,' hii ndiyo chumba chako.",
+      "description": "Hapa ndipo maoni yanapogeuka kuwa vipengele, picha za skrini zinageuka kuwa mijadala, na kwa kawaida mtu hupata tatizo lisilotarajiwa kabla halijakupata.",
+      "joinBadge": "Jiunge",
+      "title": "Discord ndipo mambo mazuri ya ajabu hutokea."
+    },
+    "github": {
+      "aside": "Cabinet ni chanzo huria. Kama unapenda dira yetu, tusaidie kueneza habari.",
+      "description": "Nyota ya GitHub husaidia watu wengi zaidi kugundua Cabinet na kujiunga na jumuiya.",
+      "starsLabel": "{{stars}} nyota za GitHub",
+      "title": "Saidia jumuiya ya Cabinet kukua"
+    },
+    "launch": {
+      "beforeYouLaunch": "Kabla ya kuzindua",
+      "defaultCabinetName": "Cabinet yako",
+      "defaultDescription": "Msingi wa maarifa + timu ya AI",
+      "launchCabinet": "Zindua Cabinet",
+      "settingUp": "Inasanidi...",
+      "disclaimerAccess": "<strong>Mawakala huendeshwa kwa ufikiaji kamili.</strong> Cabinet hutumia <flag>--dangerously-skip-permissions</flag> (Claude Code) na bendera zinazofanana katika watoa huduma wengine. Hii ni sawa na kuendesha zana hizi za CLI kutoka kwenye terminal yako mwenyewe. Seva au zana zozote za MCP ulizosanidi zinaweza kuitwa kiotomatiki na mawakala.",
+      "disclaimerBackup": "<strong>Hifadhi nakala za data yako mara kwa mara.</strong> Mawakala wanaweza kusoma, kuandika, na kufuta faili katika KB yako na repos zilizounganishwa. Cabinet haina jukumu la upotezaji wa data. Wewe ndiye unayewajibika kwa watoa huduma wa AI unaowachagua na masharti yao ya huduma.",
+      "disclaimerBeta": "<strong>Programu ya Beta. Mambo yanaweza kuharibika.</strong> Tunatoa masasisho haraka. Mabadiliko makubwa yanaweza kutokea bila taarifa.",
+      "legalNotice": "Kwa kuendelea unakubali <terms>Masharti</terms> yetu na <privacy>Faragha</privacy>. Cabinet ni <oss>mradi wa chanzo huria</oss>."
+    },
+    "provider": {
+      "agentType": "{{type}} wakala",
+      "close": "Funga",
+      "comingSoon": "Inakuja hivi karibuni",
+      "guide": "Mwongozo",
+      "heading": "Mtoa Huduma wa Wakala",
+      "install": "Sakinisha",
+      "logIn": "Ingia",
+      "openTerminalButton": "Fungua terminal",
+      "openTerminalDetail": "Utahitaji terminal kuendesha hatua zinazofuata.",
+      "openTerminalError": "Imeshindwa kufungua terminal kiotomatiki. Fungua terminal ya mfumo wako mwenyewe.",
+      "openTerminalTitle": "Fungua terminal",
+      "recheck": "Angalia tena watoa huduma",
+      "rerunVerify": "Endesha tena hakiki",
+      "runVerify": "Endesha hakiki",
+      "setupTitle": "Usanidi wa {{name}}",
+      "skipForNow": "Ruka kwa sasa",
+      "subtitle": "Cabinet inahitaji AI CLI kuwezesha mawakala wako.",
+      "verifyExplanation": "Hakiki huendesha kidokezo kisicho na kiolesura cha mtoa huduma kuanzia mwanzo hadi mwisho na huainisha kushindwa kote ili ujue hatua gani ya kurejea.",
+      "verifying": "Inahakiki…",
+      "failedAtStep": "Imeshindwa katika hatua: <strong>{{step}}</strong>"
+    },
+    "roomSetup": {
+      "subtitle": "Cabinet hii ni ya nini? Kila chumba huja na timu yake ya AI.",
+      "heading": "Chagua <accent>chumba</accent>"
+    },
+    "team": {
+      "browseAll": "Vinjari zote",
+      "browseCabinets": "Vinjari cabinets",
+      "cabinetNameLabel": "Jina la Cabinet",
+      "cancel": "Ghairi",
+      "importButton": "Ingiza",
+      "importFailed": "Uingizaji umeshindwa",
+      "importFailedConnection": "Uingizaji umeshindwa. Angalia muunganisho wako.",
+      "importTitle": "Ingiza {{name}}",
+      "orPickAgents": "Au chagua mawakala wako",
+      "required": "Inahitajika",
+      "startFromTemplate": "Anza na kiolezo",
+      "subtitle": "Kila cabinet ni timu ya AI — mawakala, kazi, na msingi wa maarifa ulioshirikiwa, wakifanya kazi pamoja kama mmoja.",
+      "heading": "Jenga <accent>timu yako</accent>",
+      "agentCount_one": "{{count}} wakala",
+      "agentCount_other": "{{count}} mawakala",
+      "jobCount_one": "{{count}} kazi",
+      "jobCount_other": "{{count}} kazi",
+      "subCabinetCount_one": "{{count}} kabati dogo",
+      "subCabinetCount_other": "{{count}} makabati madogo",
+      "cabinetsImported_one": "{{count}} kabati limeingizwa",
+      "cabinetsImported_other": "{{count}} makabati yameingizwa",
+      "agentCount": "{{count}} mawakala",
+      "cabinetsImported": "{{count}} makabati yameingizwa",
+      "jobCount": "{{count}} kazi",
+      "subCabinetCount": "{{count}} makabati madogo"
     }
   },
   "search": {
@@ -1332,7 +1436,14 @@
       "savedAgoSeconds": "sekunde {{n}} zilizopita",
       "savedAgoMinutes": "dakika {{n}} zilizopita",
       "savedAgoHours": "saa {{n}} zilizopita",
-      "savedAgoDays": "siku {{n}} zilizopita"
+      "savedAgoDays": "siku {{n}} zilizopita",
+      "saveFailedRetry": "Hifadhi imeshindwa — jaribu tena",
+      "savingText": "Inahifadhi…",
+      "savedText": "Imehifadhiwa",
+      "editingText": "Inahariri…",
+      "savedAgo": "Imehifadhiwa · {{ago}}",
+      "word": "neno",
+      "words": "maneno"
     },
     "git": {
       "statusModified": "Imerekebishwa",
@@ -1382,7 +1493,11 @@
       "syncAriaLabelWithLast": "Vuta mabadiliko mapya kutoka GitHub na onyesha upya. Ilisawazishwa mwisho {{when}}.",
       "terminal": "Terminali",
       "openTerminal": "Fungua terminali",
-      "newTerminalTab": "Kichupo kipya cha terminali"
+      "newTerminalTab": "Kichupo kipya cha terminali",
+      "pulling": "Inavuta…",
+      "pulled": "Imesasishwa kutoka mbali",
+      "upToDate": "Imesasishwa",
+      "pullFailed": "Kuvuta kumeshindwa"
     },
     "update2": {
       "updateAvailable": "Sasisho la {{version}} linapatikana",
@@ -1392,6 +1507,9 @@
       "dismiss": "Futa",
       "close": "Funga",
       "openSettings": "Fungua Mipangilio kukagua sasisho lililosakinishwa"
+    },
+    "misc": {
+      "restartToFinishUpdate": "Anzisha upya kukamilisha sasisho"
     }
   },
   "tasks": {
@@ -1442,5 +1560,47 @@
     "itemArchived": "{{title}} · imehifadhiwa",
     "itemDefault": "{{title}} · {{when}}",
     "toggleRunning": "{{count}} zinaendelea — onyesha upau wa kazi"
+  },
+  "chrome": {
+    "nav": {
+      "home": "Nyumbani",
+      "agents": "Mawakala",
+      "tasks": "Kazi",
+      "ai": "AI",
+      "menu": "Menyu",
+      "primaryAriaLabel": "Msingi"
+    },
+    "returnTo": {
+      "task": "Kazi",
+      "tasks": "Kazi",
+      "agent": "Wakala",
+      "agents": "Mawakala",
+      "cabinet": "Cabinet",
+      "home": "Nyumbani",
+      "settings": "Mipangilio",
+      "registry": "Rejista",
+      "back": "Rudi",
+      "backTo": "Rudi kwenye {{label}}"
+    },
+    "theme": {
+      "defaultHeader": "Chaguo-msingi",
+      "dark": "Giza",
+      "darkThemes": "Mandhari Meusi",
+      "lightThemes": "Mandhari Meupe"
+    },
+    "update": {
+      "restartTitle": "Anzisha upya Cabinet ili kumaliza kusasisha",
+      "availableTitle": "Cabinet {{version}} inapatikana",
+      "updatesTitle": "Masasisho ya Cabinet",
+      "description": "Cabinet huangalia matoleo mapya kiotomatiki. Ingawa bidhaa bado ni ya majaribio, hifadhi nakala ya data yako kabla ya kusakinisha masasisho.",
+      "later": "Baadaye",
+      "releaseNotes": "Maelezo ya toleo"
+    },
+    "daemon": {
+      "fixHintElectron": "Funga na ufungue upya Cabinet ili kuanzisha upya daemon ya wakala.",
+      "fixHintDev": "Endesha `npm run dev:daemon` (au anzisha upya `npm run dev:all`) ili kurudisha daemon ya wakala mtandaoni.",
+      "notResponding": "Daemon ya wakala haijibu.",
+      "willFail": "Wakala, kazi, na maombi ya AI yatashindwa hadi itakaporudi. {{fixHint}}"
+    }
   }
 }

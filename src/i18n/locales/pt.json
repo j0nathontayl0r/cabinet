@@ -61,7 +61,8 @@
       "pickAnAgent": "Escolher um agente",
       "dismiss": "Descartar",
       "lockedHeartbeatTip": "Este agente está parado. Inicie-o na aba Agentes para ativar o batimento cardíaco.",
-      "lockedRoutineTip": "Este agente está parado. Inicie-o na aba Agentes para ativar suas rotinas."
+      "lockedRoutineTip": "Este agente está parado. Inicie-o na aba Agentes para ativar suas rotinas.",
+      "avatar": "workspace.avatar"
     },
     "detail": {
       "clickToTurnOff": "Clique para desativar.",
@@ -1022,7 +1023,9 @@
       "getStarted": "Começar"
     },
     "welcome": {
-      "paragraph": "Sua Home é sua. Nela, você configurará salas para diferentes partes da sua vida: trabalho, segundo cérebro, pesquisa, família. E cada sala tem cabinets: suas notas, seus arquivos e uma equipe de IA trabalhando discretamente em segundo plano."
+      "paragraph": "Sua Home é sua. Nela, você configurará salas para diferentes partes da sua vida: trabalho, segundo cérebro, pesquisa, família. E cada sala tem cabinets: suas notas, seus arquivos e uma equipe de IA trabalhando discretamente em segundo plano.",
+      "namePrompt": "Qual é o seu nome?",
+      "heading": "Bem-vindo(a) <accent>ao lar</accent>"
     },
     "welcomeBack": {
       "heading": "Bem-vindo de volta",
@@ -1051,6 +1054,280 @@
       "finish": "Concluir",
       "complete": "Concluir configuração",
       "copyToClipboard": "Copiar para a área de transferência"
+    },
+    "cabinetCreated": {
+      "continue": "Continuar configuração",
+      "heading": "Seu Cabinet foi criado",
+      "subtitle": "Tudo está configurado e pronto para usar.",
+      "agentsReady_one": "{{count}} agente pronto para trabalhar",
+      "agentsReady_other": "{{count}} agentes prontos para trabalhar",
+      "scheduledJobs_one": "{{count}} tarefa agendada",
+      "scheduledJobs_other": "{{count}} tarefas agendadas",
+      "subCabinets_one": "{{count}} sub-Cabinet",
+      "subCabinets_other": "{{count}} sub-Cabinets",
+      "agentsReady": "{{count}} agentes prontos para trabalhar",
+      "scheduledJobs": "{{count}} tarefas agendadas",
+      "subCabinets": "{{count}} sub-Cabinets"
+    },
+    "cloud": {
+      "alreadyOnList": "Você já está na lista — entraremos em contato.",
+      "aside": "Cabinet Cloud em breve. O mesmo produto, sem a complexidade da auto-hospedagem.",
+      "description": "Abra seu Cabinet de qualquer dispositivo enquanto seus agentes de IA continuam trabalhando — rascunhando, pesquisando, organizando — mesmo com seu laptop fechado.",
+      "error": "Algo deu errado. Verifique o e-mail e tente novamente.",
+      "joinWaitlist": "Entrar na lista de espera",
+      "onList": "Você está na lista. Enviaremos um e-mail quando o Cabinet Cloud for lançado.",
+      "sending": "Enviando…",
+      "title": "Seu Cabinet, em qualquer lugar. Sua equipe de IA, sempre ativa.",
+      "waitlistSubtitle": "Conecte-se de qualquer lugar. Sua equipe de IA trabalha 24 horas por dia, 7 dias por semana."
+    },
+    "discord": {
+      "aside": "Se você quer novos recursos primeiro e prefere 'venha conversar' a 'por favor, envie um ticket', esta é a sua sala.",
+      "description": "É aqui que o feedback vira recurso, as capturas de tela viram debates, e alguém geralmente encontra o caso de uso extremo antes que ele te encontre.",
+      "joinBadge": "Participar",
+      "title": "No Discord, a boa estranheza acontece."
+    },
+    "github": {
+      "aside": "Cabinet é open source. Se você gosta da visão, ajude-nos a espalhar a palavra.",
+      "description": "Uma estrela no GitHub ajuda mais pessoas a descobrir o Cabinet e a se juntar à comunidade.",
+      "starsLabel": "{{stars}} estrelas no GitHub",
+      "title": "Ajude a comunidade Cabinet a crescer"
+    },
+    "launch": {
+      "beforeYouLaunch": "Antes de lançar",
+      "defaultCabinetName": "Seu Cabinet",
+      "defaultDescription": "Base de conhecimento + equipe de IA",
+      "launchCabinet": "Lançar Cabinet",
+      "settingUp": "Configurando...",
+      "disclaimerAccess": "<strong>Agentes são executados com acesso total.</strong> Cabinet usa <flag>--dangerously-skip-permissions</flag> (Claude Code) e flags equivalentes em outros provedores. Isso é idêntico a executar essas ferramentas CLI do seu próprio terminal. Quaisquer servidores MCP ou ferramentas que você configurou podem ser invocados automaticamente pelos agentes.",
+      "disclaimerBackup": "<strong>Faça backup dos seus dados regularmente.</strong> Agentes podem ler, escrever e excluir arquivos em sua KB e repositórios vinculados. Cabinet não se responsabiliza pela perda de dados. Você é responsável pelos provedores de IA que escolher e seus termos de serviço.",
+      "disclaimerBeta": "<strong>Software beta. As coisas podem quebrar.</strong> Lançamos rápido. Mudanças que podem causar quebras podem ocorrer sem aviso.",
+      "legalNotice": "Ao continuar, você concorda com nossos <terms>Termos</terms> e <privacy>Privacidade</privacy>. Cabinet é um <oss>projeto de código aberto</oss>."
+    },
+    "provider": {
+      "agentType": "Agente {{type}}",
+      "close": "Fechar",
+      "comingSoon": "Em breve",
+      "guide": "Guia",
+      "heading": "Provedor de Agente",
+      "install": "Instalar",
+      "logIn": "Fazer login",
+      "openTerminalButton": "Abrir terminal",
+      "openTerminalDetail": "Você precisará de um terminal para executar os próximos passos.",
+      "openTerminalError": "Não foi possível abrir o terminal automaticamente. Abra o terminal do seu sistema manualmente.",
+      "openTerminalTitle": "Abrir um terminal",
+      "recheck": "Verificar provedores novamente",
+      "rerunVerify": "Executar verificação novamente",
+      "runVerify": "Executar verificação",
+      "setupTitle": "Configuração de {{name}}",
+      "skipForNow": "Pular por enquanto",
+      "subtitle": "Cabinet precisa de uma CLI de IA para alimentar seus agentes.",
+      "verifyExplanation": "A verificação executa o prompt headless do provedor de ponta a ponta e classifica qualquer falha para que você saiba qual etapa revisar.",
+      "verifying": "Verificando…",
+      "failedAtStep": "Falha na etapa: <strong>{{step}}</strong>"
+    },
+    "roomSetup": {
+      "subtitle": "Para que serve este cabinet? Cada sala vem com sua própria equipe de IA.",
+      "heading": "Escolha uma <accent>sala</accent>"
+    },
+    "rooms": {
+      "office": {
+        "label": "O Escritório",
+        "tagline": "Gerencie um negócio, startup ou projeto paralelo.",
+        "workspaceLabel": "Nome da empresa ou projeto",
+        "workspacePlaceholder": "Acme Corp",
+        "descriptionLabel": "O que você faz?",
+        "descriptionPlaceholder": "Fazemos um podcast sobre startups de IA",
+        "departmentNoun": "Departamento",
+        "teamSizeLabel": "Tamanho da equipe",
+        "exampleAgents": {
+          "0": "CEO",
+          "1": "Editor"
+        }
+      },
+      "study": {
+        "label": "Estudo",
+        "tagline": "Seu segundo cérebro — escrita, notas, assistente pessoal.",
+        "workspaceLabel": "Dê um nome ao seu cabinet",
+        "workspacePlaceholder": "Meu Estudo",
+        "descriptionLabel": "Em quais áreas da vida você quer ajuda?",
+        "descriptionPlaceholder": "Escrita, triagem de e-mails, calendário, acompanhamento de hábitos",
+        "departmentNoun": "Área",
+        "exampleAgents": {
+          "0": "Assistente",
+          "1": "Bibliotecário"
+        }
+      },
+      "lab": {
+        "label": "Laboratório de Pesquisa",
+        "tagline": "Trabalho acadêmico, literatura, ensino, tese.",
+        "workspaceLabel": "Nome do espaço de trabalho",
+        "workspacePlaceholder": "Filosofia da Mente",
+        "descriptionLabel": "Qual é a sua área ou o que você está pesquisando?",
+        "descriptionPlaceholder": "Fenomenologia, consciência, ensino de Introdução à Filosofia",
+        "departmentNoun": "Área",
+        "exampleAgents": {
+          "0": "Líder de Pesquisa",
+          "1": "Bibliotecário"
+        }
+      },
+      "family-room": {
+        "label": "Sala da Família",
+        "tagline": "Lar, calendário familiar, refeições, crianças.",
+        "workspaceLabel": "Nome do lar",
+        "workspacePlaceholder": "A Família Nguyen",
+        "descriptionLabel": "Quem mora aqui e o que vocês gerenciam?",
+        "descriptionPlaceholder": "Dois pais, três filhos, duas escolas, um cachorro",
+        "departmentNoun": "Área",
+        "teamSizeLabel": "Tamanho do lar",
+        "exampleAgents": {
+          "0": "Gerente do Lar",
+          "1": "Planejador"
+        }
+      },
+      "blank": {
+        "label": "Sala Vazia",
+        "tagline": "Nada ainda. Traga seus próprios agentes, sua própria forma.",
+        "workspaceLabel": "Dê um nome ao seu cabinet",
+        "workspacePlaceholder": "Meu Cabinet",
+        "descriptionLabel": "Para que serve?",
+        "descriptionPlaceholder": "Qualquer coisa — deixe em branco se ainda não tiver certeza",
+        "departmentNoun": "Grupo",
+        "exampleAgents": {
+          "0": "Você decide"
+        }
+      }
+    },
+    "departments": {
+      "leadership": "Liderança",
+      "marketing": "Marketing",
+      "content": "Conteúdo",
+      "engineering": "Engenharia",
+      "product-and-design": "Produto e Design",
+      "business": "Negócios",
+      "research": "Pesquisa",
+      "finance-and-ops": "Finanças e Operações",
+      "personal": "Pessoal",
+      "second-brain": "Segundo cérebro",
+      "writing": "Escrita",
+      "tools": "Ferramentas",
+      "life-admin": "Administração da vida",
+      "from-the-office": "Do Escritório",
+      "writing-and-notes": "Escrita e notas",
+      "other": "Outro",
+      "household": "Lar",
+      "admin": "Administração",
+      "money": "Dinheiro",
+      "product": "Produto",
+      "design": "Design",
+      "sales": "Vendas",
+      "support": "Suporte",
+      "analytics": "Análise",
+      "finance": "Finanças",
+      "legal": "Jurídico",
+      "people": "Pessoas"
+    },
+    "demo": {
+      "greeting": {
+        "office": "Bom dia, equipe! Bem-vindos ao {{workspace}}. Vamos começar com tudo.",
+        "study": "Bom dia. Seu segundo cérebro está online — bem-vindo de volta ao {{home}}.",
+        "lab": "Mesa de pesquisa pronta — \"{{workspace}}\". O que vamos investigar hoje?",
+        "family-room": "Sede inicial sendo iniciada — {{home}}. Vamos colocar todos onde precisam estar.",
+        "blank": "Página em branco — \"{{workspace}}\". O que você quer construir aqui, {{home}}?"
+      },
+      "assign": "{{name}}, você pode cuidar de {{topic}}?",
+      "fallbackTopic": "o que vem a seguir",
+      "office": {
+        "replies": {
+          "0": "Certo. Terei uma visão geral do cenário pronta até o final do dia.",
+          "1": "Já estou rascunhando um plano. Compartilharei em #content em breve.",
+          "2": "Configurando os fluxos de trabalho fundamentais agora. Parece bom até agora."
+        },
+        "topics": {
+          "0": "pesquisa de concorrentes",
+          "1": "o calendário de conteúdo",
+          "2": "o plano de lançamento"
+        },
+        "closing": "Ótima energia, pessoal. Vamos fazer desta uma primeira semana forte."
+      },
+      "study": {
+        "replies": {
+          "0": "Vou triar a caixa de entrada e destacar o que precisa de você.",
+          "1": "A agenda está livre até as 15h — boa janela para escrever.",
+          "2": "Já linkei três novas notas ao índice 'Diário'."
+        },
+        "topics": {
+          "0": "triagem da caixa de entrada de hoje",
+          "1": "escrita desta semana",
+          "2": "minha lista de leitura"
+        },
+        "closing": "Certo. Me avise se precisar de algo — caso contrário, não vou atrapalhar."
+      },
+      "lab": {
+        "replies": {
+          "0": "Buscando o artigo mais recente sobre isso agora — rascunho do resumo em uma hora.",
+          "1": "Vou sincronizar a bibliografia depois disso e sinalizar duplicatas.",
+          "2": "O esboço da palestra de quinta-feira está quase pronto para revisão."
+        },
+        "topics": {
+          "0": "a revisão bibliográfica",
+          "1": "preparação da palestra de quinta-feira",
+          "2": "a lista de referências"
+        },
+        "closing": "Mantenha-me informado. Revisarei o que você enviar até o final do dia."
+      },
+      "family-room": {
+        "replies": {
+          "0": "A agenda parece livre depois das 16h. Sinalizando entregas sobrepostas.",
+          "1": "Menu rascunhado para a semana — lista de compras pronta para revisão.",
+          "2": "Atividades das crianças sincronizadas. A noite de DnD ainda está de pé para sexta-feira."
+        },
+        "topics": {
+          "0": "agenda de hoje",
+          "1": "o plano de refeições",
+          "2": "as atividades das crianças"
+        },
+        "closing": "Obrigado a todos. Me avise se algo mudar durante o dia."
+      },
+      "blank": {
+        "replies": {
+          "0": "Entendido. Pronto quando você estiver.",
+          "1": "Aguardando.",
+          "2": "Vou esperar por instruções."
+        },
+        "topics": {
+          "0": "a primeira coisa",
+          "1": "o que vem a seguir",
+          "2": "a questão em aberto"
+        },
+        "closing": "Quando estiver pronto, diga-nos o que fazer."
+      }
+    },
+    "team": {
+      "browseAll": "Ver todos",
+      "browseCabinets": "Ver cabinets",
+      "cabinetNameLabel": "Nome do Cabinet",
+      "cancel": "Cancelar",
+      "importButton": "Importar",
+      "importFailed": "Importação falhou",
+      "importFailedConnection": "Importação falhou. Verifique sua conexão.",
+      "importTitle": "Importar {{name}}",
+      "orPickAgents": "Ou escolha seus agentes",
+      "required": "Obrigatório",
+      "startFromTemplate": "Começar de um modelo",
+      "subtitle": "Cada cabinet é uma equipe de IA — agentes, tarefas e uma base de conhecimento compartilhada, trabalhando juntos como um só.",
+      "heading": "Construa <accent>sua</accent> equipe",
+      "agentCount_one": "{{count}} agente",
+      "agentCount_other": "{{count}} agentes",
+      "jobCount_one": "{{count}} tarefa",
+      "jobCount_other": "{{count}} tarefas",
+      "subCabinetCount_one": "{{count}} sub-gabinete",
+      "subCabinetCount_other": "{{count}} sub-gabinetes",
+      "cabinetsImported_one": "{{count}} cabinet importado",
+      "cabinetsImported_other": "{{count}} cabinets importados",
+      "agentCount": "{{count}} agentes",
+      "cabinetsImported": "{{count}} cabinets importados",
+      "jobCount": "{{count}} tarefas",
+      "subCabinetCount": "{{count}} sub-gabinetes"
     }
   },
   "search": {
@@ -1332,7 +1609,14 @@
       "savedAgoSeconds": "há {{n}}s",
       "savedAgoMinutes": "há {{n}}m",
       "savedAgoHours": "há {{n}}h",
-      "savedAgoDays": "há {{n}}d"
+      "savedAgoDays": "há {{n}}d",
+      "saveFailedRetry": "Falha ao salvar — tentar novamente",
+      "savingText": "Salvando…",
+      "savedText": "Salvo",
+      "editingText": "Editando…",
+      "savedAgo": "Salvo · {{ago}}",
+      "word": "palavra",
+      "words": "palavras"
     },
     "git": {
       "statusModified": "Modificado",
@@ -1382,7 +1666,11 @@
       "syncAriaLabelWithLast": "Puxar últimas alterações do GitHub e atualizar. Última sincronização: {{when}}.",
       "terminal": "Terminal",
       "openTerminal": "Abrir terminal",
-      "newTerminalTab": "Nova aba do terminal"
+      "newTerminalTab": "Nova aba do terminal",
+      "pulling": "Puxando…",
+      "pulled": "Atualizado do remoto",
+      "upToDate": "Atualizado",
+      "pullFailed": "Falha ao puxar"
     },
     "update2": {
       "updateAvailable": "Atualização {{version}} disponível",
@@ -1392,6 +1680,9 @@
       "dismiss": "Descartar",
       "close": "Fechar",
       "openSettings": "Abrir Configurações para revisar a atualização instalada"
+    },
+    "misc": {
+      "restartToFinishUpdate": "Reinicie para finalizar a atualização"
     }
   },
   "tasks": {
@@ -1442,5 +1733,47 @@
     "itemArchived": "{{title}} · arquivado",
     "itemDefault": "{{title}} · {{when}}",
     "toggleRunning": "{{count}} em execução — mostrar painel de tarefas"
+  },
+  "chrome": {
+    "nav": {
+      "home": "Início",
+      "agents": "Agentes",
+      "tasks": "Tarefas",
+      "ai": "IA",
+      "menu": "Menu",
+      "primaryAriaLabel": "Principal"
+    },
+    "returnTo": {
+      "task": "Tarefa",
+      "tasks": "Tarefas",
+      "agent": "Agente",
+      "agents": "Agentes",
+      "cabinet": "Cabinet",
+      "home": "Início",
+      "settings": "Configurações",
+      "registry": "Registro",
+      "back": "Voltar",
+      "backTo": "Voltar para {{label}}"
+    },
+    "theme": {
+      "defaultHeader": "Padrão",
+      "dark": "Escuro",
+      "darkThemes": "Temas Escuros",
+      "lightThemes": "Temas Claros"
+    },
+    "update": {
+      "restartTitle": "Reinicie o Cabinet para concluir a atualização",
+      "availableTitle": "Cabinet {{version}} está disponível",
+      "updatesTitle": "Atualizações do Cabinet",
+      "description": "O Cabinet verifica atualizações automaticamente. Enquanto o produto ainda é experimental, faça uma cópia dos seus dados antes de instalar as atualizações.",
+      "later": "Mais tarde",
+      "releaseNotes": "Notas da versão"
+    },
+    "daemon": {
+      "fixHintElectron": "Saia e reinicie o Cabinet para reiniciar o daemon do agente.",
+      "fixHintDev": "Execute `npm run dev:daemon` (ou reinicie `npm run dev:all`) para reativar o daemon do agente.",
+      "notResponding": "O daemon do agente não está respondendo.",
+      "willFail": "Agentes, tarefas e solicitações de IA falharão até que ele seja reativado. {{fixHint}}"
+    }
   }
 }

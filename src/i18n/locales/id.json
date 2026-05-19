@@ -61,7 +61,8 @@
       "pickAnAgent": "Pilih agen",
       "dismiss": "Tutup",
       "lockedHeartbeatTip": "Agen ini dihentikan. Mulai di tab Agen untuk mengaktifkan detak jantung.",
-      "lockedRoutineTip": "Agen ini dihentikan. Mulai di tab Agen untuk mengaktifkan rutinitasnya."
+      "lockedRoutineTip": "Agen ini dihentikan. Mulai di tab Agen untuk mengaktifkan rutinitasnya.",
+      "avatar": "workspace.avatar"
     },
     "detail": {
       "clickToTurnOff": "Klik untuk mematikan.",
@@ -1022,7 +1023,9 @@
       "getStarted": "Mulai"
     },
     "welcome": {
-      "paragraph": "Rumah Anda adalah milik Anda. Di dalamnya, Anda akan menyiapkan ruangan untuk berbagai bagian hidup Anda: pekerjaan, otak kedua, riset, keluarga. Dan setiap ruangan memiliki kabinet: catatan Anda, berkas Anda, dan tim AI yang diam-diam menyelesaikan pekerjaan di latar belakang."
+      "paragraph": "Rumah Anda adalah milik Anda. Di dalamnya, Anda akan menyiapkan ruangan untuk berbagai bagian hidup Anda: pekerjaan, otak kedua, riset, keluarga. Dan setiap ruangan memiliki kabinet: catatan Anda, berkas Anda, dan tim AI yang diam-diam menyelesaikan pekerjaan di latar belakang.",
+      "namePrompt": "Siapa nama Anda?",
+      "heading": "Selamat datang <accent>di rumah</accent>"
     },
     "welcomeBack": {
       "heading": "Selamat datang kembali",
@@ -1051,6 +1054,280 @@
       "finish": "Selesai",
       "complete": "Selesaikan pengaturan",
       "copyToClipboard": "Salin ke papan klip"
+    },
+    "cabinetCreated": {
+      "continue": "Lanjutkan penyiapan",
+      "heading": "Cabinet Anda telah dibuat",
+      "subtitle": "Semuanya sudah diatur dan siap digunakan.",
+      "agentsReady_one": "{{count}} agen siap bekerja",
+      "agentsReady_other": "{{count}} agen siap bekerja",
+      "scheduledJobs_one": "{{count}} tugas terjadwal",
+      "scheduledJobs_other": "{{count}} tugas terjadwal",
+      "subCabinets_one": "{{count}} sub-kabinet",
+      "subCabinets_other": "{{count}} sub-kabinet",
+      "agentsReady": "{{count}} agen siap bekerja",
+      "scheduledJobs": "{{count}} tugas terjadwal",
+      "subCabinets": "{{count}} sub-kabinet"
+    },
+    "cloud": {
+      "alreadyOnList": "Anda sudah terdaftar — kami akan menghubungi Anda.",
+      "aside": "Cabinet Cloud akan segera hadir. Produk yang sama, tanpa kerumitan hosting mandiri.",
+      "description": "Buka Cabinet Anda dari perangkat mana pun selagi agen AI Anda terus bekerja — menyusun draf, meneliti, mengatur — bahkan saat laptop Anda tertutup.",
+      "error": "Terjadi kesalahan. Periksa email dan coba lagi.",
+      "joinWaitlist": "Gabung daftar tunggu",
+      "onList": "Anda sudah terdaftar. Kami akan mengirim email saat Cabinet Cloud dibuka.",
+      "sending": "Mengirim…",
+      "title": "Cabinet Anda, di mana saja. Tim AI Anda, selalu aktif.",
+      "waitlistSubtitle": "Terhubung dari mana saja. Tim AI Anda bekerja 24/7."
+    },
+    "discord": {
+      "aside": "Jika Anda ingin fitur baru lebih dulu dan lebih suka 'ayo ngobrol' daripada 'mohon kirim tiket,' ini adalah tempat Anda.",
+      "description": "Di sinilah umpan balik menjadi fitur, tangkapan layar menjadi perdebatan, dan seseorang biasanya menemukan kasus ekstrem sebelum Anda menemukannya.",
+      "joinBadge": "Gabung",
+      "title": "Discord adalah tempat hal-hal unik yang baik terjadi."
+    },
+    "github": {
+      "aside": "Cabinet adalah sumber terbuka. Jika Anda menyukai visinya, bantu kami menyebarkan berita.",
+      "description": "Bintang GitHub membantu lebih banyak orang menemukan Cabinet dan bergabung dengan komunitas.",
+      "starsLabel": "{{stars}} bintang GitHub",
+      "title": "Bantu komunitas Cabinet berkembang"
+    },
+    "launch": {
+      "beforeYouLaunch": "Sebelum Anda meluncurkan",
+      "defaultCabinetName": "Cabinet Anda",
+      "defaultDescription": "Basis pengetahuan + tim AI",
+      "launchCabinet": "Luncurkan Cabinet",
+      "settingUp": "Menyiapkan...",
+      "disclaimerAccess": "<strong>Agen berjalan dengan akses penuh.</strong> Cabinet menggunakan <flag>--dangerously-skip-permissions</flag> (Claude Code) dan flag setara di penyedia lain. Ini sama dengan menjalankan alat CLI ini dari terminal Anda sendiri. Server atau alat MCP apa pun yang telah Anda konfigurasi dapat dipanggil secara otomatis oleh agen.",
+      "disclaimerBackup": "<strong>Cadangkan data Anda secara teratur.</strong> Agen dapat membaca, menulis, dan menghapus file di seluruh KB dan repo yang terhubung. Cabinet tidak bertanggung jawab atas kehilangan data. Anda bertanggung jawab atas penyedia AI yang Anda pilih dan ketentuan layanannya.",
+      "disclaimerBeta": "<strong>Perangkat lunak beta. Hal-hal mungkin rusak.</strong> Kami merilis dengan cepat. Perubahan yang merusak dapat terjadi tanpa pemberitahuan.",
+      "legalNotice": "Dengan melanjutkan, Anda menyetujui <terms>Ketentuan</terms> dan <privacy>Privasi</privacy> kami. Cabinet adalah <oss>proyek sumber terbuka</oss>."
+    },
+    "provider": {
+      "agentType": "agen {{type}}",
+      "close": "Tutup",
+      "comingSoon": "Segera hadir",
+      "guide": "Panduan",
+      "heading": "Penyedia Agen",
+      "install": "Instal",
+      "logIn": "Masuk",
+      "openTerminalButton": "Buka terminal",
+      "openTerminalDetail": "Anda memerlukan terminal untuk menjalankan langkah-langkah berikutnya.",
+      "openTerminalError": "Tidak dapat membuka terminal secara otomatis. Buka terminal sistem Anda secara manual.",
+      "openTerminalTitle": "Buka terminal",
+      "recheck": "Periksa ulang penyedia",
+      "rerunVerify": "Jalankan ulang verifikasi",
+      "runVerify": "Jalankan verifikasi",
+      "setupTitle": "penyiapan {{name}}",
+      "skipForNow": "Lewati untuk sekarang",
+      "subtitle": "Cabinet memerlukan CLI AI untuk menggerakkan agen Anda.",
+      "verifyExplanation": "Verifikasi menjalankan prompt tanpa kepala penyedia secara menyeluruh dan mengklasifikasikan kegagalan, agar Anda tahu langkah mana yang perlu ditinjau.",
+      "verifying": "Memverifikasi…",
+      "failedAtStep": "Gagal pada langkah: <strong>{{step}}</strong>"
+    },
+    "roomSetup": {
+      "subtitle": "Untuk apa cabinet ini? Setiap ruangan dilengkapi tim AI-nya sendiri.",
+      "heading": "Pilih sebuah <accent>ruangan</accent>"
+    },
+    "rooms": {
+      "office": {
+        "label": "Kantor",
+        "tagline": "Jalankan bisnis, startup, atau proyek sampingan.",
+        "workspaceLabel": "Nama perusahaan atau proyek",
+        "workspacePlaceholder": "Acme Corp",
+        "descriptionLabel": "Apa yang Anda lakukan?",
+        "descriptionPlaceholder": "Kami membuat podcast tentang startup AI",
+        "departmentNoun": "Departemen",
+        "teamSizeLabel": "Ukuran tim",
+        "exampleAgents": {
+          "0": "CEO",
+          "1": "Editor"
+        }
+      },
+      "study": {
+        "label": "Studi",
+        "tagline": "Otak kedua Anda — menulis, catatan, asisten pribadi.",
+        "workspaceLabel": "Beri nama cabinet Anda",
+        "workspacePlaceholder": "Studi Saya",
+        "descriptionLabel": "Bidang kehidupan apa yang Anda inginkan bantuannya?",
+        "descriptionPlaceholder": "Menulis, penyortiran email, kalender, pelacakan kebiasaan",
+        "departmentNoun": "Bidang",
+        "exampleAgents": {
+          "0": "Asisten",
+          "1": "Pustakawan"
+        }
+      },
+      "lab": {
+        "label": "Lab Penelitian",
+        "tagline": "Pekerjaan akademik, literatur, pengajaran, tesis.",
+        "workspaceLabel": "Nama Ruang Kerja",
+        "workspacePlaceholder": "Filsafat Pikiran",
+        "descriptionLabel": "Apa bidang Anda atau apa yang sedang Anda teliti?",
+        "descriptionPlaceholder": "Fenomenologi, kesadaran, mengajar Pengantar Filsafat",
+        "departmentNoun": "Bidang",
+        "exampleAgents": {
+          "0": "Pimpinan Penelitian",
+          "1": "Pustakawan"
+        }
+      },
+      "family-room": {
+        "label": "Ruang Keluarga",
+        "tagline": "Rumah tangga, kalender keluarga, makanan, anak-anak.",
+        "workspaceLabel": "Nama Rumah Tangga",
+        "workspacePlaceholder": "Keluarga Nguyen",
+        "descriptionLabel": "Siapa yang tinggal di sini dan apa yang Anda kelola?",
+        "descriptionPlaceholder": "Dua orang tua, tiga anak, dua sekolah, satu anjing",
+        "departmentNoun": "Bidang",
+        "teamSizeLabel": "Ukuran Rumah Tangga",
+        "exampleAgents": {
+          "0": "Manajer Rumah Tangga",
+          "1": "Perencana"
+        }
+      },
+      "blank": {
+        "label": "Ruangan Kosong",
+        "tagline": "Belum ada apa-apa. Bawa agen Anda sendiri, bentuk Anda sendiri.",
+        "workspaceLabel": "Beri nama cabinet Anda",
+        "workspacePlaceholder": "Cabinet Saya",
+        "descriptionLabel": "Untuk apa ini?",
+        "descriptionPlaceholder": "Apa saja — biarkan kosong jika Anda belum yakin",
+        "departmentNoun": "Grup",
+        "exampleAgents": {
+          "0": "Pilihan Anda"
+        }
+      }
+    },
+    "departments": {
+      "leadership": "Kepemimpinan",
+      "marketing": "Pemasaran",
+      "content": "Konten",
+      "engineering": "Teknik",
+      "product-and-design": "Produk & Desain",
+      "business": "Bisnis",
+      "research": "Penelitian",
+      "finance-and-ops": "Keuangan & Operasi",
+      "personal": "Pribadi",
+      "second-brain": "Otak kedua",
+      "writing": "Menulis",
+      "tools": "Alat",
+      "life-admin": "Administrasi Hidup",
+      "from-the-office": "Dari Kantor",
+      "writing-and-notes": "Menulis & Catatan",
+      "other": "Lainnya",
+      "household": "Rumah Tangga",
+      "admin": "Admin",
+      "money": "Keuangan",
+      "product": "Produk",
+      "design": "Desain",
+      "sales": "Penjualan",
+      "support": "Dukungan",
+      "analytics": "Analitik",
+      "finance": "Keuangan",
+      "legal": "Hukum",
+      "people": "SDM"
+    },
+    "demo": {
+      "greeting": {
+        "office": "Selamat pagi tim! Selamat datang di {{workspace}}. Mari kita langsung bekerja.",
+        "study": "Pagi. Otak kedua Anda aktif — selamat datang kembali di {{home}}.",
+        "lab": "Meja riset siap — \"{{workspace}}\". Apa yang akan kita telusuri hari ini?",
+        "family-room": "Markas utama sedang memuat — {{home}}. Mari kita arahkan semua orang ke tempatnya.",
+        "blank": "Lembaran kosong — \"{{workspace}}\". Apa yang ingin Anda bangun di sini, {{home}}?"
+      },
+      "assign": "{{name}}, bisakah Anda menangani {{topic}}?",
+      "fallbackTopic": "apa selanjutnya",
+      "office": {
+        "replies": {
+          "0": "Siap. Saya akan siapkan gambaran umum lanskapnya sebelum akhir hari.",
+          "1": "Sudah menyusun draf rencana. Akan saya bagikan di #content sebentar lagi.",
+          "2": "Sedang menyiapkan alur kerja dasar sekarang. Sejauh ini terlihat bagus."
+        },
+        "topics": {
+          "0": "riset kompetitor",
+          "1": "kalender konten",
+          "2": "rencana peluncuran"
+        },
+        "closing": "Semangat yang luar biasa, semuanya. Mari jadikan minggu pertama ini kuat."
+      },
+      "study": {
+        "replies": {
+          "0": "Saya akan menyortir kotak masuk dan menampilkan yang membutuhkan Anda.",
+          "1": "Jadwal terlihat kosong sampai jam 3 sore — waktu yang baik untuk menulis.",
+          "2": "Saya sudah menautkan tiga catatan baru ke indeks 'Harian'."
+        },
+        "topics": {
+          "0": "penyortiran kotak masuk hari ini",
+          "1": "tulisan minggu ini",
+          "2": "daftar bacaan saya"
+        },
+        "closing": "Baik. Beri tahu saya jika ada yang membutuhkan saya — jika tidak, saya tidak akan mengganggu."
+      },
+      "lab": {
+        "replies": {
+          "0": "Sedang menarik makalah terbaru tentang ini sekarang — draf ringkasan dalam satu jam.",
+          "1": "Saya akan menyinkronkan bibliografi setelah ini dan menandai duplikat.",
+          "2": "Garis besar kuliah untuk Kamis hampir siap ditinjau."
+        },
+        "topics": {
+          "0": "tinjauan literatur",
+          "1": "persiapan kuliah Kamis",
+          "2": "daftar referensi"
+        },
+        "closing": "Terus kabari saya. Saya akan meninjau apa pun yang Anda kirim sebelum akhir hari."
+      },
+      "family-room": {
+        "replies": {
+          "0": "Jadwal terlihat kosong setelah jam 4. Menandai penjemputan yang tumpang tindih.",
+          "1": "Menu sudah disusun untuk minggu ini — daftar belanja siap ditinjau.",
+          "2": "Aktivitas anak-anak sudah disinkronkan. Malam DnD masih berlanjut untuk Jumat."
+        },
+        "topics": {
+          "0": "jadwal hari ini",
+          "1": "rencana makan",
+          "2": "aktivitas anak-anak"
+        },
+        "closing": "Terima kasih semua. Beri tahu saya jika ada perubahan selama hari ini."
+      },
+      "blank": {
+        "replies": {
+          "0": "Oke. Siap kapan pun Anda mau.",
+          "1": "Siaga.",
+          "2": "Saya akan menunggu arahan."
+        },
+        "topics": {
+          "0": "hal pertama",
+          "1": "apa pun selanjutnya",
+          "2": "pertanyaan terbuka"
+        },
+        "closing": "Kapan pun Anda siap, beri tahu kami apa yang harus dilakukan."
+      }
+    },
+    "team": {
+      "browseAll": "Jelajahi semua",
+      "browseCabinets": "Jelajahi cabinet",
+      "cabinetNameLabel": "Nama cabinet",
+      "cancel": "Batal",
+      "importButton": "Impor",
+      "importFailed": "Impor gagal",
+      "importFailedConnection": "Impor gagal. Periksa koneksi Anda.",
+      "importTitle": "Impor {{name}}",
+      "orPickAgents": "Atau pilih agen Anda",
+      "required": "Wajib",
+      "startFromTemplate": "Mulai dari templat",
+      "subtitle": "Setiap cabinet adalah tim AI — agen, tugas, dan basis pengetahuan bersama, bekerja sama sebagai satu kesatuan.",
+      "heading": "Bangun tim <accent>Anda</accent>",
+      "agentCount_one": "{{count}} agen",
+      "agentCount_other": "{{count}} agen",
+      "jobCount_one": "{{count}} tugas",
+      "jobCount_other": "{{count}} tugas",
+      "subCabinetCount_one": "{{count}} sub-cabinet",
+      "subCabinetCount_other": "{{count}} sub-cabinet",
+      "cabinetsImported_one": "{{count}} cabinet diimpor",
+      "cabinetsImported_other": "{{count}} cabinet diimpor",
+      "agentCount": "{{count}} agen",
+      "cabinetsImported": "{{count}} cabinet diimpor",
+      "jobCount": "{{count}} tugas",
+      "subCabinetCount": "{{count}} sub-cabinet"
     }
   },
   "search": {
@@ -1332,7 +1609,14 @@
       "savedAgoSeconds": "{{n}} detik yang lalu",
       "savedAgoMinutes": "{{n}} menit yang lalu",
       "savedAgoHours": "{{n}} jam yang lalu",
-      "savedAgoDays": "{{n}} hari yang lalu"
+      "savedAgoDays": "{{n}} hari yang lalu",
+      "saveFailedRetry": "Gagal menyimpan — coba lagi",
+      "savingText": "Menyimpan…",
+      "savedText": "Tersimpan",
+      "editingText": "Mengedit…",
+      "savedAgo": "Tersimpan · {{ago}}",
+      "word": "kata",
+      "words": "kata"
     },
     "git": {
       "statusModified": "Dimodifikasi",
@@ -1382,7 +1666,11 @@
       "syncAriaLabelWithLast": "Tarik perubahan terbaru dari GitHub dan segarkan. Terakhir disinkronkan {{when}}.",
       "terminal": "Terminal",
       "openTerminal": "Buka terminal",
-      "newTerminalTab": "Tab terminal baru"
+      "newTerminalTab": "Tab terminal baru",
+      "pulling": "Menarik…",
+      "pulled": "Diperbarui dari remote",
+      "upToDate": "Terbaru",
+      "pullFailed": "Gagal menarik"
     },
     "update2": {
       "updateAvailable": "Pembaruan {{version}} tersedia",
@@ -1392,6 +1680,9 @@
       "dismiss": "Tutup",
       "close": "Tutup",
       "openSettings": "Buka Pengaturan untuk meninjau pembaruan yang terinstal"
+    },
+    "misc": {
+      "restartToFinishUpdate": "Mulai ulang untuk menyelesaikan pembaruan"
     }
   },
   "tasks": {
@@ -1442,5 +1733,47 @@
     "itemArchived": "{{title}} · diarsipkan",
     "itemDefault": "{{title}} · {{when}}",
     "toggleRunning": "{{count}} sedang berjalan — tampilkan panel tugas"
+  },
+  "chrome": {
+    "nav": {
+      "home": "Beranda",
+      "agents": "Agen",
+      "tasks": "Tugas",
+      "ai": "AI",
+      "menu": "Menu",
+      "primaryAriaLabel": "Utama"
+    },
+    "returnTo": {
+      "task": "Tugas",
+      "tasks": "Tugas",
+      "agent": "Agen",
+      "agents": "Agen",
+      "cabinet": "Cabinet",
+      "home": "Beranda",
+      "settings": "Pengaturan",
+      "registry": "Registri",
+      "back": "Kembali",
+      "backTo": "Kembali ke {{label}}"
+    },
+    "theme": {
+      "defaultHeader": "Bawaan",
+      "dark": "Gelap",
+      "darkThemes": "Tema Gelap",
+      "lightThemes": "Tema Terang"
+    },
+    "update": {
+      "restartTitle": "Mulai ulang Cabinet untuk menyelesaikan pembaruan",
+      "availableTitle": "Cabinet {{version}} tersedia",
+      "updatesTitle": "Pembaruan Cabinet",
+      "description": "Cabinet memeriksa rilis secara otomatis. Meskipun produk ini masih dalam tahap eksperimental, simpan salinan data Anda sebelum menginstal pembaruan.",
+      "later": "Nanti",
+      "releaseNotes": "Catatan rilis"
+    },
+    "daemon": {
+      "fixHintElectron": "Keluar dan luncurkan ulang Cabinet untuk memulai ulang daemon agen.",
+      "fixHintDev": "Jalankan `npm run dev:daemon` (atau mulai ulang `npm run dev:all`) untuk mengaktifkan kembali daemon agen.",
+      "notResponding": "Daemon agen tidak merespons.",
+      "willFail": "Agen, tugas, dan permintaan AI akan gagal sampai kembali aktif. {{fixHint}}"
+    }
   }
 }

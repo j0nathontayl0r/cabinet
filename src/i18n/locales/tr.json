@@ -61,7 +61,8 @@
       "pickAnAgent": "Bir aracı seç",
       "dismiss": "Kapat",
       "lockedHeartbeatTip": "Bu aracı durduruldu. Nabzı etkinleştirmek için Aracılar sekmesinden başlatın.",
-      "lockedRoutineTip": "Bu aracı durduruldu. Rutinlerini etkinleştirmek için Aracılar sekmesinden başlatın."
+      "lockedRoutineTip": "Bu aracı durduruldu. Rutinlerini etkinleştirmek için Aracılar sekmesinden başlatın.",
+      "avatar": "workspace.avatar"
     },
     "detail": {
       "clickToTurnOff": "Kapatmak için tıklayın.",
@@ -1022,7 +1023,9 @@
       "getStarted": "Başla"
     },
     "welcome": {
-      "paragraph": "Ana Sayfanız sizin. İçinde, hayatınızın farklı alanları için odalar kuracaksınız: iş, ikinci beyin, araştırma, aile. Ve her odada dolaplar bulunur: notlarınız, dosyalarınız ve arka planda sessizce işleri halleden bir yapay zeka ekibi."
+      "paragraph": "Ana Sayfanız sizin. İçinde, hayatınızın farklı alanları için odalar kuracaksınız: iş, ikinci beyin, araştırma, aile. Ve her odada dolaplar bulunur: notlarınız, dosyalarınız ve arka planda sessizce işleri halleden bir yapay zeka ekibi.",
+      "namePrompt": "Adınız nedir?",
+      "heading": "<accent>Eve</accent> hoş geldiniz"
     },
     "welcomeBack": {
       "heading": "Tekrar hoş geldiniz",
@@ -1051,6 +1054,280 @@
       "finish": "Bitir",
       "complete": "Kurulumu tamamla",
       "copyToClipboard": "Panoya kopyala"
+    },
+    "cabinetCreated": {
+      "continue": "Kuruluma devam et",
+      "heading": "Cabinet'iniz oluşturuldu",
+      "subtitle": "Her şey ayarlandı ve kullanıma hazır.",
+      "agentsReady_one": "{{count}} ajan çalışmaya hazır",
+      "agentsReady_other": "{{count}} ajan çalışmaya hazır",
+      "scheduledJobs_one": "{{count}} planlanmış görev",
+      "scheduledJobs_other": "{{count}} planlanmış görev",
+      "subCabinets_one": "{{count}} alt-cabinet",
+      "subCabinets_other": "{{count}} alt-cabinet",
+      "agentsReady": "{{count}} ajan çalışmaya hazır",
+      "scheduledJobs": "{{count}} planlanmış görev",
+      "subCabinets": "{{count}} alt-cabinet"
+    },
+    "cloud": {
+      "alreadyOnList": "Zaten listedesiniz — sizinle iletişime geçeceğiz.",
+      "aside": "Cabinet Cloud çok yakında. Aynı ürün, kendi kendine barındırma zahmeti yok.",
+      "description": "Yapay zeka ajanlarınız çalışmaya devam ederken (taslak oluşturma, araştırma, düzenleme) dizüstü bilgisayarınız kapalıyken bile Cabinet'inizi herhangi bir cihazdan açın.",
+      "error": "Bir şeyler ters gitti. E-postayı kontrol edin ve tekrar deneyin.",
+      "joinWaitlist": "Bekleme listesine katıl",
+      "onList": "Listedesiniz. Cabinet Cloud açıldığında size e-posta göndereceğiz.",
+      "sending": "Gönderiliyor…",
+      "title": "Cabinet'iniz her yerde. Yapay zeka ekibiniz her zaman aktif.",
+      "waitlistSubtitle": "Her yerden bağlanın. Yapay zeka ekibiniz 7/24 çalışır."
+    },
+    "discord": {
+      "aside": "Yeni özelliklere ilk siz ulaşmak ve 'lütfen bir bilet gönderin' yerine 'gelin sohbet edelim' demeyi tercih ediyorsanız, burası sizin odanız.",
+      "description": "Geri bildirimlerin özelliğe, ekran görüntülerinin tartışmalara dönüştüğü ve birinin genellikle uç durumu o sizi bulmadan önce bulduğu yer.",
+      "joinBadge": "Katıl",
+      "title": "Discord, güzel tuhaflıkların yaşandığı yer."
+    },
+    "github": {
+      "aside": "Cabinet açık kaynaklıdır. Vizyonu beğendiyseniz, yayılmasına yardım edin.",
+      "description": "Bir GitHub yıldızı, daha fazla kişinin Cabinet'i keşfetmesine ve topluluğa katılmasına yardımcı olur.",
+      "starsLabel": "{{stars}} GitHub yıldızı",
+      "title": "Cabinet topluluğunun büyümesine yardım edin"
+    },
+    "launch": {
+      "beforeYouLaunch": "Başlatmadan önce",
+      "defaultCabinetName": "Cabinet'iniz",
+      "defaultDescription": "Bilgi tabanı + Yapay zeka ekibi",
+      "launchCabinet": "Cabinet'i Başlat",
+      "settingUp": "Kuruluyor...",
+      "disclaimerAccess": "<strong>Aracılar tam erişimle çalışır.</strong> Cabinet, <flag>--dangerously-skip-permissions</flag> (Claude Code) ve diğer sağlayıcılarda eşdeğer bayrakları kullanır. Bu, bu CLI araçlarını kendi terminalinizden çalıştırmakla aynıdır. Yapılandırdığınız herhangi bir MCP sunucusu veya aracı, aracılar tarafından otomatik olarak çağrılabilir.",
+      "disclaimerBackup": "<strong>Verilerinizi düzenli olarak yedekleyin.</strong> Aracılar, bilgi tabanınız ve bağlantılı depolarınızdaki dosyaları okuyabilir, yazabilir ve silebilir. Cabinet veri kaybından sorumlu değildir. Seçtiğiniz yapay zeka sağlayıcılarından ve hizmet şartlarından siz sorumlusunuz.",
+      "disclaimerBeta": "<strong>Beta yazılım. Hatalar oluşabilir.</strong> Hızlı yayın yaparız. Kırıcı değişiklikler bildirim yapılmadan gelebilir.",
+      "legalNotice": "Devam ederek <terms>Şartlarımızı</terms> ve <privacy>Gizliliğimizi</privacy> kabul etmiş olursunuz. Cabinet bir <oss>açık kaynak projesidir</oss>."
+    },
+    "provider": {
+      "agentType": "{{type}} aracı",
+      "close": "Kapat",
+      "comingSoon": "Çok yakında",
+      "guide": "Rehber",
+      "heading": "Aracı Sağlayıcı",
+      "install": "Yükle",
+      "logIn": "Giriş yap",
+      "openTerminalButton": "Terminali aç",
+      "openTerminalDetail": "Sonraki adımları çalıştırmak için bir terminale ihtiyacınız olacak.",
+      "openTerminalError": "Terminal otomatik olarak açılamadı. Sistem terminalinizi manuel olarak açın.",
+      "openTerminalTitle": "Bir terminal aç",
+      "recheck": "Sağlayıcıları tekrar kontrol et",
+      "rerunVerify": "Doğrulamayı tekrar çalıştır",
+      "runVerify": "Doğrulamayı çalıştır",
+      "setupTitle": "{{name}} kurulumu",
+      "skipForNow": "Şimdilik atla",
+      "subtitle": "Cabinet, aracılarının çalışması için bir yapay zeka CLI'ına ihtiyaç duyar.",
+      "verifyExplanation": "Doğrulama, sağlayıcının başsız istemini uçtan uca çalıştırır ve hataları sınıflandırarak hangi adımı tekrar ziyaret etmeniz gerektiğini gösterir.",
+      "verifying": "Doğrulanıyor…",
+      "failedAtStep": "Şu adımda başarısız oldu: <strong>{{step}}</strong>"
+    },
+    "roomSetup": {
+      "subtitle": "Bu cabinet ne için? Her oda kendi yapay zeka ekibiyle gelir.",
+      "heading": "Bir <accent>oda</accent> seçin"
+    },
+    "rooms": {
+      "office": {
+        "label": "Ofis",
+        "tagline": "Bir iş, startup veya yan proje yürütün.",
+        "workspaceLabel": "Şirket veya proje adı",
+        "workspacePlaceholder": "Acme Corp",
+        "descriptionLabel": "Ne yapıyorsunuz?",
+        "descriptionPlaceholder": "Yapay zeka startup'ları hakkında bir podcast yapıyoruz",
+        "departmentNoun": "Departman",
+        "teamSizeLabel": "Ekip büyüklüğü",
+        "exampleAgents": {
+          "0": "CEO",
+          "1": "Editör"
+        }
+      },
+      "study": {
+        "label": "Çalışma Alanı",
+        "tagline": "İkinci beyniniz — yazma, notlar, kişisel asistan.",
+        "workspaceLabel": "Kabinetinize ad verin",
+        "workspacePlaceholder": "Çalışma Alanım",
+        "descriptionLabel": "Hayatınızın hangi alanlarında yardım almak istersiniz?",
+        "descriptionPlaceholder": "Yazma, e-posta düzenleme, takvim, alışkanlık takibi",
+        "departmentNoun": "Alan",
+        "exampleAgents": {
+          "0": "Asistan",
+          "1": "Kütüphaneci"
+        }
+      },
+      "lab": {
+        "label": "Araştırma Laboratuvarı",
+        "tagline": "Akademik çalışma, literatür, öğretim, tez.",
+        "workspaceLabel": "Çalışma alanı adı",
+        "workspacePlaceholder": "Zihin Felsefesi",
+        "descriptionLabel": "Alanınız veya ne araştırıyorsunuz?",
+        "descriptionPlaceholder": "Fenomenoloji, bilinç, Felsefeye Giriş dersi verme",
+        "departmentNoun": "Alan",
+        "exampleAgents": {
+          "0": "Araştırma Lideri",
+          "1": "Kütüphaneci"
+        }
+      },
+      "family-room": {
+        "label": "Aile Odası",
+        "tagline": "Ev işleri, aile takvimi, yemekler, çocuklar.",
+        "workspaceLabel": "Hane adı",
+        "workspacePlaceholder": "Nguyen Ailesi",
+        "descriptionLabel": "Burada kimler yaşıyor ve nelerle uğraşıyorsunuz?",
+        "descriptionPlaceholder": "İki ebeveyn, üç çocuk, iki okul, bir köpek",
+        "departmentNoun": "Alan",
+        "teamSizeLabel": "Hane büyüklüğü",
+        "exampleAgents": {
+          "0": "Ev Yöneticisi",
+          "1": "Planlayıcı"
+        }
+      },
+      "blank": {
+        "label": "Boş Oda",
+        "tagline": "Henüz bir şey yok. Kendi ajanlarınızı, kendi şeklinizi getirin.",
+        "workspaceLabel": "Kabinetinize ad verin",
+        "workspacePlaceholder": "Kabinetim",
+        "descriptionLabel": "Ne için?",
+        "descriptionPlaceholder": "Herhangi bir şey — henüz emin değilseniz boş bırakın",
+        "departmentNoun": "Grup",
+        "exampleAgents": {
+          "0": "Sizin kararınız"
+        }
+      }
+    },
+    "departments": {
+      "leadership": "Liderlik",
+      "marketing": "Pazarlama",
+      "content": "İçerik",
+      "engineering": "Mühendislik",
+      "product-and-design": "Ürün ve Tasarım",
+      "business": "İş",
+      "research": "Araştırma",
+      "finance-and-ops": "Finans ve Operasyonlar",
+      "personal": "Kişisel",
+      "second-brain": "İkinci beyin",
+      "writing": "Yazma",
+      "tools": "Araçlar",
+      "life-admin": "Hayat yönetimi",
+      "from-the-office": "Ofisten",
+      "writing-and-notes": "Yazma ve notlar",
+      "other": "Diğer",
+      "household": "Hane",
+      "admin": "Yönetim",
+      "money": "Para",
+      "product": "Ürün",
+      "design": "Tasarım",
+      "sales": "Satış",
+      "support": "Destek",
+      "analytics": "Analiz",
+      "finance": "Finans",
+      "legal": "Hukuk",
+      "people": "Kişiler"
+    },
+    "demo": {
+      "greeting": {
+        "office": "Günaydın ekip! {{workspace}}'e hoş geldiniz. Hemen işe koyulalım.",
+        "study": "Günaydın. İkinci beyniniz çevrimiçi — {{home}}'a tekrar hoş geldiniz.",
+        "lab": "Araştırma masası hazır — \"{{workspace}}\". Bugün neye odaklanıyoruz?",
+        "family-room": "Ana Merkez başlatılıyor — {{home}}. Herkesi olması gereken yere yönlendirelim.",
+        "blank": "Boş sayfa — \"{{workspace}}\". Burada ne inşa etmek istersin, {{home}}?"
+      },
+      "assign": "{{name}}, {{topic}} ile ilgilenebilir misin?",
+      "fallbackTopic": "sırada ne var",
+      "office": {
+        "replies": {
+          "0": "Üzerindeyim. Gün sonuna kadar genel bir bakış hazırlamış olurum.",
+          "1": "Zaten bir taslak hazırlıyorum. Kısa süre içinde #content'te paylaşırım.",
+          "2": "Temel iş akışlarını şimdi kuruyorum. Şimdilik iyi görünüyor."
+        },
+        "topics": {
+          "0": "rakip araştırması",
+          "1": "içerik takvimi",
+          "2": "lansman planı"
+        },
+        "closing": "Harika enerji herkes. Bu haftayı güçlü bir başlangıç yapalım."
+      },
+      "study": {
+        "replies": {
+          "0": "Gelen kutusunu önceliklendireceğim ve sana gerekenleri belirteceğim.",
+          "1": "Takvim saat 15:00'e kadar boş — yazmak için iyi bir fırsat.",
+          "2": "'Günlük' dizinine şimdiden üç yeni not bağladım."
+        },
+        "topics": {
+          "0": "bugünün gelen kutusu önceliklendirmesi",
+          "1": "bu haftanın yazıları",
+          "2": "okuma listem"
+        },
+        "closing": "İyi. Bana bir şey gerektiğinde haber ver — yoksa yolundan çekilirim."
+      },
+      "lab": {
+        "replies": {
+          "0": "Bununla ilgili en son makaleyi şimdi çekiyorum — bir saate taslak özet hazır.",
+          "1": "Bundan sonra bibliyografyayı senkronize edeceğim ve tekrarları işaretleyeceğim.",
+          "2": "Perşembe için ders taslağı neredeyse incelemeye hazır."
+        },
+        "topics": {
+          "0": "literatür taraması",
+          "1": "Perşembe ders hazırlığı",
+          "2": "referanslar listesi"
+        },
+        "closing": "Beni bilgilendir. Gün sonuna kadar gönderdiğin her şeyi inceleyeceğim."
+      },
+      "family-room": {
+        "replies": {
+          "0": "Program 4'ten sonra boş görünüyor. Çakışan bırakmaları işaretliyorum.",
+          "1": "Haftalık menü taslağı hazır — alışveriş listesi incelemeye hazır.",
+          "2": "Çocuk etkinlikleri senkronize edildi. Cuma günü DnD gecesi hala geçerli."
+        },
+        "topics": {
+          "0": "bugünün programı",
+          "1": "yemek planı",
+          "2": "çocuk etkinlikleri"
+        },
+        "closing": "Hepinize teşekkürler. Gün içinde bir değişiklik olursa bana haber verin."
+      },
+      "blank": {
+        "replies": {
+          "0": "Anlaşıldı. Ne zaman hazırsan hazırım.",
+          "1": "Hazır bekliyorum.",
+          "2": "Yönlendirme bekleyeceğim."
+        },
+        "topics": {
+          "0": "ilk şey",
+          "1": "sıradaki her neyse",
+          "2": "açık soru"
+        },
+        "closing": "Ne zaman hazırsan, bize ne yapacağımızı söyle."
+      }
+    },
+    "team": {
+      "browseAll": "Tümünü incele",
+      "browseCabinets": "Cabinet'leri incele",
+      "cabinetNameLabel": "Cabinet adı",
+      "cancel": "İptal",
+      "importButton": "İçe Aktar",
+      "importFailed": "İçe aktarma başarısız oldu",
+      "importFailedConnection": "İçe aktarma başarısız oldu. Bağlantınızı kontrol edin.",
+      "importTitle": "{{name}} içe aktar",
+      "orPickAgents": "Veya aracılarınızı seçin",
+      "required": "Gerekli",
+      "startFromTemplate": "Şablondan Başla",
+      "subtitle": "Her Cabinet, ajanlar, görevler ve paylaşılan bir bilgi tabanından oluşan, tek bir bütün olarak çalışan bir yapay zeka ekibidir.",
+      "heading": "<accent>Ekibini</accent> kur",
+      "agentCount_one": "{{count}} ajan",
+      "agentCount_other": "{{count}} ajan",
+      "jobCount_one": "{{count}} iş",
+      "jobCount_other": "{{count}} iş",
+      "subCabinetCount_one": "{{count}} alt Cabinet",
+      "subCabinetCount_other": "{{count}} alt Cabinet",
+      "cabinetsImported_one": "{{count}} Cabinet içe aktarıldı",
+      "cabinetsImported_other": "{{count}} Cabinet içe aktarıldı",
+      "agentCount": "{{count}} ajan",
+      "cabinetsImported": "{{count}} Cabinet içe aktarıldı",
+      "jobCount": "{{count}} iş",
+      "subCabinetCount": "{{count}} alt Cabinet"
     }
   },
   "search": {
@@ -1203,7 +1480,7 @@
       "privacyLink": "Neler toplanır?",
       "telemetryEnvDisabled": "CABINET_TELEMETRY_DISABLED=1 (ortam değişkeni) tarafından devre dışı bırakıldı.",
       "telemetryHint": "Yalnızca olay sayıları, sürümler ve platform bilgileri. Göndermeyi durdurmak için kapatın.",
-      "cabinetCloud": "Cabinet Cloud",
+      "cabinetCloud": "Cabinet Bulut",
       "cloudBody": "Yapay zeka ekibiniz sizin için 7/24 çalışırken Cabinet'inize her yerden bağlanın. E-postanızı aşağıya bırakın, Cabinet Cloud açıldığında size haber verelim.",
       "cloudAlready": "Zaten listedesiniz — sizinle iletişime geçeceğiz.",
       "cloudSuccess": "Listedesiniz. Cabinet Cloud açıldığında size e-posta göndereceğiz.",
@@ -1332,7 +1609,14 @@
       "savedAgoSeconds": "{{n}} saniye önce",
       "savedAgoMinutes": "{{n}} dakika önce",
       "savedAgoHours": "{{n}} saat önce",
-      "savedAgoDays": "{{n}} gün önce"
+      "savedAgoDays": "{{n}} gün önce",
+      "saveFailedRetry": "Kaydetme başarısız — tekrar dene",
+      "savingText": "Kaydediliyor…",
+      "savedText": "Kaydedildi",
+      "editingText": "Düzenleniyor…",
+      "savedAgo": "Kaydedildi · {{ago}}",
+      "word": "kelime",
+      "words": "kelimeler"
     },
     "git": {
       "statusModified": "Değiştirildi",
@@ -1382,7 +1666,11 @@
       "syncAriaLabelWithLast": "GitHub'dan en son değişiklikleri çek ve yenile. Son eşitleme {{when}}.",
       "terminal": "Terminal",
       "openTerminal": "Terminali aç",
-      "newTerminalTab": "Yeni terminal sekmesi"
+      "newTerminalTab": "Yeni terminal sekmesi",
+      "pulling": "Çekiliyor…",
+      "pulled": "Uzak sunucudan güncellendi",
+      "upToDate": "Güncel",
+      "pullFailed": "Çekme başarısız"
     },
     "update2": {
       "updateAvailable": "{{version}} güncellemesi mevcut",
@@ -1392,6 +1680,9 @@
       "dismiss": "Kapat",
       "close": "Kapat",
       "openSettings": "Yüklenen güncellemeyi incelemek için Ayarlar'ı açın"
+    },
+    "misc": {
+      "restartToFinishUpdate": "Güncellemeyi tamamlamak için yeniden başlat"
     }
   },
   "tasks": {
@@ -1442,5 +1733,47 @@
     "itemArchived": "{{title}} · arşivlendi",
     "itemDefault": "{{title}} · {{when}}",
     "toggleRunning": "{{count}} devam ediyor — görevler panelini göster"
+  },
+  "chrome": {
+    "nav": {
+      "home": "Ana Sayfa",
+      "agents": "Ajanlar",
+      "tasks": "Görevler",
+      "ai": "AI",
+      "menu": "Menü",
+      "primaryAriaLabel": "Birincil"
+    },
+    "returnTo": {
+      "task": "Görev",
+      "tasks": "Görevler",
+      "agent": "Aracı",
+      "agents": "Aracılar",
+      "cabinet": "Cabinet",
+      "home": "Ana Sayfa",
+      "settings": "Ayarlar",
+      "registry": "Kayıt Defteri",
+      "back": "Geri",
+      "backTo": "{{label}}'a Geri Dön"
+    },
+    "theme": {
+      "defaultHeader": "Varsayılan",
+      "dark": "Koyu",
+      "darkThemes": "Koyu Temalar",
+      "lightThemes": "Açık Temalar"
+    },
+    "update": {
+      "restartTitle": "Güncellemeyi tamamlamak için Cabinet'i yeniden başlatın.",
+      "availableTitle": "Cabinet {{version}} sürümü mevcut.",
+      "updatesTitle": "Cabinet güncellemeleri",
+      "description": "Cabinet güncellemeleri otomatik olarak kontrol eder. Ürün hala deneysel aşamadayken, güncellemeleri yüklemeden önce verilerinizin bir kopyasını saklayın.",
+      "later": "Daha Sonra",
+      "releaseNotes": "Sürüm notları"
+    },
+    "daemon": {
+      "fixHintElectron": "Aracı arka plan programını yeniden başlatmak için Cabinet'i kapatıp tekrar açın.",
+      "fixHintDev": "Aracı arka plan programını tekrar çalıştırmak için `npm run dev:daemon` komutunu (veya `npm run dev:all` komutunu yeniden) çalıştırın.",
+      "notResponding": "Aracı arka plan programı yanıt vermiyor.",
+      "willFail": "Geri gelene kadar aracılar, işler ve yapay zeka istekleri başarısız olacaktır. {{fixHint}}"
+    }
   }
 }

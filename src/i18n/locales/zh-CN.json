@@ -19,7 +19,7 @@
     },
     "metric": {
       "name": "指标名称",
-      "namePlaceholder": "reddit_replies",
+      "namePlaceholder": "reddit回复",
       "target": "目标",
       "targetPlaceholder": "回复/周",
       "floor": "下限",
@@ -61,7 +61,8 @@
       "pickAnAgent": "挑选一个智能体",
       "dismiss": "关闭",
       "lockedHeartbeatTip": "该智能体已停止。请在「智能体」标签页中启动它,才能启用心跳。",
-      "lockedRoutineTip": "该智能体已停止。请在「智能体」标签页中启动它,才能启用它的例行任务。"
+      "lockedRoutineTip": "该智能体已停止。请在「智能体」标签页中启动它,才能启用它的例行任务。",
+      "avatar": "工作区头像"
     },
     "detail": {
       "clickToTurnOff": "点击以关闭。",
@@ -468,7 +469,7 @@
   "slideData": {
     "thailandRootLabel": "泰国之旅",
     "thailandCaption": "把你所有的文件放在一个地方查看。",
-    "videoTitle": "Night market.mp4",
+    "videoTitle": "夜市.mp4",
     "taxRootLabel": "2026 报税",
     "taxCaption": "2026 报税 — 一个交互式的计算器网页应用,直接嵌入你的凯比内特。",
     "calculatorTitle": "计算器",
@@ -1022,7 +1023,9 @@
       "getStarted": "开始使用"
     },
     "welcome": {
-      "paragraph": "你的主页是你的。在里面,你将为生活的不同部分搭建房间:工作、第二大脑、研究、家庭。每个房间都有凯比内特:你的笔记、你的文件,以及一个在后台默默把事做完的 AI 团队。"
+      "paragraph": "你的主页是你的。在里面,你将为生活的不同部分搭建房间:工作、第二大脑、研究、家庭。每个房间都有凯比内特:你的笔记、你的文件,以及一个在后台默默把事做完的 AI 团队。",
+      "namePrompt": "你叫什么名字？",
+      "heading": "欢迎<accent>回家</accent>"
     },
     "welcomeBack": {
       "heading": "欢迎回来",
@@ -1051,6 +1054,107 @@
       "finish": "完成",
       "complete": "完成设置",
       "copyToClipboard": "复制到剪贴板"
+    },
+    "cabinetCreated": {
+      "continue": "继续设置",
+      "heading": "您的 Cabinet 已创建",
+      "subtitle": "一切就绪，随时可用。",
+      "agentsReady_one": "{{count}} 个智能体准备就绪",
+      "agentsReady_other": "{{count}} 个智能体准备就绪",
+      "scheduledJobs_one": "{{count}} 个计划任务",
+      "scheduledJobs_other": "{{count}} 个计划任务",
+      "subCabinets_one": "{{count}} 个子 Cabinet",
+      "subCabinets_other": "{{count}} 个子 Cabinet",
+      "agentsReady": "{{count}} 个智能体准备就绪",
+      "scheduledJobs": "{{count}} 个计划任务",
+      "subCabinets": "{{count}} 个子 Cabinet"
+    },
+    "cloud": {
+      "alreadyOnList": "您已在列表中 — 我们会与您联系。",
+      "aside": "Cabinet 云版即将推出。相同产品，无需自行托管。",
+      "description": "在任何设备上打开您的 Cabinet，您的 AI 智能体将持续工作 — 起草、研究、整理 — 即使您的笔记本电脑已关闭。",
+      "error": "出错了。请检查邮箱并重试。",
+      "joinWaitlist": "加入候补名单",
+      "onList": "您已在列表中。Cabinet 云版上线时，我们会通过邮件通知您。",
+      "sending": "发送中…",
+      "title": "您的 Cabinet，随处可用。您的 AI 团队，始终在线。",
+      "waitlistSubtitle": "随时随地连接。您的 AI 团队 24/7 全天候工作。"
+    },
+    "discord": {
+      "aside": "如果您想优先体验新功能，并且更喜欢“来聊聊”而不是“请提交工单”，这里就是您的专属空间。",
+      "description": "在这里，反馈会变成功能，截图会引发讨论，并且总有人会在问题找到您之前发现它。",
+      "joinBadge": "加入",
+      "title": "Discord 是奇思妙想的发生地。"
+    },
+    "github": {
+      "aside": "Cabinet 是开源的。如果您认同我们的愿景，请帮助我们传播。",
+      "description": "一个 GitHub 星标能帮助更多人发现 Cabinet 并加入社区。",
+      "starsLabel": "{{stars}} 个 GitHub 星标",
+      "title": "帮助 Cabinet 社区成长"
+    },
+    "launch": {
+      "beforeYouLaunch": "启动前",
+      "defaultCabinetName": "您的 Cabinet",
+      "defaultDescription": "知识库 + AI 团队",
+      "launchCabinet": "启动 Cabinet",
+      "settingUp": "设置中...",
+      "disclaimerAccess": "<strong>代理以完全访问权限运行。</strong> Cabinet 使用 <flag>--dangerously-skip-permissions</flag> (Claude Code) 和其他提供商的等效标志。这与从您自己的终端运行这些 CLI 工具相同。您配置的任何 MCP 服务器或工具都可能被代理自动调用。",
+      "disclaimerBackup": "<strong>定期备份您的数据。</strong> 代理可以读取、写入和删除您的知识库和链接仓库中的文件。Cabinet 不对数据丢失负责。您应对所选的 AI 提供商及其服务条款负责。",
+      "disclaimerBeta": "<strong>Beta 软件。可能会出现问题。</strong> 我们快速迭代。破坏性更改可能不另行通知。",
+      "legalNotice": "继续即表示您同意我们的<terms>条款</terms>和<privacy>隐私政策</privacy>。Cabinet 是一个<oss>开源项目</oss>。"
+    },
+    "provider": {
+      "agentType": "{{type}} 代理",
+      "close": "关闭",
+      "comingSoon": "即将推出",
+      "guide": "指南",
+      "heading": "代理提供商",
+      "install": "安装",
+      "logIn": "登录",
+      "openTerminalButton": "打开终端",
+      "openTerminalDetail": "您需要一个终端来运行后续步骤。",
+      "openTerminalError": "无法自动打开终端。请手动打开您的系统终端。",
+      "openTerminalTitle": "打开终端",
+      "recheck": "重新检查提供商",
+      "rerunVerify": "重新运行验证",
+      "runVerify": "运行验证",
+      "setupTitle": "{{name}} 设置",
+      "skipForNow": "暂时跳过",
+      "subtitle": "Cabinet 需要一个 AI CLI 来驱动您的代理。",
+      "verifyExplanation": "验证会端到端运行提供商的无头提示，并对任何故障进行分类，以便您知道要重新访问哪个步骤。",
+      "verifying": "验证中…",
+      "failedAtStep": "步骤失败：<strong>{{step}}</strong>"
+    },
+    "roomSetup": {
+      "subtitle": "这个 cabinet 是做什么用的？每个房间都配有自己的 AI 团队。",
+      "heading": "选择一个<accent>房间</accent>"
+    },
+    "team": {
+      "browseAll": "浏览全部",
+      "browseCabinets": "浏览 cabinets",
+      "cabinetNameLabel": "Cabinet 名称",
+      "cancel": "取消",
+      "importButton": "导入",
+      "importFailed": "导入失败",
+      "importFailedConnection": "导入失败。请检查您的连接。",
+      "importTitle": "导入 {{name}}",
+      "orPickAgents": "或选择您的代理",
+      "required": "必填",
+      "startFromTemplate": "从模板开始",
+      "subtitle": "每个 cabinet 都是一个 AI 团队——代理、任务和共享知识库，作为一个整体协同工作。",
+      "heading": "构建<accent>您的</accent>团队",
+      "agentCount_one": "{{count}} 个代理",
+      "agentCount_other": "{{count}} 个代理",
+      "jobCount_one": "{{count}} 个任务",
+      "jobCount_other": "{{count}} 个任务",
+      "subCabinetCount_one": "{{count}} 个子 cabinet",
+      "subCabinetCount_other": "{{count}} 个子 cabinets",
+      "cabinetsImported_one": "已导入 {{count}} 个 cabinet",
+      "cabinetsImported_other": "{{count}} 个 cabinet 已导入",
+      "agentCount": "{{count}} 个代理",
+      "cabinetsImported": "{{count}} 个 cabinet 已导入",
+      "jobCount": "{{count}} 个任务",
+      "subCabinetCount": "{{count}} 个子 cabinet"
     }
   },
   "search": {
@@ -1074,10 +1178,10 @@
     "language": {
       "title": "语言",
       "description": "更改语言和阅读方向。已有页面会保留各自的文档方向。",
-      "english": "English",
-      "hebrew": "עברית",
+      "english": "英语",
+      "hebrew": "希伯来语",
       "chineseSimplified": "简体中文",
-      "chineseTraditional": "繁體中文",
+      "chineseTraditional": "繁体中文",
       "moreLanguages": "更多语言",
       "moreLanguagesHint": "点击任意语言告诉我们你希望凯比内特支持它 — 我们会优先处理最受欢迎的语言。",
       "comingSoon": "即将推出",
@@ -1217,7 +1321,7 @@
     "profile": {
       "title": "个人资料",
       "name": "姓名",
-      "namePlaceholder": "Hila",
+      "namePlaceholder": "希拉",
       "displayName": "显示名称",
       "role": "角色",
       "rolePlaceholder": "构建者",
@@ -1332,7 +1436,14 @@
       "savedAgoSeconds": "{{n}} 秒前",
       "savedAgoMinutes": "{{n}} 分钟前",
       "savedAgoHours": "{{n}} 小时前",
-      "savedAgoDays": "{{n}} 天前"
+      "savedAgoDays": "{{n}} 天前",
+      "saveFailedRetry": "保存失败 — 重试",
+      "savingText": "保存中…",
+      "savedText": "已保存",
+      "editingText": "编辑中…",
+      "savedAgo": "已保存 · {{ago}}",
+      "word": "词",
+      "words": "词"
     },
     "git": {
       "statusModified": "已修改",
@@ -1382,7 +1493,11 @@
       "syncAriaLabelWithLast": "从 GitHub 拉取最新变更并刷新。上次同步:{{when}}。",
       "terminal": "终端",
       "openTerminal": "打开终端",
-      "newTerminalTab": "新建终端标签页"
+      "newTerminalTab": "新建终端标签页",
+      "pulling": "拉取中…",
+      "pulled": "已从远程更新",
+      "upToDate": "已是最新",
+      "pullFailed": "拉取失败"
     },
     "update2": {
       "updateAvailable": "{{version}} 版本可用",
@@ -1392,6 +1507,9 @@
       "dismiss": "关闭",
       "close": "关闭",
       "openSettings": "打开设置以查看已安装的更新"
+    },
+    "misc": {
+      "restartToFinishUpdate": "重启以完成更新"
     }
   },
   "tasks": {
@@ -1442,5 +1560,47 @@
     "itemArchived": "{{title}} · 已归档",
     "itemDefault": "{{title}} · {{when}}",
     "toggleRunning": "{{count}} 个运行中 — 显示任务栏"
+  },
+  "chrome": {
+    "nav": {
+      "home": "主页",
+      "agents": "代理",
+      "tasks": "任务",
+      "ai": "AI",
+      "menu": "菜单",
+      "primaryAriaLabel": "主要"
+    },
+    "returnTo": {
+      "task": "任务",
+      "tasks": "任务",
+      "agent": "代理",
+      "agents": "代理",
+      "cabinet": "Cabinet",
+      "home": "主页",
+      "settings": "设置",
+      "registry": "注册",
+      "back": "返回",
+      "backTo": "返回到 {{label}}"
+    },
+    "theme": {
+      "defaultHeader": "默认",
+      "dark": "深色",
+      "darkThemes": "深色主题",
+      "lightThemes": "亮色主题"
+    },
+    "update": {
+      "restartTitle": "重启 Cabinet 以完成更新",
+      "availableTitle": "Cabinet {{version}} 可用",
+      "updatesTitle": "Cabinet 更新",
+      "description": "Cabinet 会自动检查更新。本产品仍处于实验阶段，请在安装更新前备份您的数据。",
+      "later": "稍后",
+      "releaseNotes": "发行说明"
+    },
+    "daemon": {
+      "fixHintElectron": "退出并重新启动 Cabinet 以重启代理守护程序。",
+      "fixHintDev": "运行 `npm run dev:daemon`（或重启 `npm run dev:all`）以重新启动代理守护程序。",
+      "notResponding": "代理守护程序无响应。",
+      "willFail": "在恢复正常前，代理、任务和 AI 请求将失败。{{fixHint}}"
+    }
   }
 }

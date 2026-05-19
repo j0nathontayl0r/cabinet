@@ -61,7 +61,8 @@
       "pickAnAgent": "Välj en agent",
       "dismiss": "Stäng",
       "lockedHeartbeatTip": "Denna agent är stoppad. Starta den på fliken Agenter för att aktivera heartbeat.",
-      "lockedRoutineTip": "Denna agent är stoppad. Starta den på fliken Agenter för att aktivera dess rutiner."
+      "lockedRoutineTip": "Denna agent är stoppad. Starta den på fliken Agenter för att aktivera dess rutiner.",
+      "avatar": "workspace.avatar"
     },
     "detail": {
       "clickToTurnOff": "Klicka för att stänga av.",
@@ -1022,7 +1023,9 @@
       "getStarted": "Kom igång"
     },
     "welcome": {
-      "paragraph": "Ditt Hem är ditt eget. Här skapar du rum för olika delar av ditt liv: arbete, 'second brain', forskning, familj. Och varje rum har skåp: dina anteckningar, dina filer och ett AI-team som tyst arbetar i bakgrunden."
+      "paragraph": "Ditt Hem är ditt eget. Här skapar du rum för olika delar av ditt liv: arbete, 'second brain', forskning, familj. Och varje rum har skåp: dina anteckningar, dina filer och ett AI-team som tyst arbetar i bakgrunden.",
+      "namePrompt": "Vad heter du?",
+      "heading": "Välkommen <accent>hem</accent>"
     },
     "welcomeBack": {
       "heading": "Välkommen tillbaka",
@@ -1051,6 +1054,107 @@
       "finish": "Slutför",
       "complete": "Slutför installationen",
       "copyToClipboard": "Kopiera till urklipp"
+    },
+    "cabinetCreated": {
+      "continue": "Fortsätt installationen",
+      "heading": "Din cabinet har skapats",
+      "subtitle": "Allt är klart och redo att användas.",
+      "agentsReady_one": "{{count}} agent redo att arbeta",
+      "agentsReady_other": "{{count}} agenter redo att arbeta",
+      "scheduledJobs_one": "{{count}} schemalagt jobb",
+      "scheduledJobs_other": "{{count}} schemalagda jobb",
+      "subCabinets_one": "{{count}} under-cabinet",
+      "subCabinets_other": "{{count}} under-cabinets",
+      "agentsReady": "{{count}} agenter redo att arbeta",
+      "scheduledJobs": "{{count}} schemalagda jobb",
+      "subCabinets": "{{count}} under-cabinet"
+    },
+    "cloud": {
+      "alreadyOnList": "Du är redan på listan – vi hör av oss.",
+      "aside": "Cabinet Cloud kommer snart. Samma produkt, utan krånglet med egen hosting.",
+      "description": "Öppna ditt Cabinet från vilken enhet som helst medan dina AI-agenter fortsätter att arbeta – utkast, research, organisering – även när din laptop är stängd.",
+      "error": "Något gick fel. Kontrollera e-postadressen och försök igen.",
+      "joinWaitlist": "Gå med i väntelistan",
+      "onList": "Du är på listan. Vi mejlar dig när Cabinet Cloud öppnar.",
+      "sending": "Skickar…",
+      "title": "Ditt Cabinet, överallt. Ditt AI-team, alltid på.",
+      "waitlistSubtitle": "Anslut varifrån som helst. Ditt AI-team arbetar dygnet runt."
+    },
+    "discord": {
+      "aside": "Om du vill ha nya funktioner först och föredrar 'kom och chatta' framför 'vänligen skicka in ett ärende', är detta ditt rum.",
+      "description": "Här blir feedback till funktioner, skärmdumpar till debatter, och någon hittar oftast gränsfallet innan det hittar dig.",
+      "joinBadge": "Gå med",
+      "title": "Discord är där det roliga och oväntade händer."
+    },
+    "github": {
+      "aside": "Cabinet är öppen källkod. Om du gillar visionen, hjälp oss att sprida ordet.",
+      "description": "En GitHub-stjärna hjälper fler att upptäcka Cabinet och gå med i gemenskapen.",
+      "starsLabel": "{{stars}} GitHub-stjärnor",
+      "title": "Hjälp Cabinet-gemenskapen att växa"
+    },
+    "launch": {
+      "beforeYouLaunch": "Innan du startar",
+      "defaultCabinetName": "Ditt Cabinet",
+      "defaultDescription": "Kunskapsbas + AI-team",
+      "launchCabinet": "Starta Cabinet",
+      "settingUp": "Ställer in...",
+      "disclaimerAccess": "<strong>Agenter körs med full åtkomst.</strong> Cabinet använder <flag>--dangerously-skip-permissions</flag> (Claude Code) och motsvarande flaggor hos andra leverantörer. Detta är identiskt med att köra dessa CLI-verktyg från din egen terminal. Alla MCP-servrar eller verktyg du har konfigurerat kan anropas automatiskt av agenter.",
+      "disclaimerBackup": "<strong>Säkerhetskopiera din data regelbundet.</strong> Agenter kan läsa, skriva och radera filer i din KB och länkade repos. Cabinet ansvarar inte för dataförlust. Du ansvarar för de AI-leverantörer du väljer och deras användarvillkor.",
+      "disclaimerBeta": "<strong>Beta-programvara. Saker kan gå sönder.</strong> Vi levererar snabbt. Brytande ändringar kan införas utan förvarning.",
+      "legalNotice": "Genom att fortsätta godkänner du våra <terms>Villkor</terms> och <privacy>Integritetspolicy</privacy>. Cabinet är ett <oss>öppen källkod-projekt</oss>."
+    },
+    "provider": {
+      "agentType": "{{type}}-agent",
+      "close": "Stäng",
+      "comingSoon": "Kommer snart",
+      "guide": "Guide",
+      "heading": "Agentleverantör",
+      "install": "Installera",
+      "logIn": "Logga in",
+      "openTerminalButton": "Öppna terminal",
+      "openTerminalDetail": "Du behöver en terminal för att köra nästa steg.",
+      "openTerminalError": "Kunde inte öppna terminalen automatiskt. Öppna din systemterminal manuellt.",
+      "openTerminalTitle": "Öppna en terminal",
+      "recheck": "Kontrollera leverantörer igen",
+      "rerunVerify": "Kör verifiering igen",
+      "runVerify": "Kör verifiering",
+      "setupTitle": "{{name}}-inställningar",
+      "skipForNow": "Hoppa över för nu",
+      "subtitle": "Cabinet behöver en AI CLI för att driva dina agenter.",
+      "verifyExplanation": "Verifiering kör leverantörens headless-prompt från början till slut och klassificerar eventuella fel så att du vet vilket steg du ska återbesöka.",
+      "verifying": "Verifierar…",
+      "failedAtStep": "Misslyckades vid steg: <strong>{{step}}</strong>"
+    },
+    "roomSetup": {
+      "subtitle": "Vad är detta kabinett till för? Varje rum har ett eget AI-team.",
+      "heading": "Välj ett <accent>rum</accent>"
+    },
+    "team": {
+      "browseAll": "Bläddra bland alla",
+      "browseCabinets": "Bläddra bland kabinett",
+      "cabinetNameLabel": "Kabinettnamn",
+      "cancel": "Avbryt",
+      "importButton": "Importera",
+      "importFailed": "Import misslyckades",
+      "importFailedConnection": "Import misslyckades. Kontrollera din anslutning.",
+      "importTitle": "Importera {{name}}",
+      "orPickAgents": "Eller välj dina agenter",
+      "required": "Krävs",
+      "startFromTemplate": "Börja från en mall",
+      "subtitle": "Varje kabinett är ett AI-team — agenter, uppgifter och en delad kunskapsbas som samarbetar.",
+      "heading": "Bygg <accent>ditt</accent> team",
+      "agentCount_one": "{{count}} agent",
+      "agentCount_other": "{{count}} agenter",
+      "jobCount_one": "{{count}} uppgift",
+      "jobCount_other": "{{count}} uppgifter",
+      "subCabinetCount_one": "{{count}} underkabinett",
+      "subCabinetCount_other": "{{count}} underkabinett",
+      "cabinetsImported_one": "{{count}} kabinett importerat",
+      "cabinetsImported_other": "{{count}} kabinett importerade",
+      "agentCount": "{{count}} agenter",
+      "cabinetsImported": "{{count}} kabinett importerade",
+      "jobCount": "{{count}} uppgifter",
+      "subCabinetCount": "{{count}} underkabinett"
     }
   },
   "search": {
@@ -1332,7 +1436,14 @@
       "savedAgoSeconds": "{{n}}s sedan",
       "savedAgoMinutes": "{{n}}m sedan",
       "savedAgoHours": "{{n}}h sedan",
-      "savedAgoDays": "{{n}}d sedan"
+      "savedAgoDays": "{{n}}d sedan",
+      "saveFailedRetry": "Spara misslyckades — försök igen",
+      "savingText": "Sparar…",
+      "savedText": "Sparat",
+      "editingText": "Redigerar…",
+      "savedAgo": "Sparat · {{ago}}",
+      "word": "ord",
+      "words": "ord"
     },
     "git": {
       "statusModified": "Ändrad",
@@ -1382,7 +1493,11 @@
       "syncAriaLabelWithLast": "Hämta senaste ändringarna från GitHub och uppdatera. Senast synkad {{when}}.",
       "terminal": "Terminal",
       "openTerminal": "Öppna terminal",
-      "newTerminalTab": "Ny terminalflik"
+      "newTerminalTab": "Ny terminalflik",
+      "pulling": "Hämtar…",
+      "pulled": "Uppdaterad från fjärr",
+      "upToDate": "Aktuell",
+      "pullFailed": "Hämtning misslyckades"
     },
     "update2": {
       "updateAvailable": "Uppdatering {{version}} tillgänglig",
@@ -1392,6 +1507,9 @@
       "dismiss": "Avfärda",
       "close": "Stäng",
       "openSettings": "Öppna Inställningar för att granska den installerade uppdateringen"
+    },
+    "misc": {
+      "restartToFinishUpdate": "Starta om för att slutföra uppdatering"
     }
   },
   "tasks": {
@@ -1442,5 +1560,47 @@
     "itemArchived": "{{title}} · arkiverad",
     "itemDefault": "{{title}} · {{when}}",
     "toggleRunning": "{{count}} körs — visa uppgiftsfält"
+  },
+  "chrome": {
+    "nav": {
+      "home": "Hem",
+      "agents": "Agenter",
+      "tasks": "Uppgifter",
+      "ai": "AI",
+      "menu": "Meny",
+      "primaryAriaLabel": "Primär"
+    },
+    "returnTo": {
+      "task": "Uppgift",
+      "tasks": "Uppgifter",
+      "agent": "Agent",
+      "agents": "Agenter",
+      "cabinet": "Cabinet",
+      "home": "Hem",
+      "settings": "Inställningar",
+      "registry": "Register",
+      "back": "Tillbaka",
+      "backTo": "Tillbaka till {{label}}"
+    },
+    "theme": {
+      "defaultHeader": "Standard",
+      "dark": "Mörk",
+      "darkThemes": "Mörka teman",
+      "lightThemes": "Ljusa teman"
+    },
+    "update": {
+      "restartTitle": "Starta om Cabinet för att slutföra uppdateringen",
+      "availableTitle": "Cabinet {{version}} är tillgänglig",
+      "updatesTitle": "Cabinet-uppdateringar",
+      "description": "Cabinet söker automatiskt efter nya versioner. Eftersom produkten fortfarande är experimentell, spara en kopia av din data innan du installerar uppdateringar.",
+      "later": "Senare",
+      "releaseNotes": "Versionsinformation"
+    },
+    "daemon": {
+      "fixHintElectron": "Avsluta och starta om Cabinet för att starta om agent-demonen.",
+      "fixHintDev": "Kör `npm run dev:daemon` (eller starta om `npm run dev:all`) för att få igång agent-demonen igen.",
+      "notResponding": "Agent-demonen svarar inte.",
+      "willFail": "Agenter, jobb och AI-förfrågningar kommer att misslyckas tills den är igång igen. {{fixHint}}"
+    }
   }
 }

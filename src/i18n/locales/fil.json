@@ -61,7 +61,8 @@
       "pickAnAgent": "Pumili ng ahente",
       "dismiss": "I-dismiss",
       "lockedHeartbeatTip": "Ang ahenteng ito ay nakahinto. Simulan ito sa tab ng Mga Ahente para paganahin ang heartbeat.",
-      "lockedRoutineTip": "Ang ahenteng ito ay nakahinto. Simulan ito sa tab ng Mga Ahente para paganahin ang mga routine nito."
+      "lockedRoutineTip": "Ang ahenteng ito ay nakahinto. Simulan ito sa tab ng Mga Ahente para paganahin ang mga routine nito.",
+      "avatar": "workspace.avatar"
     },
     "detail": {
       "clickToTurnOff": "I-click para patayin.",
@@ -1022,7 +1023,9 @@
       "getStarted": "Simulan"
     },
     "welcome": {
-      "paragraph": "Ang iyong Home ay pag-aari mo. Dito, magse-set up ka ng mga silid para sa iba't ibang bahagi ng iyong buhay: trabaho, second brain, pananaliksik, pamilya. At bawat silid ay may mga cabinet: ang iyong mga tala, ang iyong mga file, at isang AI team na tahimik na gumagawa sa background."
+      "paragraph": "Ang iyong Home ay pag-aari mo. Dito, magse-set up ka ng mga silid para sa iba't ibang bahagi ng iyong buhay: trabaho, second brain, pananaliksik, pamilya. At bawat silid ay may mga cabinet: ang iyong mga tala, ang iyong mga file, at isang AI team na tahimik na gumagawa sa background.",
+      "namePrompt": "Ano ang pangalan mo?",
+      "heading": "Maligayang pagdating <accent>sa tahanan</accent>"
     },
     "welcomeBack": {
       "heading": "Maligayang pagbabalik",
@@ -1051,6 +1054,107 @@
       "finish": "Tapusin",
       "complete": "Kumpletuhin ang setup",
       "copyToClipboard": "Kopyahin sa clipboard"
+    },
+    "cabinetCreated": {
+      "continue": "Ipagpatuloy ang pag-setup",
+      "heading": "Nalikha na ang iyong Cabinet",
+      "subtitle": "Lahat ay naka-setup at handa na.",
+      "agentsReady_one": "{{count}} ahente ang handang magtrabaho",
+      "agentsReady_other": "{{count}} ahente ang handang magtrabaho",
+      "scheduledJobs_one": "{{count}} nakatakdang trabaho",
+      "scheduledJobs_other": "{{count}} nakatakdang trabaho",
+      "subCabinets_one": "{{count}} sub-cabinet",
+      "subCabinets_other": "{{count}} sub-cabinet",
+      "agentsReady": "{{count}} ahente ang handang magtrabaho",
+      "scheduledJobs": "{{count}} nakatakdang trabaho",
+      "subCabinets": "{{count}} sub-cabinet"
+    },
+    "cloud": {
+      "alreadyOnList": "Nasa listahan ka na — makikipag-ugnayan kami.",
+      "aside": "Malapit na ang Cabinet Cloud. Parehong produkto, walang abala sa self-hosting.",
+      "description": "Buksan ang iyong Cabinet mula sa anumang device habang patuloy na gumagana ang iyong mga AI agent — nagda-draft, nagsasaliksik, nag-oorganisa — kahit nakasara ang iyong laptop.",
+      "error": "May nagkamali. Suriin ang email at subukang muli.",
+      "joinWaitlist": "Sumali sa waitlist",
+      "onList": "Nasa listahan ka na. Ime-email ka namin kapag bukas na ang Cabinet Cloud.",
+      "sending": "Ipinapadala…",
+      "title": "Ang iyong Cabinet, kahit saan. Ang iyong AI team, laging aktibo.",
+      "waitlistSubtitle": "Kumonekta mula kahit saan. Ang iyong AI team ay gumagana 24/7."
+    },
+    "discord": {
+      "aside": "Kung gusto mo ng mga bagong feature muna at mas gusto ang 'halika' kaysa 'magsumite ng ticket,' ito ang iyong silid.",
+      "description": "Dito nagiging feature ang feedback, nagiging debate ang mga screenshot, at karaniwang may nakakahanap ng edge case bago ka pa nito matagpuan.",
+      "joinBadge": "Sumali",
+      "title": "Sa Discord nangyayari ang magandang kakaibahan."
+    },
+    "github": {
+      "aside": "Ang Cabinet ay open source. Kung gusto mo ang bisyon, tulungan kaming ipalaganap ang balita.",
+      "description": "Ang isang GitHub star ay nakakatulong upang mas maraming tao ang makatuklas sa Cabinet at sumali sa komunidad.",
+      "starsLabel": "{{stars}} GitHub stars",
+      "title": "Tulungan ang komunidad ng Cabinet na lumago"
+    },
+    "launch": {
+      "beforeYouLaunch": "Bago ka mag-launch",
+      "defaultCabinetName": "Ang iyong Cabinet",
+      "defaultDescription": "Base ng kaalaman + AI team",
+      "launchCabinet": "Ilunsad ang Cabinet",
+      "settingUp": "Ina-setup...",
+      "disclaimerAccess": "<strong>Ang mga ahente ay tumatakbo nang may buong access.</strong> Gumagamit ang Cabinet ng <flag>--dangerously-skip-permissions</flag> (Claude Code) at katumbas na flags sa ibang provider. Ito ay kapareho ng pagpapatakbo ng mga CLI tool na ito mula sa iyong sariling terminal. Anumang MCP server o tool na iyong na-configure ay maaaring awtomatikong tawagin ng mga ahente.",
+      "disclaimerBackup": "<strong>Regular na i-backup ang iyong data.</strong> Maaaring magbasa, magsulat, at magtanggal ng mga file ang mga ahente sa iyong KB at mga naka-link na repo. Hindi responsable ang Cabinet sa pagkawala ng data. Ikaw ang responsable sa mga AI provider na pipiliin mo at sa kanilang mga tuntunin ng serbisyo.",
+      "disclaimerBeta": "<strong>Beta software. Maaaring magkaroon ng problema.</strong> Mabilis kaming mag-ship. Maaaring magkaroon ng breaking changes nang walang abiso.",
+      "legalNotice": "Sa pagpapatuloy, sumasang-ayon ka sa aming <terms>Mga Tuntunin</terms> at <privacy>Privacy</privacy>. Ang Cabinet ay isang <oss>open-source na proyekto</oss>."
+    },
+    "provider": {
+      "agentType": "{{type}} ahente",
+      "close": "Isara",
+      "comingSoon": "Malapit na",
+      "guide": "Gabay",
+      "heading": "Provider ng Ahente",
+      "install": "I-install",
+      "logIn": "Mag-log in",
+      "openTerminalButton": "Buksan ang terminal",
+      "openTerminalDetail": "Kakailanganin mo ng terminal para patakbuhin ang mga susunod na hakbang.",
+      "openTerminalError": "Hindi awtomatikong mabuksan ang terminal. Buksan nang mano-mano ang iyong system terminal.",
+      "openTerminalTitle": "Magbukas ng terminal",
+      "recheck": "Muling suriin ang mga provider",
+      "rerunVerify": "Muling patakbuhin ang pag-verify",
+      "runVerify": "Patakbuhin ang pag-verify",
+      "setupTitle": "{{name}} setup",
+      "skipForNow": "Laktawan muna",
+      "subtitle": "Kailangan ng Cabinet ng isang AI CLI para paganahin ang iyong mga ahente.",
+      "verifyExplanation": "Pinapatakbo ng pag-verify ang headless prompt ng provider mula simula hanggang dulo at kinakategorya ang anumang pagkabigo para malaman mo kung aling hakbang ang babalikan.",
+      "verifying": "Nagbe-verify…",
+      "failedAtStep": "Nabigo sa hakbang: <strong>{{step}}</strong>"
+    },
+    "roomSetup": {
+      "subtitle": "Para saan ang cabinet na ito? Bawat silid ay may sariling AI team.",
+      "heading": "Pumili ng <accent>silid</accent>"
+    },
+    "team": {
+      "browseAll": "I-browse lahat",
+      "browseCabinets": "I-browse ang mga cabinet",
+      "cabinetNameLabel": "Pangalan ng cabinet",
+      "cancel": "Kanselahin",
+      "importButton": "I-import",
+      "importFailed": "Nabigo ang pag-import",
+      "importFailedConnection": "Nabigo ang pag-import. Suriin ang iyong koneksyon.",
+      "importTitle": "I-import ang {{name}}",
+      "orPickAgents": "O piliin ang iyong mga ahente",
+      "required": "Kinakailangan",
+      "startFromTemplate": "Magsimula sa isang template",
+      "subtitle": "Bawat cabinet ay isang AI team — mga ahente, gawain, at isang ibinahaging knowledge base, nagtutulungan bilang isa.",
+      "heading": "Buuin ang <accent>iyong</accent> team",
+      "agentCount_one": "{{count}} ahente",
+      "agentCount_other": "{{count}} mga ahente",
+      "jobCount_one": "{{count}} gawain",
+      "jobCount_other": "{{count}} mga gawain",
+      "subCabinetCount_one": "{{count}} sub-cabinet",
+      "subCabinetCount_other": "{{count}} mga sub-cabinet",
+      "cabinetsImported_one": "{{count}} cabinet na na-import",
+      "cabinetsImported_other": "{{count}} mga cabinet na na-import",
+      "agentCount": "{{count}} mga ahente",
+      "cabinetsImported": "{{count}} mga cabinet na na-import",
+      "jobCount": "{{count}} mga gawain",
+      "subCabinetCount": "{{count}} mga sub-cabinet"
     }
   },
   "search": {
@@ -1332,7 +1436,14 @@
       "savedAgoSeconds": "{{n}} segundo na ang nakalipas",
       "savedAgoMinutes": "{{n}} minuto na ang nakalipas",
       "savedAgoHours": "{{n}} oras na ang nakalipas",
-      "savedAgoDays": "{{n}} araw na ang nakalipas"
+      "savedAgoDays": "{{n}} araw na ang nakalipas",
+      "saveFailedRetry": "Nabigo ang pag-save — subukang muli",
+      "savingText": "Nagse-save…",
+      "savedText": "Na-save",
+      "editingText": "Nag-e-edit…",
+      "savedAgo": "Na-save · {{ago}}",
+      "word": "salita",
+      "words": "mga salita"
     },
     "git": {
       "statusModified": "Binago",
@@ -1382,7 +1493,11 @@
       "syncAriaLabelWithLast": "Kunin ang pinakabagong pagbabago mula sa GitHub at i-refresh. Huling na-sync {{when}}.",
       "terminal": "Terminal",
       "openTerminal": "Buksan ang terminal",
-      "newTerminalTab": "Bagong tab ng terminal"
+      "newTerminalTab": "Bagong tab ng terminal",
+      "pulling": "Hinihila…",
+      "pulled": "Na-update mula sa remote",
+      "upToDate": "Napapanahon",
+      "pullFailed": "Nabigo ang paghila"
     },
     "update2": {
       "updateAvailable": "Available ang update {{version}}",
@@ -1392,6 +1507,9 @@
       "dismiss": "Balewalain",
       "close": "Isara",
       "openSettings": "Buksan ang Mga Setting para suriin ang na-install na update"
+    },
+    "misc": {
+      "restartToFinishUpdate": "I-restart para matapos ang update"
     }
   },
   "tasks": {
@@ -1442,5 +1560,47 @@
     "itemArchived": "{{title}} · na-archive",
     "itemDefault": "{{title}} · {{when}}",
     "toggleRunning": "{{count}} tumatakbo — ipakita ang tasks rail"
+  },
+  "chrome": {
+    "nav": {
+      "home": "Home",
+      "agents": "Mga Ahente",
+      "tasks": "Mga Gawain",
+      "ai": "AI",
+      "menu": "Menu",
+      "primaryAriaLabel": "Pangunahin"
+    },
+    "returnTo": {
+      "task": "Gawain",
+      "tasks": "Mga Gawain",
+      "agent": "Ahente",
+      "agents": "Mga Ahente",
+      "cabinet": "Cabinet",
+      "home": "Home",
+      "settings": "Mga Setting",
+      "registry": "Registry",
+      "back": "Bumalik",
+      "backTo": "Bumalik sa {{label}}"
+    },
+    "theme": {
+      "defaultHeader": "Default",
+      "dark": "Madilim",
+      "darkThemes": "Mga Madilim na Tema",
+      "lightThemes": "Mga Maliwanag na Tema"
+    },
+    "update": {
+      "restartTitle": "I-restart ang Cabinet para matapos ang pag-update",
+      "availableTitle": "May available na Cabinet {{version}}",
+      "updatesTitle": "Mga update ng Cabinet",
+      "description": "Awtomatikong sinusuri ng Cabinet ang mga release. Habang eksperimental pa ang produkto, panatilihin ang kopya ng iyong data bago mag-install ng mga update.",
+      "later": "Mamaya",
+      "releaseNotes": "Mga tala ng release"
+    },
+    "daemon": {
+      "fixHintElectron": "Lumabas at muling ilunsad ang Cabinet para i-restart ang agent daemon.",
+      "fixHintDev": "Patakbuhin ang `npm run dev:daemon` (o i-restart ang `npm run dev:all`) para muling buhayin ang agent daemon.",
+      "notResponding": "Hindi tumutugon ang agent daemon.",
+      "willFail": "Magfe-fail ang mga agent, trabaho, at AI request hangga't hindi ito bumabalik. {{fixHint}}"
+    }
   }
 }

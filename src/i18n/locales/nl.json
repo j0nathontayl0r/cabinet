@@ -61,7 +61,8 @@
       "pickAnAgent": "Kies een agent",
       "dismiss": "Sluiten",
       "lockedHeartbeatTip": "Deze agent is gestopt. Start deze op het tabblad 'Agenten' om de hartslag in te schakelen.",
-      "lockedRoutineTip": "Deze agent is gestopt. Start deze op het tabblad 'Agenten' om de routines in te schakelen."
+      "lockedRoutineTip": "Deze agent is gestopt. Start deze op het tabblad 'Agenten' om de routines in te schakelen.",
+      "avatar": "workspace.avatar"
     },
     "detail": {
       "clickToTurnOff": "Klik om uit te schakelen.",
@@ -244,7 +245,7 @@
     "newApiKey": "Nieuwe API-sleutel"
   },
   "updateSummary": {
-    "cabinetUpdates": "Cabinet Updates",
+    "cabinetUpdates": "Cabinet-updates",
     "dataDirectory": "Datamap",
     "backups": "Back-ups"
   },
@@ -412,7 +413,7 @@
   },
   "keyboardShortcuts": {
     "title": "Sneltoetsen",
-    "filterPlaceholder": "Filter…",
+    "filterPlaceholder": "Filteren…",
     "close": "Sluiten"
   },
   "agentDetailPanelPlus": {
@@ -1022,7 +1023,9 @@
       "getStarted": "Aan de slag"
     },
     "welcome": {
-      "paragraph": "Jouw Home is van jou. Hierin richt je kamers in voor verschillende onderdelen van je leven: werk, second brain, onderzoek, familie. En elke kamer heeft cabinets: jouw notities, jouw bestanden en een AI-team dat op de achtergrond stil dingen voor je regelt."
+      "paragraph": "Jouw Home is van jou. Hierin richt je kamers in voor verschillende onderdelen van je leven: werk, second brain, onderzoek, familie. En elke kamer heeft cabinets: jouw notities, jouw bestanden en een AI-team dat op de achtergrond stil dingen voor je regelt.",
+      "namePrompt": "Wat is je naam?",
+      "heading": "Welkom <accent>thuis</accent>"
     },
     "welcomeBack": {
       "heading": "Welkom terug",
@@ -1051,6 +1054,280 @@
       "finish": "Voltooien",
       "complete": "Installatie voltooien",
       "copyToClipboard": "Kopiëren naar klembord"
+    },
+    "cabinetCreated": {
+      "continue": "Instellen voortzetten",
+      "heading": "Je cabinet is aangemaakt",
+      "subtitle": "Alles is ingesteld en klaar voor gebruik.",
+      "agentsReady_one": "{{count}} agent klaar om te werken",
+      "agentsReady_other": "{{count}} agents klaar om te werken",
+      "scheduledJobs_one": "{{count}} geplande taak",
+      "scheduledJobs_other": "{{count}} geplande taken",
+      "subCabinets_one": "{{count}} sub-cabinet",
+      "subCabinets_other": "{{count}} sub-cabinets",
+      "agentsReady": "{{count}} agents klaar om te werken",
+      "scheduledJobs": "{{count}} geplande taken",
+      "subCabinets": "{{count}} sub-cabinets"
+    },
+    "cloud": {
+      "alreadyOnList": "Je staat al op de lijst — we nemen contact op.",
+      "aside": "Cabinet Cloud komt eraan. Hetzelfde product, zonder de complexiteit van zelf-hosting.",
+      "description": "Open je Cabinet vanaf elk apparaat terwijl je AI-agents blijven werken — concepten opstellen, onderzoeken, organiseren — zelfs als je laptop gesloten is.",
+      "error": "Er is iets misgegaan. Controleer het e-mailadres en probeer het opnieuw.",
+      "joinWaitlist": "Aanmelden wachtlijst",
+      "onList": "Je staat op de lijst. We sturen je een e-mail zodra Cabinet Cloud beschikbaar is.",
+      "sending": "Verzenden…",
+      "title": "Je Cabinet, overal. Je AI-team, altijd actief.",
+      "waitlistSubtitle": "Verbind vanaf elke locatie. Je AI-team werkt 24/7."
+    },
+    "discord": {
+      "aside": "Als je nieuwe functies als eerste wilt en liever 'kom chatten' dan 'stuur een ticket in,' dan is dit jouw plek.",
+      "description": "Hier wordt feedback omgezet in functies, screenshots in discussies, en vindt iemand meestal de 'edge case' voordat deze jou vindt.",
+      "joinBadge": "Deelnemen",
+      "title": "Discord is waar de leuke gekkigheid gebeurt."
+    },
+    "github": {
+      "aside": "Cabinet is open source. Als je de visie waardeert, help ons dan het woord te verspreiden.",
+      "description": "Een GitHub-ster helpt meer mensen Cabinet te ontdekken en zich bij de community aan te sluiten.",
+      "starsLabel": "{{stars}} GitHub-sterren",
+      "title": "Help de Cabinet-community groeien"
+    },
+    "launch": {
+      "beforeYouLaunch": "Voordat je lanceert",
+      "defaultCabinetName": "Jouw Cabinet",
+      "defaultDescription": "Kennisbank + AI-team",
+      "launchCabinet": "Cabinet starten",
+      "settingUp": "Instellen...",
+      "disclaimerAccess": "<strong>Agents draaien met volledige toegang.</strong> Cabinet gebruikt <flag>--dangerously-skip-permissions</flag> (Claude Code) en gelijkwaardige flags bij andere providers. Dit is identiek aan het uitvoeren van deze CLI-tools vanuit uw eigen terminal. Alle MCP-servers of tools die u hebt geconfigureerd, kunnen automatisch worden aangeroepen door agents.",
+      "disclaimerBackup": "<strong>Maak regelmatig een back-up van uw gegevens.</strong> Agents kunnen bestanden lezen, schrijven en verwijderen in uw KB en gekoppelde repo's. Cabinet is niet verantwoordelijk voor gegevensverlies. U bent verantwoordelijk voor de AI-providers die u kiest en hun servicevoorwaarden.",
+      "disclaimerBeta": "<strong>Bèta software. Er kunnen problemen optreden.</strong> We leveren snel. Ingrijpende wijzigingen kunnen zonder kennisgeving worden doorgevoerd.",
+      "legalNotice": "Door verder te gaan, gaat u akkoord met onze <terms>Voorwaarden</terms> en <privacy>Privacy</privacy>. Cabinet is een <oss>open-source project</oss>."
+    },
+    "provider": {
+      "agentType": "{{type}}-agent",
+      "close": "Sluiten",
+      "comingSoon": "Binnenkort beschikbaar",
+      "guide": "Gids",
+      "heading": "Agentprovider",
+      "install": "Installeren",
+      "logIn": "Inloggen",
+      "openTerminalButton": "Terminal openen",
+      "openTerminalDetail": "U hebt een terminal nodig om de volgende stappen uit te voeren.",
+      "openTerminalError": "Kon terminal niet automatisch openen. Open uw systeemterminal handmatig.",
+      "openTerminalTitle": "Een terminal openen",
+      "recheck": "Providers opnieuw controleren",
+      "rerunVerify": "Verificatie opnieuw uitvoeren",
+      "runVerify": "Verificatie uitvoeren",
+      "setupTitle": "{{name}}-installatie",
+      "skipForNow": "Nu overslaan",
+      "subtitle": "Cabinet heeft een AI CLI nodig om uw agents aan te sturen.",
+      "verifyExplanation": "Verificatie voert de headless prompt van de provider end-to-end uit en classificeert eventuele fouten, zodat u weet welke stap u opnieuw moet bekijken.",
+      "verifying": "Bezig met verifiëren…",
+      "failedAtStep": "Mislukt bij stap: <strong>{{step}}</strong>"
+    },
+    "roomSetup": {
+      "subtitle": "Waar is dit cabinet voor? Elke kamer heeft zijn eigen AI-team.",
+      "heading": "Kies een <accent>kamer</accent>"
+    },
+    "rooms": {
+      "office": {
+        "label": "Het Kantoor",
+        "tagline": "Beheer een bedrijf, startup of nevenproject.",
+        "workspaceLabel": "Bedrijfs- of projectnaam",
+        "workspacePlaceholder": "Acme Corp",
+        "descriptionLabel": "Wat doe je?",
+        "descriptionPlaceholder": "We maken een podcast over AI-startups",
+        "departmentNoun": "Afdeling",
+        "teamSizeLabel": "Teamgrootte",
+        "exampleAgents": {
+          "0": "CEO",
+          "1": "Redacteur"
+        }
+      },
+      "study": {
+        "label": "Studie",
+        "tagline": "Je tweede brein — schrijven, notities, persoonlijke assistent.",
+        "workspaceLabel": "Geef je cabinet een naam",
+        "workspacePlaceholder": "Mijn Studie",
+        "descriptionLabel": "Met welke levensgebieden wil je hulp?",
+        "descriptionPlaceholder": "Schrijven, e-mail triage, agenda, gewoonte volgen",
+        "departmentNoun": "Gebied",
+        "exampleAgents": {
+          "0": "Assistent",
+          "1": "Bibliothecaris"
+        }
+      },
+      "lab": {
+        "label": "Onderzoekslab",
+        "tagline": "Academisch werk, literatuur, onderwijs, scriptie.",
+        "workspaceLabel": "Werkruimtenaam",
+        "workspacePlaceholder": "Filosofie van de Geest",
+        "descriptionLabel": "Wat is je vakgebied of wat onderzoek je?",
+        "descriptionPlaceholder": "Fenomenologie, bewustzijn, Introductie Filosofie doceren",
+        "departmentNoun": "Gebied",
+        "exampleAgents": {
+          "0": "Onderzoeksleider",
+          "1": "Bibliothecaris"
+        }
+      },
+      "family-room": {
+        "label": "Familiekamer",
+        "tagline": "Huishouden, familieagenda, maaltijden, kinderen.",
+        "workspaceLabel": "Naam huishouden",
+        "workspacePlaceholder": "De Nguyen Familie",
+        "descriptionLabel": "Wie woont hier en wat houd je allemaal draaiende?",
+        "descriptionPlaceholder": "Twee ouders, drie kinderen, twee scholen, één hond",
+        "departmentNoun": "Gebied",
+        "teamSizeLabel": "Huishoudgrootte",
+        "exampleAgents": {
+          "0": "Huismanager",
+          "1": "Planner"
+        }
+      },
+      "blank": {
+        "label": "Blanco Ruimte",
+        "tagline": "Nog niets. Breng je eigen agents, je eigen vorm.",
+        "workspaceLabel": "Noem je cabinet",
+        "workspacePlaceholder": "Mijn Cabinet",
+        "descriptionLabel": "Waar is het voor?",
+        "descriptionPlaceholder": "Alles — laat leeg als je het nog niet zeker weet",
+        "departmentNoun": "Groep",
+        "exampleAgents": {
+          "0": "Jouw keuze"
+        }
+      }
+    },
+    "departments": {
+      "leadership": "Leiderschap",
+      "marketing": "Marketing",
+      "content": "Content",
+      "engineering": "Engineering",
+      "product-and-design": "Product & Design",
+      "business": "Business",
+      "research": "Onderzoek",
+      "finance-and-ops": "Financiën & Ops",
+      "personal": "Persoonlijk",
+      "second-brain": "Tweede brein",
+      "writing": "Schrijven",
+      "tools": "Tools",
+      "life-admin": "Levensadministratie",
+      "from-the-office": "Vanuit kantoor",
+      "writing-and-notes": "Schrijven & notities",
+      "other": "Overig",
+      "household": "Huishouden",
+      "admin": "Administratie",
+      "money": "Geld",
+      "product": "Product",
+      "design": "Design",
+      "sales": "Sales",
+      "support": "Support",
+      "analytics": "Analytics",
+      "finance": "Financiën",
+      "legal": "Juridisch",
+      "people": "Mensen"
+    },
+    "demo": {
+      "greeting": {
+        "office": "Goedemorgen team! Welkom bij {{workspace}}. Laten we er meteen invliegen.",
+        "study": "Morgen. Je tweede brein is online — welkom terug bij {{home}}.",
+        "lab": "Onderzoeksdesk klaar — \"{{workspace}}\". Waar duiken we vandaag in?",
+        "family-room": "Thuis-HQ start op — {{home}}. Laten we iedereen op de juiste plek krijgen.",
+        "blank": "Blanco lei — \"{{workspace}}\". Wat wil je hier bouwen, {{home}}?"
+      },
+      "assign": "{{name}}, kun jij {{topic}} oppakken?",
+      "fallbackTopic": "wat nu",
+      "office": {
+        "replies": {
+          "0": "Ik pak het op. Landschapsoverzicht is klaar tegen het einde van de dag.",
+          "1": "Plan wordt al opgesteld. Ik deel het zo meteen in #content.",
+          "2": "Basisworkflows worden nu opgezet. Ziet er tot nu toe goed uit."
+        },
+        "topics": {
+          "0": "concurrentieonderzoek",
+          "1": "de contentkalender",
+          "2": "het lanceringsplan"
+        },
+        "closing": "Goede energie allemaal. Laten we er een sterke eerste week van maken."
+      },
+      "study": {
+        "replies": {
+          "0": "Ik sorteer de inbox en haal eruit wat jouw aandacht nodig heeft.",
+          "1": "Agenda is leeg tot 15.00 uur — goed moment om te schrijven.",
+          "2": "Ik heb al drie nieuwe notities gekoppeld aan de 'Dagelijkse' index."
+        },
+        "topics": {
+          "0": "inbox-triage van vandaag",
+          "1": "het schrijfwerk van deze week",
+          "2": "mijn leeslijst"
+        },
+        "closing": "Goed. Geef een seintje als er iets is — anders blijf ik uit de weg."
+      },
+      "lab": {
+        "replies": {
+          "0": "Nieuwste artikel hierover wordt nu opgehaald — conceptoverzicht over een uur.",
+          "1": "Ik synchroniseer hierna de bibliografie en markeer duplicaten.",
+          "2": "College-overzicht voor donderdag is bijna klaar voor beoordeling."
+        },
+        "topics": {
+          "0": "de literatuurstudie",
+          "1": "collegevoorbereiding van donderdag",
+          "2": "de referentielijst"
+        },
+        "closing": "Houd me op de hoogte. Ik beoordeel alles wat je stuurt tegen het einde van de dag."
+      },
+      "family-room": {
+        "replies": {
+          "0": "Schema is leeg na 16.00 uur. Overlappende afzetmomenten worden gemarkeerd.",
+          "1": "Menu voor de week opgesteld — boodschappenlijst is klaar voor beoordeling.",
+          "2": "Activiteiten van de kinderen gesynchroniseerd. DnD-avond gaat nog steeds door op vrijdag."
+        },
+        "topics": {
+          "0": "schema van vandaag",
+          "1": "het maaltijdplan",
+          "2": "de activiteiten van de kinderen"
+        },
+        "closing": "Bedankt allemaal. Geef een seintje als er iets verandert gedurende de dag."
+      },
+      "blank": {
+        "replies": {
+          "0": "Begrepen. Klaar wanneer jij dat bent.",
+          "1": "Sta paraat.",
+          "2": "Ik wacht op instructies."
+        },
+        "topics": {
+          "0": "het eerste",
+          "1": "het volgende",
+          "2": "de open vraag"
+        },
+        "closing": "Wanneer je klaar bent, vertel ons wat we moeten doen."
+      }
+    },
+    "team": {
+      "browseAll": "Alles bekijken",
+      "browseCabinets": "Cabinets bekijken",
+      "cabinetNameLabel": "Cabinetnaam",
+      "cancel": "Annuleren",
+      "importButton": "Importeren",
+      "importFailed": "Importeren mislukt",
+      "importFailedConnection": "Importeren mislukt. Controleer uw verbinding.",
+      "importTitle": "{{name}} importeren",
+      "orPickAgents": "Of kies uw agents",
+      "required": "Vereist",
+      "startFromTemplate": "Beginnen met een sjabloon",
+      "subtitle": "Elk cabinet is een AI-team — agents, taken en een gedeelde kennisbank, die samenwerken als één geheel.",
+      "heading": "Stel <accent>uw</accent> team samen",
+      "agentCount_one": "{{count}} agent",
+      "agentCount_other": "{{count}} agenten",
+      "jobCount_one": "{{count}} taak",
+      "jobCount_other": "{{count}} taken",
+      "subCabinetCount_one": "{{count}} sub-cabinet",
+      "subCabinetCount_other": "{{count}} sub-cabinets",
+      "cabinetsImported_one": "{{count}} cabinet geïmporteerd",
+      "cabinetsImported_other": "{{count}} cabinets geïmporteerd",
+      "agentCount": "{{count}} agenten",
+      "cabinetsImported": "{{count}} cabinets geïmporteerd",
+      "jobCount": "{{count}} taken",
+      "subCabinetCount": "{{count}} sub-cabinets"
     }
   },
   "search": {
@@ -1075,9 +1352,9 @@
       "title": "Taal",
       "description": "Wijzigt taal en leesrichting. Bestaande pagina's behouden hun document-specifieke richting.",
       "english": "Engels",
-      "hebrew": "עברית",
-      "chineseSimplified": "简体中文",
-      "chineseTraditional": "繁體中文",
+      "hebrew": "Hebreeuws",
+      "chineseSimplified": "Vereenvoudigd Chinees",
+      "chineseTraditional": "Traditioneel Chinees",
       "moreLanguages": "Meer talen",
       "moreLanguagesHint": "Klik op een taal om aan te geven dat je Cabinet in die taal wilt — we geven prioriteit aan de meestgevraagde talen.",
       "comingSoon": "Binnenkort beschikbaar",
@@ -1332,7 +1609,14 @@
       "savedAgoSeconds": "{{n}}s geleden",
       "savedAgoMinutes": "{{n}}m geleden",
       "savedAgoHours": "{{n}}u geleden",
-      "savedAgoDays": "{{n}}d geleden"
+      "savedAgoDays": "{{n}}d geleden",
+      "saveFailedRetry": "Opslaan mislukt — opnieuw proberen",
+      "savingText": "Opslaan…",
+      "savedText": "Opgeslagen",
+      "editingText": "Bewerken…",
+      "savedAgo": "Opgeslagen · {{ago}}",
+      "word": "woord",
+      "words": "woorden"
     },
     "git": {
       "statusModified": "Gewijzigd",
@@ -1382,7 +1666,11 @@
       "syncAriaLabelWithLast": "Haal nieuwste wijzigingen op van GitHub en ververs. Laatst gesynchroniseerd {{when}}.",
       "terminal": "Terminal",
       "openTerminal": "Terminal openen",
-      "newTerminalTab": "Nieuw terminaltabblad"
+      "newTerminalTab": "Nieuw terminaltabblad",
+      "pulling": "Ophalen…",
+      "pulled": "Bijgewerkt vanaf remote",
+      "upToDate": "Up-to-date",
+      "pullFailed": "Ophalen mislukt"
     },
     "update2": {
       "updateAvailable": "Update {{version}} beschikbaar",
@@ -1392,6 +1680,9 @@
       "dismiss": "Sluiten",
       "close": "Sluiten",
       "openSettings": "Open Instellingen om de geïnstalleerde update te bekijken"
+    },
+    "misc": {
+      "restartToFinishUpdate": "Herstarten om update te voltooien"
     }
   },
   "tasks": {
@@ -1442,5 +1733,47 @@
     "itemArchived": "{{title}} · gearchiveerd",
     "itemDefault": "{{title}} · {{when}}",
     "toggleRunning": "{{count}} actief — takenbalk tonen"
+  },
+  "chrome": {
+    "nav": {
+      "home": "Startpagina",
+      "agents": "Agenten",
+      "tasks": "Taken",
+      "ai": "AI",
+      "menu": "Menu",
+      "primaryAriaLabel": "Primair"
+    },
+    "returnTo": {
+      "task": "Taak",
+      "tasks": "Taken",
+      "agent": "Agent",
+      "agents": "Agenten",
+      "cabinet": "Cabinet",
+      "home": "Startpagina",
+      "settings": "Instellingen",
+      "registry": "Register",
+      "back": "Terug",
+      "backTo": "Terug naar {{label}}"
+    },
+    "theme": {
+      "defaultHeader": "Standaard",
+      "dark": "Donker",
+      "darkThemes": "Donkere thema's",
+      "lightThemes": "Lichte thema's"
+    },
+    "update": {
+      "restartTitle": "Herstart Cabinet om de update te voltooien",
+      "availableTitle": "Cabinet {{version}} is beschikbaar",
+      "updatesTitle": "Cabinet-updates",
+      "description": "Cabinet controleert automatisch op nieuwe versies. Aangezien het product nog experimenteel is, raden we aan een kopie van uw gegevens te bewaren voordat u updates installeert.",
+      "later": "Later",
+      "releaseNotes": "Release-opmerkingen"
+    },
+    "daemon": {
+      "fixHintElectron": "Sluit Cabinet af en start het opnieuw om de agent-daemon te herstarten.",
+      "fixHintDev": "Voer `npm run dev:daemon` uit (of herstart `npm run dev:all`) om de agent-daemon opnieuw te starten.",
+      "notResponding": "De agent-daemon reageert niet.",
+      "willFail": "Agenten, taken en AI-verzoeken zullen mislukken totdat deze weer werkt. {{fixHint}}"
+    }
   }
 }
