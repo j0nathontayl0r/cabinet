@@ -1,7 +1,7 @@
 "use client";
 
 import { type CSSProperties, type ReactNode } from "react";
-import { Archive, BookOpen, Users, SquareKanban, ChevronDown } from "lucide-react";
+import { Archive, BookOpen, Users, SquareKanban, ChevronDown, Check } from "lucide-react";
 import { TOUR_PALETTE as P } from "./palette";
 import { useLocale } from "@/i18n/use-locale";
 
@@ -16,6 +16,11 @@ interface MockupSidebarProps {
    * the tabs stay decorative there.
    */
   onTabChange?: (tab: MockupTab) => void;
+  /**
+   * Tabs to mark as completed with a green check badge. Used by the onboarding
+   * rail to show progress as the user names the cabinet, hires an agent, etc.
+   */
+  completedTabs?: MockupTab[];
   children?: ReactNode;
   /**
    * Hide the tab rail entirely. Used by the intro slide when only the
@@ -69,6 +74,7 @@ const TAB_DEFS: Array<{ id: MockupTab; labelKey: string; icon: typeof BookOpen }
 export function MockupSidebar({
   activeTab,
   onTabChange,
+  completedTabs,
   children,
   hideTabs = false,
   hideBody = false,
@@ -143,6 +149,7 @@ export function MockupSidebar({
           {TAB_DEFS.map((tab, i) => {
             const Icon = tab.icon;
             const active = tab.id === activeTab;
+            const completed = completedTabs?.includes(tab.id) ?? false;
             const tabClass =
               "relative flex w-full flex-col items-center gap-0.5 rounded-md px-1.5 pt-3 pb-2 transition-all duration-150";
             const tabStyle: CSSProperties = active
@@ -167,6 +174,30 @@ export function MockupSidebar({
                       : "rgba(168, 152, 136, 0.45)",
                   }}
                 />
+                {/* completion badge — bottom-right of the tab cell. Always
+                    rendered and toggled via a bouncy scale/opacity transition so
+                    it pops IN when completed and pops OUT when un-completed.
+                    Inline insets so position never depends on Tailwind logical
+                    inset generation. */}
+                <span
+                  aria-hidden={!completed}
+                  className="absolute flex items-center justify-center rounded-full"
+                  style={{
+                    bottom: 3,
+                    insetInlineEnd: 3,
+                    height: 14,
+                    width: 14,
+                    background: "#dcfce7",
+                    pointerEvents: "none",
+                    transformOrigin: "center",
+                    transform: completed ? "scale(1)" : "scale(0)",
+                    opacity: completed ? 1 : 0,
+                    transition:
+                      "transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 180ms ease",
+                  }}
+                >
+                  <Check style={{ height: 9, width: 9, color: "#16a34a" }} strokeWidth={3} />
+                </span>
                 <Icon className="h-[18px] w-[18px] shrink-0" />
                 <span className="text-[8px] font-semibold uppercase tracking-[0.1em]">
                   {t(tab.labelKey)}

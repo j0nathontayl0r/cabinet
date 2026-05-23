@@ -92,6 +92,7 @@ const ONBOARDING_VERIFY_META: Record<OnboardingVerifyStatus, { labelKey: string;
 
 interface OnboardingAnswers {
   name: string;
+  email: string;
   role: string;
   homeName: string;
   roomType: RoomType;
@@ -940,11 +941,19 @@ function OnboardingCabinetRail({
     step >= STEP_TASK ? "tasks" : step >= STEP_PROVIDER ? "agents" : "data";
   const title = cabinetName.trim() || t("onboarding:rail.untitled");
   const files = ["index.md", "Getting Started", "Notes"];
+  // Progress checks: each tab gets a green tick once the user completes that
+  // part (names the cabinet, hires an agent, files a task).
+  const completedTabs: MockupTab[] = [
+    ...(cabinetName.trim() ? (["data"] as const) : []),
+    ...(agent ? (["agents"] as const) : []),
+    ...(task ? (["tasks"] as const) : []),
+  ];
 
   return shell(
     <>
       <div className="min-h-0 flex-1">
-          <MockupSidebar title={title} activeTab={activeTab} headerBadge="">
+          <MockupSidebar title={title} activeTab={activeTab} completedTabs={completedTabs} headerBadge="">
+
             {activeTab === "data" && (
               <div className="space-y-1.5 px-3 pt-3">
                 {files.map((f) => (
@@ -1143,6 +1152,9 @@ function TeamBuildStep({
               />
               <span className="text-sm font-medium" style={{ color: WEB.text }}>
                 Heartbeat
+              </span>
+              <span className="text-[10px]" style={{ color: WEB.textTertiary }}>
+                recommended
               </span>
             </div>
             <p className="mt-1 text-xs leading-relaxed" style={{ color: WEB.textSecondary }}>
@@ -1683,6 +1695,7 @@ export function OnboardingWizard({ onComplete }: { onComplete: () => void }) {
 
   const [answers, setAnswers] = useState<OnboardingAnswers>({
     name: "",
+    email: "",
     role: "",
     homeName: "",
     // The onboarding room starts blank; the user names it and gives it a
@@ -2008,6 +2021,7 @@ export function OnboardingWizard({ onComplete }: { onComplete: () => void }) {
           roomType: answers.roomType,
           answers: {
             name: answers.name,
+            email: answers.email.trim(),
             workspaceName: answers.workspaceName,
             description: answers.description,
             teamSize: answers.teamSize,
@@ -2297,6 +2311,28 @@ export function OnboardingWizard({ onComplete }: { onComplete: () => void }) {
                 </div>
 
                 <div
+                  className="wh-item space-y-2"
+                  style={{ ["--wh-d" as string]: "5.08s" } as React.CSSProperties}
+                >
+                  <label className="text-sm font-medium" style={{ color: WEB.text }}>
+                    {"What's your email?"}
+                  </label>
+                  <input
+                    type="email"
+                    value={answers.email}
+                    onChange={(e) => setAnswers({ ...answers, email: e.target.value })}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" && answers.name.trim()) {
+                        e.preventDefault();
+                        setStep(STEP_WHAT_IS_CABINET);
+                      }
+                    }}
+                    placeholder="you@example.com"
+                    style={inputStyle}
+                  />
+                </div>
+
+                <div
                   className="wh-item flex items-center justify-between pt-1"
                   style={{ ["--wh-d" as string]: "5.15s" } as React.CSSProperties}
                 >
@@ -2337,11 +2373,11 @@ export function OnboardingWizard({ onComplete }: { onComplete: () => void }) {
             <div className="mx-auto flex max-w-xl flex-col gap-7 animate-in fade-in duration-300">
               <div className="text-center space-y-2">
                 <h1 className="font-logo text-2xl tracking-tight italic" style={{ color: WEB.text }}>
-                  Create your first <span style={{ color: WEB.accent }}>room</span>
+                  Create your first <span style={{ color: WEB.accent }}>Cabinet</span>
                 </h1>
                 <p className="text-sm leading-relaxed" style={{ color: WEB.textSecondary }}>
-                  A room is your workspace: one big cabinet for a single part of your work or
-                  life, where your AI team helps you get it done.
+                  Your room is your workspace. Inside your room you have one big cabinet for a
+                  single part of your work or life, where your AI team helps you get it done.
                 </p>
               </div>
 
