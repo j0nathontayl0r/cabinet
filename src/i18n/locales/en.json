@@ -13,6 +13,8 @@
       "promptPlaceholder": "You are a marketing agent for…",
       "addAgentTitle": "Add an agent to your team",
       "addAgentDescription": "Pick a specialist from the library. You can edit its name, role, and instructions after it's added.",
+      "createFromScratchTitle": "Create from scratch",
+      "createFromScratchDescription": "Build a new agent with its own identity, role, and instructions.",
       "searchLibraryPlaceholder": "Search the library",
       "errorLoadLibrary": "Couldn't load the agent library.",
       "errorAddAgent": "Couldn't add this agent."
