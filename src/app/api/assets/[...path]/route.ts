@@ -3,6 +3,8 @@ import path from "path";
 import { resolveContentPath } from "@/lib/storage/path-utils";
 import { fileExists } from "@/lib/storage/fs-operations";
 import { autoCommit } from "@/lib/git/git-service";
+import { getDb } from "@/lib/db";
+import { decodeDrivePath } from "@/lib/google-drive/paths";
 import fs from "fs/promises";
 
 const MIME_TYPES: Record<string, string> = {
@@ -47,6 +49,40 @@ export async function GET(req: NextRequest, { params }: RouteParams) {
   try {
     const { path: segments } = await params;
     const virtualPath = segments.join("/");
+
+    // Google Drive file: path starts with "gdrive:" — validate against mounts and serve directly.
+    const driveAbsPath = decodeDrivePath(virtualPath);
+    if (driveAbsPath !== null) {
+      const normalized = path.normalize(driveAbsPath);
+      if (normalized.includes("..")) {
+        return NextResponse.json({ error: "Invalid path" }, { status: 400 });
+      }
+      const db = getDb();
+      const mounts = db.prepare("SELECT abs_path FROM google_drive_mounts WHERE enabled = 1").all() as { abs_path: string }[];
+      const inMount = mounts.some((m) => {
+        const mp = path.normalize(m.abs_path);
+        return normalized.startsWith(mp + path.sep) || normalized === mp;
+      });
+      if (!inMount) {
+        return NextResponse.json({ error: "Path is not within a mounted folder" }, { status: 403 });
+      }
+      try {
+        const stat = await fs.stat(normalized);
+        const ext = path.extname(normalized).toLowerCase();
+        const contentType = MIME_TYPES[ext] || "application/octet-stream";
+        const buffer = await fs.readFile(normalized);
+        return new NextResponse(buffer, {
+          headers: {
+            "Content-Type": contentType,
+            "Content-Length": String(stat.size),
+            "Cache-Control": "private, max-age=60",
+          },
+        });
+      } catch {
+        return NextResponse.json({ error: "File not found" }, { status: 404 });
+      }
+    }
+
     const resolved = resolveContentPath(virtualPath);
 
     if (!(await fileExists(resolved))) {

@@ -48,7 +48,11 @@ import {
   Copy,
   Trash2,
   TriangleAlert,
+  Cloud,
+  RefreshCw,
+  Settings,
 } from "lucide-react";
+import { GoogleDriveTreeSection } from "./google-drive-tree";
 import { cn } from "@/lib/utils";
 import { AgentAvatar, getAgentDisplayName } from "@/components/agents/agent-avatar";
 import { EditAgentIdentityDialog } from "@/components/agents/edit-agent-identity-dialog";
@@ -833,6 +837,7 @@ export function TreeView() {
                   ))
                 )}
               </SidebarSearch>
+              <GoogleDriveTreeSection depth={1} padFn={pad} itemClass={itemClass} />
                   </div>
                 </ContextMenuTrigger>
                 <ContextMenuContent>
