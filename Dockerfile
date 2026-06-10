@@ -70,6 +70,15 @@ FROM node:22-bookworm-slim AS runtime
 WORKDIR /app
 ENV NODE_ENV=production
 
+# Cabinet auto-commits knowledge-base edits via simple-git, which shells out to
+# the `git` binary at runtime — node:22-bookworm-slim does not ship it. Without
+# this, Cabinet's per-edit commits and in-app version history silently fail
+# (the workspace still reaches GitHub via the separate git-sync CronJob, but at
+# coarser 15-minute granularity).
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends git \
+    && rm -rf /var/lib/apt/lists/*
+
 # Pruned production node_modules (tsx, node-pty, better-sqlite3, simple-git,
 # next, react, etc.) and the Next.js build output.
 COPY --from=builder /app/node_modules ./node_modules
