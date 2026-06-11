@@ -81,10 +81,10 @@ RUN apt-get update \
 
 # AI agent CLIs that Cabinet drives as subprocesses. Installed globally to
 # /usr/local/bin, which is on Cabinet's ADAPTER_RUNTIME_PATH so the daemon
-# resolves them automatically. Authenticate at runtime via env vars
-# (ANTHROPIC_API_KEY / OPENAI_API_KEY from the cabinet-agent-keys Secret) —
-# not interactive `claude login` / `codex login`, whose tokens land under
-# $HOME and are lost on pod restart.
+# resolves them automatically. Authenticate via interactive `claude login` /
+# `codex login` run once in a terminal; CLAUDE_CONFIG_DIR / CODEX_HOME (set on
+# the daemon container) point their config dirs at the cabinet-agent-state PVC
+# so the OAuth tokens persist across pod restarts.
 RUN npm install -g @anthropic-ai/claude-code @openai/codex
 
 # Pruned production node_modules (tsx, node-pty, better-sqlite3, simple-git,
