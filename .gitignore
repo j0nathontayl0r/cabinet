@@ -51,8 +51,11 @@ next-env.d.ts
 /data-backup-*/
 /data copy/
 
-# claude code
-.claude/
+# claude code — ignore everything except project-level slash commands
+.claude/*
+!.claude/commands
+.claude/commands/*
+!.claude/commands/*.md
 
 # cabinetai CLI
 cabinetai/dist/
