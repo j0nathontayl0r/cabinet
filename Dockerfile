@@ -8,7 +8,7 @@
 #      (the repo's existing .dockerignore already excludes node_modules,
 #      .next, .git, data, and most *.md files from the build context).
 #   2. From that repo's root:
-#        docker build -t ghcr.io/j0nathontayl0r/cabinet:0.4.7 .
+#        docker build -t ghcr.io/j0nathontayl0r/cabinet:0.4.8 .
 #
 # Runtime model:
 #   - The image's default CMD starts BOTH the Next.js app (`npm run
@@ -77,8 +77,12 @@ ENV NODE_ENV=production
 # empty system CA store and every `git clone https://...` fails with "server
 # certificate verification failed. CAfile: none". (Node's own fetch() is
 # unaffected because Node bundles its own CAs; this only bites the git binary.)
+# openssh-client: Cabinet's in-app git pull (status-bar auto-pull) and any
+# ssh:// remote operations shell out to `ssh`. Without it, `git pull` against
+# the ssh:// cabinet-storage remote fails with "cannot run ssh: No such file
+# or directory" -> "fatal: unable to fork".
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends git ca-certificates \
+    && apt-get install -y --no-install-recommends git ca-certificates openssh-client \
     && rm -rf /var/lib/apt/lists/*
 
 # AI agent CLIs that Cabinet drives as subprocesses. Installed globally to
