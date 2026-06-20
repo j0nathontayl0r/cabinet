@@ -12,6 +12,7 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import { GDRIVE_MOUNTS_CHANGED_EVENT } from "@/components/sidebar/google-drive-tree";
+import { useTreeStore } from "@/stores/tree-store";
 
 interface BrowseDir {
   name: string;
@@ -37,10 +38,16 @@ export function ConnectDriveDialog({
   open,
   onOpenChange,
   cabinetPath,
+  mountAt,
 }: {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   cabinetPath: string;
+  /**
+   * When set, the folder is mounted INLINE as a symlink under this tree path
+   * (F2) instead of into the room's Drive browser. Undefined → browser surface.
+   */
+  mountAt?: string;
 }) {
   const [detected, setDetected] = useState<boolean | null>(null);
   const [rootPath, setRootPath] = useState<string | null>(null);
@@ -49,6 +56,7 @@ export function ConnectDriveDialog({
   const [loading, setLoading] = useState(false);
   const [connecting, setConnecting] = useState(false);
   const [policy, setPolicy] = useState<Policy>("read-only");
+  const loadTree = useTreeStore((s) => s.loadTree);
 
   const cabinetQs = cabinetPath ? `?cabinet=${encodeURIComponent(cabinetPath)}` : "";
 
@@ -111,17 +119,37 @@ export function ConnectDriveDialog({
     if (!currentPath) return;
     setConnecting(true);
     try {
-      const res = await fetch("/api/google-drive/mounts", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ absPath: currentPath, folderName, cabinet: cabinetPath, policy }),
-      });
+      const inline = mountAt !== undefined;
+      const res = await fetch(
+        inline ? "/api/knowledge-sources/connect-inline" : "/api/google-drive/mounts",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(
+            inline
+              ? {
+                  provider: "google-drive",
+                  absPath: currentPath,
+                  name: folderName,
+                  cabinet: cabinetPath,
+                  policy,
+                  parentPath: mountAt,
+                }
+              : { absPath: currentPath, folderName, cabinet: cabinetPath, policy },
+          ),
+        },
+      );
       if (!res.ok) {
         const data = (await res.json().catch(() => ({}))) as { error?: string };
         toast("error", data.error ?? `Failed to connect (${res.status})`);
         return;
       }
-      window.dispatchEvent(new Event(GDRIVE_MOUNTS_CHANGED_EVENT));
+      if (inline) {
+        // The symlink is a new tree node — refresh the tree to show it.
+        await loadTree({ fresh: true });
+      } else {
+        window.dispatchEvent(new Event(GDRIVE_MOUNTS_CHANGED_EVENT));
+      }
       toast("success", `Connected "${folderName}"`);
       onOpenChange(false);
     } catch {

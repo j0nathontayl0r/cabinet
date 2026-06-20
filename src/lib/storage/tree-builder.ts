@@ -6,6 +6,7 @@ import { createTtlCache, type TtlCache } from "@/lib/cache/ttl-cache";
 import { CABINET_LINK_META_CANDIDATES, CABINET_MANIFEST_FILE } from "@/lib/cabinets/files";
 import { ROOT_CABINET_PATH } from "@/lib/cabinets/paths";
 import type { TreeNode, GoogleFrontmatter } from "@/types";
+import { getInlineSourceMap, type InlineMark } from "@/lib/knowledge-sources/store";
 import { DATA_DIR, virtualPathFromFs, isHiddenEntry } from "./path-utils";
 import { listDirectory, readFileContent, fileExists } from "./fs-operations";
 import { ORDER_SIDECAR } from "./order-store";
@@ -125,7 +126,9 @@ async function readCabinetManifest(
 async function buildTreeRecursive(
   dirPath: string,
   ancestorRealPaths = new Set<string>(),
-  showHidden = false
+  showHidden = false,
+  inlineMap: Map<string, InlineMark> = new Map(),
+  inheritedPolicy?: "read-only" | "read-write"
 ): Promise<TreeNode[]> {
   let realDirPath = dirPath;
   try {
@@ -187,6 +190,10 @@ async function buildTreeRecursive(
       const hasRepo = await fileExists(repoYaml);
       const isLinked = entry.isSymlink || undefined;
 
+      // Inline Connect Knowledge mount? (keyed by data-root-relative path.)
+      const inlineMark = inlineMap.get(vPath.replace(/\/+$/, ""));
+      const nodePolicy = inlineMark?.policy ?? inheritedPolicy;
+
       // Website or App: has index.html but no index.md
       if (hasIndexHtml && !hasIndexMd) {
         const appMarker = path.join(fullPath, ".app");
@@ -197,6 +204,8 @@ async function buildTreeRecursive(
           type: isApp ? "app" : "website",
           hasRepo: hasRepo || undefined,
           isLinked,
+          knowledgeProvider: inlineMark?.provider,
+          knowledgePolicy: nodePolicy,
           frontmatter: {
             title: entry.name,
             order: sidecarOrders[entry.name],
@@ -212,7 +221,13 @@ async function buildTreeRecursive(
       } else if (isLinked) {
         fm = await readCabinetMeta(fullPath);
       }
-      const children = await buildTreeRecursive(fullPath, nextAncestorRealPaths, showHidden);
+      const children = await buildTreeRecursive(
+        fullPath,
+        nextAncestorRealPaths,
+        showHidden,
+        inlineMap,
+        nodePolicy
+      );
 
       nodes.push({
         name: entry.name,
@@ -220,6 +235,8 @@ async function buildTreeRecursive(
         type: hasCabinet ? "cabinet" : "directory",
         hasRepo: hasRepo || undefined,
         isLinked,
+        knowledgeProvider: inlineMark?.provider,
+        knowledgePolicy: nodePolicy,
         frontmatter: {
           title: (fm.title as string) || entry.name,
           icon: fm.icon as string | undefined,
@@ -233,6 +250,7 @@ async function buildTreeRecursive(
         name: entry.name,
         path: vPath,
         type: "pdf",
+        knowledgePolicy: inheritedPolicy,
         frontmatter: {
           title: entry.name.replace(/\.pdf$/i, ""),
           order: sidecarOrders[entry.name],
@@ -243,6 +261,7 @@ async function buildTreeRecursive(
         name: entry.name,
         path: vPath,
         type: "csv",
+        knowledgePolicy: inheritedPolicy,
         frontmatter: {
           title: entry.name.replace(/\.csv$/i, ""),
           order: sidecarOrders[entry.name],
@@ -256,6 +275,7 @@ async function buildTreeRecursive(
           name: entry.name,
           path: vPath,
           type: fileType,
+          knowledgePolicy: inheritedPolicy,
           frontmatter: {
             title: entry.name.replace(new RegExp(`\\${ext}$`, "i"), ""),
             order: sidecarOrders[entry.name],
@@ -276,6 +296,7 @@ async function buildTreeRecursive(
         name: entry.name,
         path: vPath.replace(/\.md$/, ""),
         type: "file",
+        knowledgePolicy: inheritedPolicy,
         frontmatter: {
           title: (fm.title as string) || entry.name.replace(/\.md$/, ""),
           icon: fm.icon as string | undefined,
@@ -335,7 +356,10 @@ export async function buildTree(
 }
 
 async function buildTreeUncached(showHidden: boolean): Promise<TreeNode[]> {
-  const children = await buildTreeRecursive(DATA_DIR, new Set<string>(), showHidden);
+  // Inline Connect Knowledge mounts (cross-room) → mark their tree nodes with
+  // provider/policy. Best-effort: a lookup failure must never break the tree.
+  const inlineMap = await getInlineSourceMap().catch(() => new Map<string, InlineMark>());
+  const children = await buildTreeRecursive(DATA_DIR, new Set<string>(), showHidden, inlineMap);
   const rootManifest = await readCabinetManifest(DATA_DIR);
 
   if (Object.keys(rootManifest).length === 0) {

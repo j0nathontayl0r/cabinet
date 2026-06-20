@@ -67,6 +67,7 @@ import { Button } from "@/components/ui/button";
 import { LinkRepoDialog } from "./link-repo-dialog";
 import { ConnectKnowledgeDialog } from "./connect-knowledge-dialog";
 import { ConnectDriveDialog } from "./connect-drive-dialog";
+import { providerLogo } from "@/lib/knowledge-sources/providers";
 import { NewCabinetDialog } from "./new-cabinet-dialog";
 import { NewFileDialog } from "./new-file-dialog";
 import { EditSymlinkDialog } from "./edit-symlink-dialog";
@@ -167,6 +168,11 @@ function TreeNodeImpl({
   const [linkRepoOpen, setLinkRepoOpen] = useState(false);
   const [connectKnowledgeOpen, setConnectKnowledgeOpen] = useState(false);
   const [connectDriveOpen, setConnectDriveOpen] = useState(false);
+  // Inline Connect Knowledge mount metadata (set by the tree-builder).
+  const isReadOnly = node.knowledgePolicy === "read-only";
+  const knowledgeLogo = node.knowledgeProvider
+    ? providerLogo(node.knowledgeProvider)
+    : undefined;
   const [createCabinetOpen, setCreateCabinetOpen] = useState(false);
   const [newFileOpen, setNewFileOpen] = useState(false);
   const [editSymlinkOpen, setEditSymlinkOpen] = useState(false);
@@ -279,7 +285,7 @@ function TreeNodeImpl({
         e.preventDefault();
         if (node.isLinked) {
           setEditSymlinkOpen(true);
-        } else {
+        } else if (!isReadOnly) {
           setRenameTitle(title);
           setRenameOpen(true);
         }
@@ -304,6 +310,9 @@ function TreeNodeImpl({
         : e.key === "Delete" && !e.metaKey && !e.ctrlKey && !e.altKey;
       if (isDelete) {
         e.preventDefault();
+        // Read-only mount contents can't be deleted; the mount node itself
+        // (a symlink) can still be disconnected.
+        if (isReadOnly && !node.isLinked) return;
         setDeleteOpen(true);
       }
     };
@@ -315,6 +324,7 @@ function TreeNodeImpl({
     isMac,
     title,
     node.isLinked,
+    isReadOnly,
     subPageOpen,
     newFolderOpen,
     renameOpen,
@@ -703,7 +713,11 @@ function TreeNodeImpl({
             ) : (
               <span className="w-3 -ms-1 shrink-0" />
             )}
-            {node.frontmatter?.google ? (
+            {knowledgeLogo ? (
+              // Inline Connect Knowledge mount → provider brand mark.
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={knowledgeLogo} alt="" className="h-3.5 w-3.5 shrink-0" />
+            ) : node.frontmatter?.google ? (
               <GoogleNodeIcon kind={node.frontmatter.google.kind} />
             ) : node.type === "csv" ? (
               <Table className="h-3.5 w-3.5 shrink-0 text-green-400" />
@@ -764,6 +778,14 @@ function TreeNodeImpl({
             >
               {title}
             </span>
+            {node.knowledgeProvider && isReadOnly && (
+              <span
+                className="ms-1 shrink-0 rounded bg-foreground/[0.05] px-1 py-px font-mono text-[9px] font-medium text-muted-foreground/60"
+                title="Read-only — connected for viewing"
+              >
+                view
+              </span>
+            )}
             {isChanged && !isMoving && node.type !== "cabinet" && (
               <span
                 className="ms-auto h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500"
@@ -808,20 +830,20 @@ function TreeNodeImpl({
         <ContextMenuContent className="w-60">
           <ContextMenuGroup>
             <ContextMenuLabel className="font-normal text-muted-foreground/50">{t("treeNode:sectionAdd")}</ContextMenuLabel>
-            <ContextMenuItem onClick={() => setSubPageOpen(true)}>
+            <ContextMenuItem disabled={isReadOnly} onClick={() => setSubPageOpen(true)}>
               <FilePlus className="h-4 w-4 me-2" />
               {t("treeNode:addSubPage")}
             </ContextMenuItem>
-            <ContextMenuItem onClick={() => setNewFolderOpen(true)}>
+            <ContextMenuItem disabled={isReadOnly} onClick={() => setNewFolderOpen(true)}>
               <FolderPlus className="h-4 w-4 me-2" />
               {t("treeNode:newFolder")}
             </ContextMenuItem>
-            <ContextMenuItem onClick={() => setNewFileOpen(true)}>
+            <ContextMenuItem disabled={isReadOnly} onClick={() => setNewFileOpen(true)}>
               <FilePlus2 className="h-4 w-4 me-2" />
               {t("treeNode:createFile")}
             </ContextMenuItem>
             <ContextMenuItem
-              disabled={importing}
+              disabled={importing || isReadOnly}
               onClick={() => importFiles(importTargetPath)}
             >
               {importing ? (
@@ -832,7 +854,7 @@ function TreeNodeImpl({
               {t("treeNode:importFile")}
             </ContextMenuItem>
             <ContextMenuItem
-              disabled={importingFolder}
+              disabled={importingFolder || isReadOnly}
               onClick={() => importFolder(importTargetPath)}
             >
               {importingFolder ? (
@@ -842,11 +864,11 @@ function TreeNodeImpl({
               )}
               {t("treeNode:importFolder")}
             </ContextMenuItem>
-            <ContextMenuItem onClick={() => setConnectKnowledgeOpen(true)}>
+            <ContextMenuItem disabled={isReadOnly} onClick={() => setConnectKnowledgeOpen(true)}>
               <GitBranch className="h-4 w-4 me-2" />
               {t("treeNode:connectKnowledge")}
             </ContextMenuItem>
-            <ContextMenuItem onClick={() => setCreateCabinetOpen(true)}>
+            <ContextMenuItem disabled={isReadOnly} onClick={() => setCreateCabinetOpen(true)}>
               <Archive className="h-4 w-4 me-2" />
               {t("treeNode:createCabinet")}
             </ContextMenuItem>
@@ -861,7 +883,7 @@ function TreeNodeImpl({
                 <ContextMenuShortcut>{renameShortcut}</ContextMenuShortcut>
               </ContextMenuItem>
             ) : (
-              <ContextMenuItem onClick={() => { setRenameTitle(title); setRenameOpen(true); }}>
+              <ContextMenuItem disabled={isReadOnly} onClick={() => { setRenameTitle(title); setRenameOpen(true); }}>
                 <Pencil className="h-4 w-4 me-2" />
                 {t("treeNode:rename")}
                 <ContextMenuShortcut>{renameShortcut}</ContextMenuShortcut>
@@ -874,7 +896,7 @@ function TreeNodeImpl({
               </ContextMenuItem>
             )}
             {onMoveToRequest && (
-              <ContextMenuItem onClick={() => onMoveToRequest(node)}>
+              <ContextMenuItem disabled={isReadOnly} onClick={() => onMoveToRequest(node)}>
                 <ArrowRightLeft className="h-4 w-4 me-2" />
                 {t("treeNode:moveTo")}
                 <ContextMenuShortcut>{moveShortcut}</ContextMenuShortcut>
@@ -897,7 +919,11 @@ function TreeNodeImpl({
             </ContextMenuItem>
           </ContextMenuGroup>
           <ContextMenuSeparator />
-          <ContextMenuItem onClick={handleDelete} className="text-destructive">
+          <ContextMenuItem
+            disabled={isReadOnly && !node.isLinked}
+            onClick={handleDelete}
+            className="text-destructive"
+          >
             {node.isLinked ? (
               <Link2Off className="h-4 w-4 me-2" />
             ) : (
@@ -1034,6 +1060,7 @@ function TreeNodeImpl({
         open={connectDriveOpen}
         onOpenChange={setConnectDriveOpen}
         cabinetPath={contextCabinetPath || ""}
+        mountAt={node.path}
       />
 
       <NewCabinetDialog

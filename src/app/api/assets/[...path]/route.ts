@@ -3,7 +3,7 @@ import path from "path";
 import { resolveContentPath } from "@/lib/storage/path-utils";
 import { fileExists } from "@/lib/storage/fs-operations";
 import { autoCommit } from "@/lib/git/git-service";
-import { resolveAuthorizedMountPaths } from "@/lib/knowledge-sources/store";
+import { resolveAuthorizedMountPaths, assertWritablePath, ReadOnlySourceError } from "@/lib/knowledge-sources/store";
 import { decodeDrivePath } from "@/lib/google-drive/paths";
 import fs from "fs/promises";
 
@@ -226,12 +226,16 @@ export async function PUT(req: NextRequest, { params }: RouteParams) {
   try {
     const { path: segments } = await params;
     const virtualPath = segments.join("/");
+    await assertWritablePath(virtualPath);
     const resolved = resolveContentPath(virtualPath);
     const body = await req.text();
     await fs.writeFile(resolved, body, "utf-8");
     autoCommit(virtualPath, "Update");
     return NextResponse.json({ ok: true });
   } catch (error) {
+    if (error instanceof ReadOnlySourceError) {
+      return NextResponse.json({ error: error.message }, { status: 403 });
+    }
     const message = error instanceof Error ? error.message : "Unknown error";
     return NextResponse.json({ error: message }, { status: 500 });
   }

@@ -86,6 +86,7 @@ async function writeKnowledgeSources(
   const tmp = `${file}.tmp-${process.pid}-${Date.now()}`;
   await fs.writeFile(tmp, JSON.stringify(payload, null, 2), "utf-8");
   await fs.rename(tmp, file);
+  invalidateSourcesCache();
 }
 
 export interface AddSourceInput {
@@ -192,4 +193,100 @@ export async function resolveAuthorizedMountPaths(
       ? await listDriveMounts(cabinetPath)
       : await listAllDriveMounts();
   return mounts.map((m) => m.abs_path);
+}
+
+// --- Cross-room source lookups (for the tree-builder + write-guard) ----------
+//
+// These run on hot paths (the write-guard fires on every page save), so the
+// union is cached briefly and invalidated whenever any sources file changes.
+
+type SourceWithCabinet = KnowledgeSource & { cabinet: string };
+let _allSourcesCache: { at: number; sources: SourceWithCabinet[] } | null = null;
+const SOURCES_CACHE_MS = 3000;
+
+function invalidateSourcesCache(): void {
+  _allSourcesCache = null;
+}
+
+function normTreePath(p: string): string {
+  return p.replace(/^\.?\/+/, "").replace(/\/+$/, "");
+}
+
+/** Every knowledge source across the home root and all rooms (cached ~3s). */
+export async function listAllSources(): Promise<SourceWithCabinet[]> {
+  const now = Date.now();
+  if (_allSourcesCache && now - _allSourcesCache.at < SOURCES_CACHE_MS) {
+    return _allSourcesCache.sources;
+  }
+  const rooms = await listRooms();
+  const cabinetPaths = [ROOT_CABINET_PATH, ...rooms.map((r) => r.path)];
+  const all: SourceWithCabinet[] = [];
+  for (const cp of cabinetPaths) {
+    for (const s of await readKnowledgeSources(cp)) all.push({ ...s, cabinet: cp });
+  }
+  _allSourcesCache = { at: now, sources: all };
+  return all;
+}
+
+export interface InlineMark {
+  provider: KnowledgeProviderId;
+  policy: KnowledgePolicy;
+}
+
+/**
+ * Map of data-root-relative treePath → {provider, policy} for every INLINE
+ * source across rooms. The tree-builder uses this to mark mount nodes (which
+ * are data-root-relative too), since it has no per-room context.
+ */
+export async function getInlineSourceMap(): Promise<Map<string, InlineMark>> {
+  const all = await listAllSources();
+  const map = new Map<string, InlineMark>();
+  for (const s of all) {
+    if (s.surface === "inline" && s.treePath) {
+      map.set(normTreePath(s.treePath), { provider: s.provider, policy: s.policy });
+    }
+  }
+  return map;
+}
+
+/**
+ * Remove any inline source whose treePath matches `treePath` (across rooms).
+ * Called when a mount symlink is deleted (disconnect), so the registry never
+ * drifts from disk. Best-effort — returns the count removed.
+ */
+export async function removeInlineSourceByTreePath(
+  treePath: string,
+): Promise<number> {
+  const norm = normTreePath(treePath);
+  let removed = 0;
+  for (const s of await listAllSources()) {
+    if (s.surface === "inline" && s.treePath && normTreePath(s.treePath) === norm) {
+      if (await removeKnowledgeSource(s.cabinet, s.id)) removed++;
+    }
+  }
+  return removed;
+}
+
+/** Thrown when a write targets a path under a read-only inline mount. */
+export class ReadOnlySourceError extends Error {
+  constructor(name: string) {
+    super(`"${name}" is connected read-only — editing is disabled here.`);
+    this.name = "ReadOnlySourceError";
+  }
+}
+
+/**
+ * Guard for file-mutation routes. Throws ReadOnlySourceError if virtualPath
+ * sits STRICTLY UNDER a read-only inline mount (so the mount node itself can
+ * still be disconnected, but its Drive contents can't be edited/deleted/moved
+ * through the normal file API). docs/CONNECT_KNOWLEDGE_PRD.md §6.1.
+ */
+export async function assertWritablePath(virtualPath: string): Promise<void> {
+  const norm = normTreePath(virtualPath);
+  if (!norm) return;
+  for (const s of await listAllSources()) {
+    if (s.surface !== "inline" || s.policy !== "read-only" || !s.treePath) continue;
+    const tp = normTreePath(s.treePath);
+    if (tp && norm.startsWith(tp + "/")) throw new ReadOnlySourceError(s.name);
+  }
 }
