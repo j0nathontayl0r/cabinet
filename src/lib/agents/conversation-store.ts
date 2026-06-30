@@ -231,6 +231,19 @@ function conversationDir(id: string, cabinetPath?: string): string {
   return path.join(resolveConversationsDir(cabinetPath), id);
 }
 
+/**
+ * Continuation-turn runs use synthetic ids of the shape
+ * `${conversationId}::t${n}::${uuid}` (see conversation-runner). All on-disk
+ * conversation state (meta.json, session.json, turns/, transcript.txt) lives
+ * under the OWNING conversation's directory — there is never a `::t…`-suffixed
+ * directory. Resolve a run id back to its base conversation id before reading
+ * or writing conversation storage.
+ */
+export function baseConversationId(runId: string): string {
+  const marker = runId.indexOf("::t");
+  return marker === -1 ? runId : runId.slice(0, marker);
+}
+
 function metaPath(id: string, cabinetPath?: string): string {
   return path.join(conversationDir(id, cabinetPath), "meta.json");
 }

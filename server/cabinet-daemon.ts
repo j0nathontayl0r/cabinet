@@ -60,6 +60,7 @@ import {
 import { getRuntimePath } from "../src/lib/agents/provider-cli";
 import {
   appendConversationTranscript,
+  baseConversationId,
   cleanupStaleStagingAttachments,
   finalizeConversation,
   listConversationMetas,
@@ -472,10 +473,17 @@ function emitSessionOutput(
 }
 
 async function finalizeSessionConversation(session: ActiveSession): Promise<void> {
-  const meta = await readConversationMeta(session.id);
+  // Continuation turns run under synthetic ids (`<conversationId>::t<N>::<uuid>`)
+  // but every conversation file lives under the base conversation directory, so
+  // resolve the owning conversation id before touching storage. Previously this
+  // keyed meta.json off the raw run id, which never exists for turns → the
+  // "meta.json missing/unreadable" warning and the turn's run result (status,
+  // tokens, error hints, resume id) went unpersisted on every continuation turn.
+  const conversationId = baseConversationId(session.id);
+  const meta = await readConversationMeta(conversationId);
   if (!meta) {
     console.warn(
-      `[cabinet-daemon] cannot finalize session ${session.id}: meta.json missing/unreadable — run result not persisted`
+      `[cabinet-daemon] cannot finalize session ${session.id} (conversation ${conversationId}): meta.json missing/unreadable — run result not persisted`
     );
     return;
   }
@@ -512,7 +520,7 @@ async function finalizeSessionConversation(session: ActiveSession): Promise<void
       adapterErrorHint?.trim()
     ) {
       await finalizeConversation(
-        session.id,
+        conversationId,
         {
           status: "failed",
           exitCode: session.exitCode ?? meta.exitCode ?? 1,
@@ -540,7 +548,7 @@ async function finalizeSessionConversation(session: ActiveSession): Promise<void
       ? distillPtyOutput(plain, session.exitCode, session.providerId)
       : plain;
 
-  await finalizeConversation(session.id, {
+  await finalizeConversation(conversationId, {
     status: session.resolvedStatus || (session.exitCode === 0 ? "completed" : "failed"),
     exitCode: session.resolvedStatus === "completed" ? 0 : session.exitCode,
     output: summaryOutput,
@@ -569,7 +577,7 @@ async function finalizeSessionConversation(session: ActiveSession): Promise<void
     if (resumeId) {
       try {
         await writeSession(
-          session.id,
+          conversationId,
           {
             kind: session.adapterType || "legacy_pty_cli",
             resumeId,

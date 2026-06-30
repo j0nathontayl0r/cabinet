@@ -420,3 +420,15 @@ test("finalizeConversation classifies codex model_unavailable when errorHint is 
   const agent = turns.find((turn) => turn.role === "agent");
   assert.match(agent?.content ?? "", /not supported when using Codex/i);
 });
+
+test("baseConversationId strips continuation-turn run id suffixes", () => {
+  const convId = "2026-06-30T00-29-53-722Z-beb85d3b-devops-agent";
+  // Plain conversation ids (turn 1) are returned unchanged.
+  assert.equal(store.baseConversationId(convId), convId);
+  // Synthetic continuation-turn run ids resolve back to the owning conversation.
+  assert.equal(
+    store.baseConversationId(`${convId}::t2::5fd17e0b-6ab7-4c29-b3cf-9d62129583ab`),
+    convId
+  );
+  assert.equal(store.baseConversationId(`${convId}::t10::abc`), convId);
+});
