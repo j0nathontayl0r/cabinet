@@ -7,6 +7,15 @@ export interface FrontMatter {
   order?: number;
   dir?: "ltr" | "rtl";
   google?: GoogleFrontmatter;
+  /** Set on pages imported from Apple Notes — the upsert key for re-import. */
+  appleNotes?: AppleNotesFrontmatter;
+}
+
+export interface AppleNotesFrontmatter {
+  /** AppleScript note id (x-coredata://…/ICNote/p<rowid>) — stable across edits. */
+  id: string;
+  /** The note's modification date in Notes.app (ISO 8601). Newer wins on re-import. */
+  modified: string;
 }
 
 export interface GoogleFrontmatter {
@@ -38,11 +47,31 @@ export interface TreeNode {
     | "xlsx"
     | "pptx"
     | "notebook"
+    | "latex"
     | "unknown";
   hasRepo?: boolean;
   isLinked?: boolean;
+  /** "google-drive" when the node comes from a Drive for Desktop mount. */
+  source?: "google-drive";
+  /**
+   * Set when the node is (or sits under) an inline Connect Knowledge mount.
+   * `knowledgeProvider` marks the mount node itself (drives its brand icon);
+   * `knowledgePolicy` is inherited by descendants so the UI can gate edits.
+   * See docs/CONNECT_KNOWLEDGE_PRD.md §6.
+   */
+  knowledgeProvider?: "local" | "google-drive" | "icloud" | "onedrive" | "sharepoint" | "dropbox";
+  knowledgePolicy?: "read-only" | "read-write";
   frontmatter?: Partial<FrontMatter>;
   children?: TreeNode[];
+}
+
+export interface GoogleDriveSection {
+  mountId: string;
+  folderName: string;
+  absPath: string;
+  /** The provider this mount belongs to (drives the section's brand icon). */
+  provider?: "local" | "google-drive" | "icloud" | "onedrive" | "sharepoint" | "dropbox";
+  children: TreeNode[];
 }
 
 export interface PageData {

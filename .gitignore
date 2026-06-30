@@ -79,3 +79,6 @@ skills-lock.json
 !.agents/skills/testing-and-reviewing
 .agents/skills/testing-and-reviewing/*
 !.agents/skills/testing-and-reviewing/SKILL.md
+
+# latex.js static assets copied from node_modules by postinstall
+/public/latex-js/

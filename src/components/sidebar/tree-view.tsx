@@ -13,7 +13,6 @@ import {
   ContextMenuContent,
   ContextMenuItem,
   ContextMenuSeparator,
-  ContextMenuShortcut,
   ContextMenuTrigger,
 } from "@/components/ui/context-menu";
 import {
@@ -27,6 +26,11 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { LinkRepoDialog } from "./link-repo-dialog";
+import { ConnectDriveDialog } from "./connect-drive-dialog";
+import { ConnectKnowledgeDialog } from "./connect-knowledge-dialog";
+import { NotionConnectDialog } from "./notion-connect-dialog";
+import { AppleNotesConnectDialog } from "./apple-notes-connect-dialog";
+import type { KnowledgeProviderId } from "@/lib/knowledge-sources/store";
 import { NewFileDialog } from "./new-file-dialog";
 import { MoveToDialog } from "./move-to-dialog";
 import { RecentTasks } from "./recent-tasks";
@@ -48,7 +52,10 @@ import {
   Copy,
   Trash2,
   TriangleAlert,
+  RefreshCw,
+  Settings,
 } from "lucide-react";
+import { GoogleDriveTreeSection } from "./google-drive-tree";
 import { cn } from "@/lib/utils";
 import { AgentAvatar, getAgentDisplayName } from "@/components/agents/agent-avatar";
 import { EditAgentIdentityDialog } from "@/components/agents/edit-agent-identity-dialog";
@@ -96,7 +103,14 @@ const itemClass = (active: boolean) =>
 
 export function TreeView() {
   const { t } = useLocale();
-  const { nodes, loading } = useTreeStore();
+  const {
+    nodes,
+    loading,
+    pendingMove,
+    setPendingMove,
+    executeMovePage,
+    setSortAlphabetical,
+  } = useTreeStore();
   const selectPage = useTreeStore((s) => s.selectPage);
   const createPage = useTreeStore((s) => s.createPage);
   const deletePage = useTreeStore((s) => s.deletePage);
@@ -150,6 +164,11 @@ export function TreeView() {
   const [cabinetDeleteOpen, setCabinetDeleteOpen] = useState(false);
   const [kbCreating, setKbCreating] = useState(false);
   const [linkRepoOpen, setLinkRepoOpen] = useState(false);
+  const [connectDriveOpen, setConnectDriveOpen] = useState(false);
+  const [connectKnowledgeOpen, setConnectKnowledgeOpen] = useState(false);
+  const [notionConnectOpen, setNotionConnectOpen] = useState(false);
+  const [appleNotesConnectOpen, setAppleNotesConnectOpen] = useState(false);
+  const [driveProvider, setDriveProvider] = useState<KnowledgeProviderId>("google-drive");
   const [newFileOpen, setNewFileOpen] = useState(false);
   const [moveToOpen, setMoveToOpen] = useState(false);
   const [moveToSource, setMoveToSource] = useState<TreeNodeType | null>(null);
@@ -823,18 +842,34 @@ export function TreeView() {
                     {activeCabinet ? "Add cabinet data" : "Add your first page"}
                   </button>
                 ) : (
-                  visibleTreeNodes.map((node, index) => (
-                    <TreeNode
-                      key={node.path}
-                      node={node}
-                      depth={1}
-                      contextCabinetPath={activeCabinet?.path || null}
-                      siblings={visibleTreeNodes}
-                      onMoveToRequest={requestMoveTo}
-                      animationDelayMs={index * 22}
-                    />
-                  ))
+                  // Each row carries its own context menu (rename, copy path,
+                  // Open in Finder, delete). Without this stopPropagation a
+                  // right-click on a row bubbles to the data-drawer trigger
+                  // above and opens *that* menu instead — same fix the Drive
+                  // section uses below.
+                  <div onContextMenu={(e) => e.stopPropagation()}>
+                    {visibleTreeNodes.map((node, index) => (
+                      <TreeNode
+                        key={node.path}
+                        node={node}
+                        depth={1}
+                        contextCabinetPath={activeCabinet?.path || null}
+                        siblings={visibleTreeNodes}
+                        onMoveToRequest={requestMoveTo}
+                        animationDelayMs={index * 22}
+                      />
+                    ))}
+                  </div>
                 )}
+                {/* Mounted Drive folders flow inline right after the cabinet
+                    files. Rendered inside SidebarSearch so they sit with the
+                    file list rather than below its flex-1 slack (which would
+                    pin them to the bottom when collapsed). stopPropagation keeps
+                    a right-click on a Drive node from also opening the cabinet
+                    context menu. */}
+                <div onContextMenu={(e) => e.stopPropagation()}>
+                  <GoogleDriveTreeSection key={dataRootPath} depth={1} padFn={pad} itemClass={itemClass} cabinetPath={dataRootPath} />
+                </div>
               </SidebarSearch>
                   </div>
                 </ContextMenuTrigger>
@@ -847,12 +882,9 @@ export function TreeView() {
                     <FilePlus2 className="h-4 w-4 me-2" />
                     {t("treeNode:createFile")}
                   </ContextMenuItem>
-                  <ContextMenuItem onClick={() => setLinkRepoOpen(true)}>
+                  <ContextMenuItem onClick={() => setConnectKnowledgeOpen(true)}>
                     <GitBranch className="h-4 w-4 me-2" />
                     {t("treeNode:connectKnowledge")}
-                    <ContextMenuShortcut className="text-muted-foreground/40">
-                      {t("treeNode:symlinkTag")}
-                    </ContextMenuShortcut>
                   </ContextMenuItem>
                   <ContextMenuItem
                     onClick={async () => {
@@ -946,6 +978,43 @@ export function TreeView() {
       parentPath={dataRootPath}
     />
 
+    <ConnectKnowledgeDialog
+      open={connectKnowledgeOpen}
+      onOpenChange={setConnectKnowledgeOpen}
+      onLocal={() => {
+        setConnectKnowledgeOpen(false);
+        setLinkRepoOpen(true);
+      }}
+      onCloud={(provider) => {
+        setConnectKnowledgeOpen(false);
+        setDriveProvider(provider);
+        setConnectDriveOpen(true);
+      }}
+      onNotion={() => setNotionConnectOpen(true)}
+      onAppleNotes={() => setAppleNotesConnectOpen(true)}
+    />
+
+    <NotionConnectDialog
+      open={notionConnectOpen}
+      onOpenChange={setNotionConnectOpen}
+      targetPath={dataRootPath}
+    />
+
+    <AppleNotesConnectDialog
+      open={appleNotesConnectOpen}
+      onOpenChange={setAppleNotesConnectOpen}
+      targetPath={dataRootPath}
+    />
+
+    <ConnectDriveDialog
+      open={connectDriveOpen}
+      onOpenChange={setConnectDriveOpen}
+      cabinetPath={dataRootPath}
+      provider={driveProvider}
+      // From the room root, every provider connects into the per-room cloud
+      // browser (the dedicated section); per-node connects mount inline.
+    />
+
     <NewFileDialog
       open={newFileOpen}
       onOpenChange={setNewFileOpen}
@@ -999,6 +1068,48 @@ export function TreeView() {
             }}
           >
             Delete
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+
+    <Dialog open={!!pendingMove} onOpenChange={(open) => !open && setPendingMove(null)}>
+      <DialogContent className="sm:max-w-md">
+        <DialogHeader>
+          <DialogTitle>Disable Alphabetical Sorting?</DialogTitle>
+          <DialogDescription>
+            You are manually reordering files or folders, but alphabetical auto-sorting is currently enabled.
+            Would you like to disable alphabetical sorting to apply your manual ordering?
+          </DialogDescription>
+        </DialogHeader>
+        <DialogFooter className="mt-2 flex gap-2 sm:justify-end">
+          <Button variant="outline" onClick={() => setPendingMove(null)}>
+            Cancel
+          </Button>
+          <Button
+            variant="outline"
+            onClick={async () => {
+              if (pendingMove) {
+                const move = pendingMove;
+                setPendingMove(null);
+                await executeMovePage(move);
+              }
+            }}
+          >
+            Keep Auto-Sorting
+          </Button>
+          <Button
+            variant="default"
+            onClick={async () => {
+              if (pendingMove) {
+                const move = pendingMove;
+                setPendingMove(null);
+                setSortAlphabetical(false);
+                await executeMovePage(move);
+              }
+            }}
+          >
+            Disable Auto-Sorting &amp; Move
           </Button>
         </DialogFooter>
       </DialogContent>

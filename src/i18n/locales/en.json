@@ -617,6 +617,9 @@
     "newFolder": "New Folder",
     "createFile": "Create New File…",
     "connectKnowledge": "Connect Knowledge…",
+    "connectLocalFolder": "Local folder…",
+    "connectGoogleDrive": "Google Drive…",
+    "comingSoon": "Soon",
     "symlinkTag": "Symlink",
     "importFile": "Import File…",
     "importFolder": "Import Folder…",
@@ -1068,7 +1071,16 @@
       "copyAsHtml": "Copy as HTML",
       "downloadMarkdown": "Download .md",
       "downloadPdf": "Download PDF",
-      "copiedForLlmToast": "Copied {{size}} of Markdown for LLM"
+      "copiedForLlmToast": "Copied {{size}} of Markdown for LLM",
+      "browseMode": "Open in browser",
+      "editMode": "Back to editor"
+    },
+    "browser": {
+      "noUrl": "Built-in browser ready. Click a link in a page to open it here.",
+      "openExternally": "Open externally",
+      "back": "Back",
+      "forward": "Forward",
+      "reload": "Reload"
     },
     "toolbar": {
       "heading1": "Heading 1",
@@ -1598,7 +1610,11 @@
       "sidebar": "Sidebar",
       "showHiddenFiles": "Show hidden files",
       "sidebarDescription": "Configure how files are displayed in the sidebar.",
-      "showHiddenFilesHint": "Display files and folders starting with a dot (e.g. .env, .git)"
+      "showHiddenFilesHint": "Display files and folders starting with a dot (e.g. .env, .git)",
+      "autoSortAlphabetical": "Sort alphabetically",
+      "autoSortAlphabeticalHint": "Auto-sort files and folders alphabetically by name.",
+      "foldersFirst": "Folders first",
+      "foldersFirstHint": "Position all folders above files in the same directory."
     },
     "tabs": {
       "profile": "Profile",

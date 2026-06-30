@@ -26,6 +26,7 @@ import { WikiLink } from "./wiki-link-extension";
 import { CalloutExtension } from "./callout-extension";
 import { ResizableImage } from "./extensions/resizable-image";
 import { EmbedExtension } from "./extensions/embed-extension";
+import { LatexEmbedExtension } from "./extensions/latex-extension";
 import { colorAndStyleExtensions } from "./extensions/color-highlight";
 import { DragHandle } from "./extensions/drag-handle";
 import { CabinetMath } from "./extensions/math-extension";
@@ -100,6 +101,7 @@ export const editorExtensions = [
   }),
   Link.configure({
     openOnClick: false, // we handle clicks ourselves in the editor
+    isAllowedUri: (url) => !!url, // allow file:// and any other protocol
     HTMLAttributes: {
       class: "text-primary underline cursor-pointer",
     },
@@ -138,6 +140,7 @@ export const editorExtensions = [
   }),
   ...colorAndStyleExtensions,
   EmbedExtension,
+  LatexEmbedExtension,
   DragHandle,
   CabinetMath,
   IconExtension,

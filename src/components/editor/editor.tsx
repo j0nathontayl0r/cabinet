@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useCallback, useState } from "react";
 import { useEditor, EditorContent } from "@tiptap/react";
-import { Sparkles, Loader2, FilePlus } from "lucide-react";
+import { Sparkles, Loader2, FilePlus, Lock } from "lucide-react";
 import { editorExtensions } from "./extensions";
 import { EditorToolbar } from "./editor-toolbar";
 import { SlashCommands } from "./slash-commands";
@@ -17,7 +17,10 @@ import { useTreeStore } from "@/stores/tree-store";
 import { findNodeByPath } from "@/lib/cabinets/tree";
 import { markdownToHtml } from "@/lib/markdown/to-html";
 import { htmlToMarkdown } from "@/lib/markdown/to-markdown";
+import { slugifyPageName } from "@/lib/markdown/wiki-links";
 import { detectEmbed } from "@/lib/embeds/detect";
+import { openLocalFileUrl } from "@/lib/runtime/open-local-file";
+import { openUrlInAppropriateContext } from "@/lib/runtime/open-url";
 import { cellAround, isInTable } from "@tiptap/pm/tables";
 import type { TreeNode } from "@/types";
 import { useLocale } from "@/i18n/use-locale";
@@ -51,19 +54,25 @@ function flattenTree(nodes: TreeNode[]): { path: string; name: string }[] {
 
 function findPageBySlug(slug: string, currentPath: string | null, nodes: TreeNode[]): string | null {
   const allPages = flattenTree(nodes);
-  // The slug matches the last segment of the path
-  const matches = allPages.filter((p) => p.name === slug || p.path.endsWith("/" + slug));
+  // The slug matches the last segment of the path. Native pages are stored with
+  // slug filenames, so an exact match works; imported pages (e.g. Notion) keep
+  // human names ("Day 1-100 Build 👩🏻‍💻"), so also match when the last segment
+  // *slugifies to* the target slug.
+  const lastSeg = (p: string) => p.split("/").pop() ?? p;
+  const parentOf = (p: string) => (p.includes("/") ? p.substring(0, p.lastIndexOf("/")) : "");
+  const matches = allPages.filter(
+    (p) =>
+      p.name === slug ||
+      p.path.endsWith("/" + slug) ||
+      slugifyPageName(lastSeg(p.path)) === slug
+  );
   if (matches.length === 0) return null;
   if (matches.length === 1) return matches[0].path;
 
   // Prefer sibling pages (same parent directory as current page)
   if (currentPath) {
-    const parentDir = currentPath.includes("/")
-      ? currentPath.substring(0, currentPath.lastIndexOf("/"))
-      : "";
-    const sibling = matches.find(
-      (m) => m.path === (parentDir ? parentDir + "/" + slug : slug)
-    );
+    const parentDir = parentOf(currentPath);
+    const sibling = matches.find((m) => parentOf(m.path) === parentDir);
     if (sibling) return sibling.path;
   }
   return matches[0].path;
@@ -122,6 +131,12 @@ export function KBEditor() {
   const { t } = useLocale();
   const { currentPath, assetBase, content, saveStatus, frontmatter, isLoading, loadStatus, createMissingPage } = useEditorStore();
   const nodes = useTreeStore((s) => s.nodes);
+  // A page under a read-only Connect Knowledge mount is view-only — edits would
+  // be rejected server-side (403), so disable editing up front. The tree-builder
+  // propagates knowledgePolicy down from the mount node.
+  const isReadOnlyMount =
+    (currentPath ? findNodeByPath(nodes, currentPath) : null)?.knowledgePolicy ===
+    "read-only";
   const isRtl = frontmatter?.dir === "rtl";
   const isLoadingRef = useRef(false);
   const [sourceMode, setSourceMode] = useState(false);
@@ -157,9 +172,24 @@ export function KBEditor() {
     setFolderTab("page");
   }, [currentPath]);
 
+  // Guards against a freshly-mounted (content: "") editor autosaving its empty
+  // initial state over a real page. Stays false until the content effect has
+  // populated this editor instance at least once. Critical when leaving browse
+  // mode: that unmounts/remounts KBEditor while the store is already
+  // loadStatus "ok", so the loadStatus guard below wouldn't catch the spurious
+  // empty onUpdate the way it does on a cold app start.
+  const hasPopulatedRef = useRef(false);
+
   const handleUpdate = useCallback(
     ({ editor }: { editor: ReturnType<typeof useEditor> }) => {
       if (isLoadingRef.current || !editor) return;
+      // Ignore updates until the page has loaded — a transaction fired while the
+      // fetch is still in flight (e.g. editor mount/normalization on a fresh
+      // open) must not mark the page dirty with the empty loading state.
+      if (useEditorStore.getState().loadStatus !== "ok") return;
+      // Ignore updates before this editor instance has been populated once —
+      // the initial empty-doc transaction must never overwrite stored content.
+      if (!hasPopulatedRef.current) return;
       const html = editor.getHTML();
       const md = htmlToMarkdown(html);
       useEditorStore.getState().updateContent(md);
@@ -251,9 +281,31 @@ export function KBEditor() {
             return true;
           }
 
-          // Internal links: relative paths to .md files or other KB pages
-          // Skip external URLs and API asset links (PDFs, images)
-          if (/^https?:\/\//.test(href) || href.startsWith("/api/")) return false;
+          // Skip API asset links (PDFs, images); they load directly.
+          if (href.startsWith("/api/")) return false;
+
+          // External links: open in the built-in browser.
+          if (/^https?:\/\//.test(href) || href.startsWith("//")) {
+            event.preventDefault();
+            event.stopPropagation();
+            openUrlInAppropriateContext(href, (url) =>
+              useAppStore.getState().setAppMode("browse", url)
+            );
+            return true;
+          }
+
+          // Local file links: open with the OS default app (Electron) or
+          // surface the path (browser). file:// can't load in a webview.
+          if (href.startsWith("file://")) {
+            event.preventDefault();
+            event.stopPropagation();
+            const pathPart = href.slice("file://".length);
+            const encoded = pathPart.includes("%20") || !pathPart.includes(" ")
+              ? href
+              : "file://" + encodeURI(pathPart);
+            openLocalFileUrl(encoded);
+            return true;
+          }
           if (href.startsWith("mailto:") || href.startsWith("tel:")) return false;
 
           event.preventDefault();
@@ -358,6 +410,11 @@ export function KBEditor() {
     immediatelyRender: false,
   });
 
+  // Toggle editability when navigating into/out of a read-only mount.
+  useEffect(() => {
+    editor?.setEditable(!isReadOnlyMount);
+  }, [editor, isReadOnlyMount]);
+
   // When content updates from store (after loadPage), set it in editor
   const prevPathRef = useRef<string | null>(null);
   // What the editor DOM currently shows, recorded when the async markdown
@@ -399,6 +456,9 @@ export function KBEditor() {
         // image refs; currentPath is only correct for directory pages.
         const html = await markdownToHtml(content, assetBase ?? currentPath);
         editor.commands.setContent(html);
+        // This editor instance now reflects stored content, so user-driven
+        // onUpdate transactions are safe to persist (see hasPopulatedRef).
+        hasPopulatedRef.current = true;
         setRendered({ key, path: currentPath });
         // Surface a known-bad state instead of silently rendering blank: the
         // store has content but ProseMirror parsed it down to nothing —
@@ -641,6 +701,12 @@ export function KBEditor() {
         >
           <FindBar editor={editor} />
           <div className="absolute inset-0 overflow-y-auto" data-editor-scroll>
+            {isReadOnlyMount && (
+              <div className="mx-auto mt-3 flex max-w-3xl items-center gap-2 rounded-md border border-border bg-muted/40 px-3 py-1.5 text-[12px] text-muted-foreground">
+                <Lock className="h-3.5 w-3.5 shrink-0" />
+                Read-only — this folder is connected for viewing. Edits are disabled.
+              </div>
+            )}
             <EditorContent editor={editor} />
             <EditorBubbleMenu editor={editor} />
             <TableMenu editor={editor} />

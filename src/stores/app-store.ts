@@ -72,7 +72,14 @@ export interface SelectedSection {
   conversationId?: string; // auto-select this conversation on mount
   taskId?: string; // task id when type === "task"
   /** Sub-tab key when type === "agents" (e.g. "routines", "heartbeats"). */
-  agentsTab?: "agents" | "routines" | "heartbeats" | "schedule";
+  agentsTab?: "agents" | "routines" | "heartbeats" | "schedule" | "channels";
+  /**
+   * The integration card actually clicked, when it differs from `slug` (the
+   * suite it connects through). E.g. clicking "Microsoft Teams" sets
+   * slug="microsoft-365", integrationVia="microsoft-teams" so the detail page
+   * can default to the account mode that sub-product needs.
+   */
+  integrationVia?: string;
 }
 
 /**
@@ -146,6 +153,11 @@ interface AppState {
   defaultEffort: string | null;
   providersLoading: boolean;
   providersLoaded: boolean;
+  /** Top-level app surface: the page editor, or the in-app browser. */
+  appMode: "edit" | "browse";
+  /** URL shown in browse mode; null until a link/bookmark sets it. */
+  browseUrl: string | null;
+  setAppMode: (mode: "edit" | "browse", url?: string | null) => void;
   loadProviders: () => Promise<void>;
   /**
    * Hydrate one provider's real, entitlement-gated model list from
@@ -258,6 +270,13 @@ export const useAppStore = create<AppState>((set, get) => ({
   defaultEffort: null,
   providersLoading: false,
   providersLoaded: false,
+  appMode: "edit",
+  browseUrl: null,
+  setAppMode: (mode, url) =>
+    set((state) => ({
+      appMode: mode,
+      browseUrl: url !== undefined ? url : state.browseUrl,
+    })),
 
   loadProviders: async () => {
     const { providersLoading, providersLoaded } = get();

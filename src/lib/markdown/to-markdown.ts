@@ -16,6 +16,27 @@ const turndown = new TurndownService({
 // Add GFM support (tables, strikethrough, task lists)
 turndown.use(gfm);
 
+// Task items, the Tiptap way. Tiptap (and our markdownToHtml) render a task
+// item as `<li data-type="taskItem" data-checked="…"><label><input></label>
+// <div><p>text</p></div></li>`. turndown-plugin-gfm's task rule only fires when
+// the checkbox `<input>` sits *directly* under the `<li>`, so the `<label>`
+// wrapper makes it miss — the checkbox is dropped and `- [ ]` degrades to a
+// plain bullet on every save. Match the `<li>` itself and re-emit the GFM
+// marker from `data-checked`, keeping the item on one line.
+turndown.addRule("taskItem", {
+  filter: (node) =>
+    node.nodeName === "LI" &&
+    (node as HTMLElement).getAttribute("data-type") === "taskItem",
+  replacement: (content, node) => {
+    const checked = (node as HTMLElement).getAttribute("data-checked") === "true";
+    const body = content
+      .replace(/^\n+/, "")
+      .replace(/\n+$/, "")
+      .replace(/\n/g, "\n    "); // indent continuation / nested lines under the item
+    return `- [${checked ? "x" : " "}] ${body}${node.nextSibling ? "\n" : ""}`;
+  },
+});
+
 // Preserve line breaks in code blocks
 turndown.addRule("codeBlock", {
   filter: (node) => {
@@ -168,6 +189,18 @@ turndown.addRule("twitterEmbed", {
     const a = el.querySelector("a");
     const href = a?.getAttribute("href") ?? "";
     return `\n<blockquote class="twitter-tweet" data-theme="auto"><a href="${href}">${href}</a></blockquote>\n`;
+  },
+});
+
+// Serialize LaTeX embed blocks back to ![[file.tex]] syntax.
+turndown.addRule("latexEmbed", {
+  filter: (node) =>
+    node.nodeName === "DIV" &&
+    (node as HTMLElement).getAttribute("data-latex-embed") === "true",
+  replacement: (_content, node) => {
+    const el = node as HTMLElement;
+    const path = el.getAttribute("data-path") ?? "";
+    return `\n![[${path}]]\n`;
   },
 });
 

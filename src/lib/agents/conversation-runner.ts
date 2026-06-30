@@ -188,6 +188,7 @@ export async function buildCabinetEpilogueInstructions(options: {
       "  LAUNCH_TASK: <agent-slug> | <title> | <one-line prompt>",
       "  SCHEDULE_JOB: <agent-slug> | <name> | <cron> | <prompt>",
       "  SCHEDULE_TASK: <agent-slug> | <ISO datetime> | <title> | <prompt>",
+      "  SEND_EMAIL: <to@example.com> | <Subject> | <Body>",
       "",
       "Optionally pin a sub-task's runtime by appending `| providerId=<p> |",
       "adapterType=<a> | model=<m> | effort=<e>` segments to the inline line, e.g.",
@@ -198,7 +199,7 @@ export async function buildCabinetEpilogueInstructions(options: {
       "For multi-line prompts or large fan-out (more than ~5 actions), emit a",
       "separate ```cabinet-actions code block containing a JSON array:",
       "```cabinet-actions",
-      '[{"type":"LAUNCH_TASK","agent":"<slug>","title":"<title>","prompt":"<prompt>","providerId":"<optional>","adapterType":"<optional>","model":"<optional>","effort":"<optional>"}]',
+      '[{"type":"LAUNCH_TASK","agent":"<slug>","title":"<title>","prompt":"<prompt>"},{"type":"SEND_EMAIL","to":["<email>"],"subject":"<subject>","body":"<body>"}]',
       "```",
       "",
       "Runtime inheritance: sub-tasks inherit THIS conversation's runtime",
@@ -259,17 +260,22 @@ function buildKnowledgeBaseScopeInstructions(
   baseCwd: string,
   cabinetPath?: string
 ): string[] {
+  const connectKnowledgeNote =
+    "Folders added via Connect Knowledge (cloud or local mounts) appear in the tree as normal files — read them as context. Anything connected read-only (and native Google Docs/Sheets/Slides) is view-only: do not edit, move, or delete it.";
+
   if (cabinetPath) {
     return [
       `Work only inside the cabinet-scoped knowledge base rooted at /data/${cabinetPath}.`,
       `For local filesystem work, treat ${baseCwd} as the root for this run.`,
       "Do not create or modify files in sibling cabinets or the global /data root unless the user explicitly asks.",
+      connectKnowledgeNote,
     ];
   }
 
   return [
     "Work in the Cabinet knowledge base rooted at /data.",
     `For local filesystem work, treat ${baseCwd} as the root for this run.`,
+    connectKnowledgeNote,
   ];
 }
 

@@ -85,6 +85,15 @@ export interface CatalogEntry {
   command?: string;
   args?: string[];
   /**
+   * Extra stdio args appended only when a given credential has a value in
+   * `.cabinet.env`. Used for flags that apply to the "bring your own app" path
+   * but would break the built-in/default path. Concrete case: Microsoft 365's
+   * `--org-mode` unlocks the work/school-only Graph tools (Teams chat/channel,
+   * SharePoint) — but those tools error on a personal account, so we only pass
+   * it once the user has supplied their Entra Client ID (i.e. work mode).
+   */
+  argsWhenCredentialSet?: { credentialKey: string; args: string[] };
+  /**
    * Relative path (from the repo root) to a first-party server's local build.
    * When it exists — i.e. Cabinet is running from source — the config writer
    * runs `node <abs path>` instead of `command`/`args`, so a not-yet-published
@@ -237,8 +246,8 @@ const NOTION: CatalogEntry = {
   ],
   setupSteps: [
     {
-      title: "Sign in with Notion",
-      body: "Click Connect & sign in — your agent's CLI opens Notion in the browser. Approve access and pick which pages or databases to share.",
+      title: "Connect Notion",
+      body: "Click Connect to register Notion. The first time an agent uses it, its CLI opens Notion in the browser — approve access and pick which pages or databases to share.",
     },
     {
       title: "Choose what to share",
@@ -390,25 +399,34 @@ const MICROSOFT_365: CatalogEntry = {
   mcpServerName: "cabinet-microsoft-365",
   command: "npx",
   args: ["-y", "@softeria/ms-365-mcp-server"],
+  // Work/school only: --org-mode exposes the Teams/SharePoint Graph tools. Gated
+  // on the Entra Client ID so personal accounts (built-in app, no creds) don't
+  // get org-only tools that would just error.
+  argsWhenCredentialSet: { credentialKey: "MS365_MCP_CLIENT_ID", args: ["--org-mode"] },
   serverEnv: {
     MS365_MCP_CLIENT_ID: "${MS365_MCP_CLIENT_ID}",
     MS365_MCP_TENANT_ID: "${MS365_MCP_TENANT_ID}",
     MS365_MCP_CLIENT_SECRET: "${MS365_MCP_CLIENT_SECRET}",
   },
+  // Credentials are OPTIONAL: leave them blank for a personal Outlook.com
+  // account and the server uses its built-in app + device-code sign-in (the
+  // connect panel's "Personal account" mode). Fill them to use your own Entra
+  // app ("Work / school" mode). The config writer omits any unset placeholder
+  // so blank values never override the built-in default.
   credentials: [
     {
       envKey: "MS365_MCP_CLIENT_ID",
       label: "Azure app Client ID",
       kind: "plain",
-      required: true,
+      required: false,
       placeholder: "00000000-0000-0000-0000-000000000000",
-      hint: "From your Microsoft Entra (Azure AD) app registration.",
+      hint: "Work/school only — from your Microsoft Entra (Azure AD) app registration. Leave blank for a personal account.",
     },
     {
       envKey: "MS365_MCP_TENANT_ID",
       label: "Tenant ID",
       kind: "plain",
-      required: true,
+      required: false,
       placeholder: "common (or your tenant id)",
       hint: "Use 'common' for multi-tenant, or your directory (tenant) id.",
     },
@@ -416,7 +434,7 @@ const MICROSOFT_365: CatalogEntry = {
       envKey: "MS365_MCP_CLIENT_SECRET",
       label: "Client Secret",
       kind: "secret",
-      required: true,
+      required: false,
       placeholder: "••••••••",
       hint: "Saved securely on this device only — never uploaded.",
     },
